@@ -10,14 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestYourselfRouteImport } from './routes/test-yourself'
+import { Route as SafeZonesRouteImport } from './routes/safe-zones'
 import { Route as PreparednessRouteImport } from './routes/preparedness'
 import { Route as HistoricalRouteImport } from './routes/historical'
+import { Route as GisRouteImport } from './routes/gis'
+import { Route as DamageAssessmentRouteImport } from './routes/damage-assessment'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TestYourselfRoute = TestYourselfRouteImport.update({
   id: '/test-yourself',
   path: '/test-yourself',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafeZonesRoute = SafeZonesRouteImport.update({
+  id: '/safe-zones',
+  path: '/safe-zones',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PreparednessRoute = PreparednessRouteImport.update({
@@ -28,6 +36,16 @@ const PreparednessRoute = PreparednessRouteImport.update({
 const HistoricalRoute = HistoricalRouteImport.update({
   id: '/historical',
   path: '/historical',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GisRoute = GisRouteImport.update({
+  id: '/gis',
+  path: '/gis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DamageAssessmentRoute = DamageAssessmentRouteImport.update({
+  id: '/damage-assessment',
+  path: '/damage-assessment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -44,44 +62,75 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/damage-assessment': typeof DamageAssessmentRoute
+  '/gis': typeof GisRoute
   '/historical': typeof HistoricalRoute
   '/preparedness': typeof PreparednessRoute
+  '/safe-zones': typeof SafeZonesRoute
   '/test-yourself': typeof TestYourselfRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/damage-assessment': typeof DamageAssessmentRoute
+  '/gis': typeof GisRoute
   '/historical': typeof HistoricalRoute
   '/preparedness': typeof PreparednessRoute
+  '/safe-zones': typeof SafeZonesRoute
   '/test-yourself': typeof TestYourselfRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/damage-assessment': typeof DamageAssessmentRoute
+  '/gis': typeof GisRoute
   '/historical': typeof HistoricalRoute
   '/preparedness': typeof PreparednessRoute
+  '/safe-zones': typeof SafeZonesRoute
   '/test-yourself': typeof TestYourselfRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/historical' | '/preparedness' | '/test-yourself'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/damage-assessment'
+    | '/gis'
+    | '/historical'
+    | '/preparedness'
+    | '/safe-zones'
+    | '/test-yourself'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/historical' | '/preparedness' | '/test-yourself'
+  to:
+    | '/'
+    | '/about'
+    | '/damage-assessment'
+    | '/gis'
+    | '/historical'
+    | '/preparedness'
+    | '/safe-zones'
+    | '/test-yourself'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/damage-assessment'
+    | '/gis'
     | '/historical'
     | '/preparedness'
+    | '/safe-zones'
     | '/test-yourself'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  DamageAssessmentRoute: typeof DamageAssessmentRoute
+  GisRoute: typeof GisRoute
   HistoricalRoute: typeof HistoricalRoute
   PreparednessRoute: typeof PreparednessRoute
+  SafeZonesRoute: typeof SafeZonesRoute
   TestYourselfRoute: typeof TestYourselfRoute
 }
 
@@ -92,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/test-yourself'
       fullPath: '/test-yourself'
       preLoaderRoute: typeof TestYourselfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safe-zones': {
+      id: '/safe-zones'
+      path: '/safe-zones'
+      fullPath: '/safe-zones'
+      preLoaderRoute: typeof SafeZonesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/preparedness': {
@@ -106,6 +162,20 @@ declare module '@tanstack/react-router' {
       path: '/historical'
       fullPath: '/historical'
       preLoaderRoute: typeof HistoricalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gis': {
+      id: '/gis'
+      path: '/gis'
+      fullPath: '/gis'
+      preLoaderRoute: typeof GisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/damage-assessment': {
+      id: '/damage-assessment'
+      path: '/damage-assessment'
+      fullPath: '/damage-assessment'
+      preLoaderRoute: typeof DamageAssessmentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -128,8 +198,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  DamageAssessmentRoute: DamageAssessmentRoute,
+  GisRoute: GisRoute,
   HistoricalRoute: HistoricalRoute,
   PreparednessRoute: PreparednessRoute,
+  SafeZonesRoute: SafeZonesRoute,
   TestYourselfRoute: TestYourselfRoute,
 }
 export const routeTree = rootRouteImport

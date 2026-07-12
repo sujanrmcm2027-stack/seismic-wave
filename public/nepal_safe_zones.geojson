@@ -1,0 +1,3616 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-001",
+        "name": "Tundikhel",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 630,
+        "capacity_persons": 210,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.325094,
+          27.710797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-002",
+        "name": "Khula Manch",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 535,
+        "capacity_persons": 178,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.315813,
+          27.710723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-003",
+        "name": "Dasharath Rangasala (National Stadium)",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Stadium",
+        "usable_area_sqm": 565,
+        "capacity_persons": 188,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Stadium in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.329909,
+          27.709521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-004",
+        "name": "Bhrikutimandap",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 636,
+        "capacity_persons": 212,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.326386,
+          27.713545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-005",
+        "name": "Ratna Park",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Park",
+        "usable_area_sqm": 408,
+        "capacity_persons": 136,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Park in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.327647,
+          27.713591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-006",
+        "name": "Basantapur Durbar Square",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Institutional Compound",
+        "usable_area_sqm": 621,
+        "capacity_persons": 207,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Institutional Compound in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.323555,
+          27.712698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-007",
+        "name": "Naya Bazar Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 456,
+        "capacity_persons": 152,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.317931,
+          27.712088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-008",
+        "name": "Chuchepati Open Space",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 504,
+        "capacity_persons": 168,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.324199,
+          27.714741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-009",
+        "name": "Gaushala Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 501,
+        "capacity_persons": 167,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.320272,
+          27.722697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-010",
+        "name": "Baneshwor Community Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 630,
+        "capacity_persons": 210,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.318012,
+          27.715884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-011",
+        "name": "Tinkune Open Space",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 675,
+        "capacity_persons": 225,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.317071,
+          27.719468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-012",
+        "name": "Balaju Park",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Park",
+        "usable_area_sqm": 626,
+        "capacity_persons": 209,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Park in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.332791,
+          27.725076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-013",
+        "name": "Chabahil Chowk Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 515,
+        "capacity_persons": 172,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.331636,
+          27.720063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-014",
+        "name": "Sinamangal Open Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 616,
+        "capacity_persons": 205,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.317576,
+          27.725304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-015",
+        "name": "Gaucharan Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 640,
+        "capacity_persons": 213,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.319917,
+          27.71694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-016",
+        "name": "Maitighar Mandala",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Institutional Compound",
+        "usable_area_sqm": 487,
+        "capacity_persons": 162,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Institutional Compound in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.327784,
+          27.709025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-017",
+        "name": "Dilli Bazar Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 485,
+        "capacity_persons": 162,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.321241,
+          27.716094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-018",
+        "name": "Putalisadak Open Space",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 649,
+        "capacity_persons": 216,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.330857,
+          27.724557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-019",
+        "name": "Kalimati Fruit Market Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 422,
+        "capacity_persons": 141,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.321426,
+          27.72609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-020",
+        "name": "Kalanki Chowk Open Space",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 653,
+        "capacity_persons": 218,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3185,
+          27.711212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-021",
+        "name": "Balkhu Riverside Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 430,
+        "capacity_persons": 143,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.333262,
+          27.719065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-022",
+        "name": "Sorakhutte Open Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 518,
+        "capacity_persons": 173,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.328032,
+          27.72199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-023",
+        "name": "Gongabu Bus Park Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Park",
+        "usable_area_sqm": 582,
+        "capacity_persons": 194,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Park in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.32454,
+          27.724356
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-024",
+        "name": "Samakhushi Community Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 694,
+        "capacity_persons": 231,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.31822,
+          27.713749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-025",
+        "name": "Swayambhu Open Area",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 694,
+        "capacity_persons": 231,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.331575,
+          27.714283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-026",
+        "name": "Teku Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 414,
+        "capacity_persons": 138,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.329024,
+          27.725846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-027",
+        "name": "Thapathali Open Space",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 438,
+        "capacity_persons": 146,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.324419,
+          27.720567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-028",
+        "name": "Babarmahal Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kathmandu Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 467,
+        "capacity_persons": 156,
+        "status": "Open / Verified",
+        "contact_authority": "Kathmandu Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Kathmandu Metropolitan City, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.31753,
+          27.709302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-029",
+        "name": "Patan Durbar Square (Mangal Bazar)",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Institutional Compound",
+        "usable_area_sqm": 633,
+        "capacity_persons": 211,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Institutional Compound in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.317063,
+          27.660427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-030",
+        "name": "Jawalakhel Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 526,
+        "capacity_persons": 175,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.329378,
+          27.651118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-031",
+        "name": "Pulchowk Engineering Campus Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "School Ground",
+        "usable_area_sqm": 436,
+        "capacity_persons": 145,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "School Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.331603,
+          27.659268
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-032",
+        "name": "Kupondole Open Space",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 573,
+        "capacity_persons": 191,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.32125,
+          27.668066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-033",
+        "name": "Sanepa Community Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 452,
+        "capacity_persons": 151,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.323373,
+          27.64964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-034",
+        "name": "Ekantakuna Open Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 492,
+        "capacity_persons": 164,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.319889,
+          27.658625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-035",
+        "name": "Satdobato Chowk Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 608,
+        "capacity_persons": 203,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.329549,
+          27.649488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-036",
+        "name": "Lagankhel Bus Park Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Park",
+        "usable_area_sqm": 674,
+        "capacity_persons": 225,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Park in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.324486,
+          27.666323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-037",
+        "name": "Gwarko Open Space",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 471,
+        "capacity_persons": 157,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.321965,
+          27.658193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-038",
+        "name": "Imadol Community Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 459,
+        "capacity_persons": 153,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.33075,
+          27.66418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-039",
+        "name": "Kumaripati Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 627,
+        "capacity_persons": 209,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.316729,
+          27.654966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-040",
+        "name": "Jhamsikhel Open Space",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 621,
+        "capacity_persons": 207,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.318011,
+          27.656561
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-041",
+        "name": "Sundhara Lalitpur Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 644,
+        "capacity_persons": 215,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.322742,
+          27.655248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-042",
+        "name": "Bakhundol Community Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 634,
+        "capacity_persons": 211,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.326526,
+          27.666003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-043",
+        "name": "Nakhipot Open Space",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 415,
+        "capacity_persons": 138,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.318994,
+          27.659219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-044",
+        "name": "Dhapakhel Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 500,
+        "capacity_persons": 167,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.328634,
+          27.650781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-045",
+        "name": "Thasikhel Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 412,
+        "capacity_persons": 137,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.321041,
+          27.666787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-046",
+        "name": "Bhaisepati Open Space",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 526,
+        "capacity_persons": 175,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.322824,
+          27.65866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-047",
+        "name": "Chakupat Community Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 485,
+        "capacity_persons": 162,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.322484,
+          27.653877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-048",
+        "name": "Sunakothi Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 424,
+        "capacity_persons": 141,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.324705,
+          27.661703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-049",
+        "name": "Harisiddhi Open Space",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 578,
+        "capacity_persons": 193,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.326985,
+          27.665476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-050",
+        "name": "Chapagaun Chowk Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Lalitpur Metropolitan City",
+        "type": "Open Ground",
+        "usable_area_sqm": 678,
+        "capacity_persons": 226,
+        "status": "Open / Verified",
+        "contact_authority": "Lalitpur Metropolitan City Disaster Management Committee",
+        "description": "Open Ground in Lalitpur Metropolitan City, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.320823,
+          27.656327
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-051",
+        "name": "Bhaktapur Durbar Square",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Bhaktapur Municipality",
+        "type": "Institutional Compound",
+        "usable_area_sqm": 682,
+        "capacity_persons": 227,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Bhaktapur Municipality Disaster Management Committee",
+        "description": "Institutional Compound in Bhaktapur Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.427769,
+          27.673845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-052",
+        "name": "Taumadhi Square",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Bhaktapur Municipality",
+        "type": "Institutional Compound",
+        "usable_area_sqm": 595,
+        "capacity_persons": 198,
+        "status": "Open / Verified",
+        "contact_authority": "Bhaktapur Municipality Disaster Management Committee",
+        "description": "Institutional Compound in Bhaktapur Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.427249,
+          27.664134
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-053",
+        "name": "Dattatreya Square",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Bhaktapur Municipality",
+        "type": "Institutional Compound",
+        "usable_area_sqm": 542,
+        "capacity_persons": 181,
+        "status": "Open / Verified",
+        "contact_authority": "Bhaktapur Municipality Disaster Management Committee",
+        "description": "Institutional Compound in Bhaktapur Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.423171,
+          27.665837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-054",
+        "name": "Golmadhi Tole Ground",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Bhaktapur Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 684,
+        "capacity_persons": 228,
+        "status": "Open / Verified",
+        "contact_authority": "Bhaktapur Municipality Disaster Management Committee",
+        "description": "Open Ground in Bhaktapur Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.425871,
+          27.662717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-055",
+        "name": "Byasi Open Space",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Bhaktapur Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 595,
+        "capacity_persons": 198,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Bhaktapur Municipality Disaster Management Committee",
+        "description": "Open Ground in Bhaktapur Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.435199,
+          27.680441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-056",
+        "name": "Yenma Chok Ground",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Bhaktapur Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 665,
+        "capacity_persons": 222,
+        "status": "Open / Verified",
+        "contact_authority": "Bhaktapur Municipality Disaster Management Committee",
+        "description": "Open Ground in Bhaktapur Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.436432,
+          27.67077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-057",
+        "name": "Jagati Open Ground",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Bhaktapur Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 410,
+        "capacity_persons": 137,
+        "status": "Open / Verified",
+        "contact_authority": "Bhaktapur Municipality Disaster Management Committee",
+        "description": "Open Ground in Bhaktapur Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.420211,
+          27.671737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-058",
+        "name": "Sallaghari Ground",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Bhaktapur Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 596,
+        "capacity_persons": 199,
+        "status": "Open / Verified",
+        "contact_authority": "Bhaktapur Municipality Disaster Management Committee",
+        "description": "Open Ground in Bhaktapur Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.419966,
+          27.663798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-059",
+        "name": "Thimi Balkumari Ground",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Madhyapur Thimi Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 624,
+        "capacity_persons": 208,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Madhyapur Thimi Municipality Disaster Management Committee",
+        "description": "Open Ground in Madhyapur Thimi Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.39836,
+          27.703442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-060",
+        "name": "Bode Open Space",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Madhyapur Thimi Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 565,
+        "capacity_persons": 188,
+        "status": "Open / Verified",
+        "contact_authority": "Madhyapur Thimi Municipality Disaster Management Committee",
+        "description": "Open Ground in Madhyapur Thimi Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.389925,
+          27.685479
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-061",
+        "name": "Nagdesh Ground",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Madhyapur Thimi Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 631,
+        "capacity_persons": 210,
+        "status": "Open / Verified",
+        "contact_authority": "Madhyapur Thimi Municipality Disaster Management Committee",
+        "description": "Open Ground in Madhyapur Thimi Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.387192,
+          27.685798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-062",
+        "name": "Gathaghar Community Ground",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Madhyapur Thimi Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 513,
+        "capacity_persons": 171,
+        "status": "Open / Verified",
+        "contact_authority": "Madhyapur Thimi Municipality Disaster Management Committee",
+        "description": "Open Ground in Madhyapur Thimi Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.385549,
+          27.702224
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-063",
+        "name": "Kirtipur Durbar Square Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kirtipur Municipality",
+        "type": "Institutional Compound",
+        "usable_area_sqm": 522,
+        "capacity_persons": 174,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Kirtipur Municipality Disaster Management Committee",
+        "description": "Institutional Compound in Kirtipur Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.272299,
+          27.67639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-064",
+        "name": "Panga Open Space",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kirtipur Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 477,
+        "capacity_persons": 159,
+        "status": "Open / Verified",
+        "contact_authority": "Kirtipur Municipality Disaster Management Committee",
+        "description": "Open Ground in Kirtipur Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.279448,
+          27.677242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-065",
+        "name": "Naya Bazar Kirtipur Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kirtipur Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 540,
+        "capacity_persons": 180,
+        "status": "Open / Verified",
+        "contact_authority": "Kirtipur Municipality Disaster Management Committee",
+        "description": "Open Ground in Kirtipur Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.283752,
+          27.669244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-066",
+        "name": "Tribhuvan University Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kirtipur Municipality",
+        "type": "School Ground",
+        "usable_area_sqm": 594,
+        "capacity_persons": 198,
+        "status": "Open / Verified",
+        "contact_authority": "Kirtipur Municipality Disaster Management Committee",
+        "description": "School Ground in Kirtipur Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.28774,
+          27.681334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-067",
+        "name": "Budhanilkantha Temple Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Budhanilkantha Municipality",
+        "type": "Institutional Compound",
+        "usable_area_sqm": 652,
+        "capacity_persons": 217,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Budhanilkantha Municipality Disaster Management Committee",
+        "description": "Institutional Compound in Budhanilkantha Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.370148,
+          27.780286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-068",
+        "name": "Narayanthan Open Space",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Budhanilkantha Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 590,
+        "capacity_persons": 197,
+        "status": "Open / Verified",
+        "contact_authority": "Budhanilkantha Municipality Disaster Management Committee",
+        "description": "Open Ground in Budhanilkantha Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.358647,
+          27.77976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-069",
+        "name": "Chunikhel Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Budhanilkantha Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 613,
+        "capacity_persons": 204,
+        "status": "Open / Verified",
+        "contact_authority": "Budhanilkantha Municipality Disaster Management Committee",
+        "description": "Open Ground in Budhanilkantha Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.36735,
+          27.77924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-070",
+        "name": "Tokha Bazar Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Tokha Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 545,
+        "capacity_persons": 182,
+        "status": "Open / Verified",
+        "contact_authority": "Tokha Municipality Disaster Management Committee",
+        "description": "Open Ground in Tokha Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.353139,
+          27.763802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-071",
+        "name": "Jhor Community Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Tokha Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 568,
+        "capacity_persons": 189,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Tokha Municipality Disaster Management Committee",
+        "description": "Open Ground in Tokha Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.348393,
+          27.755919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-072",
+        "name": "Gokarna Open Space",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Gokarneshwar Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 498,
+        "capacity_persons": 166,
+        "status": "Open / Verified",
+        "contact_authority": "Gokarneshwar Municipality Disaster Management Committee",
+        "description": "Open Ground in Gokarneshwar Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.388107,
+          27.766788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-073",
+        "name": "Sundarijal Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Gokarneshwar Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 431,
+        "capacity_persons": 144,
+        "status": "Open / Verified",
+        "contact_authority": "Gokarneshwar Municipality Disaster Management Committee",
+        "description": "Open Ground in Gokarneshwar Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.401815,
+          27.759164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-074",
+        "name": "Sitapaila Open Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Tarakeshwar Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 465,
+        "capacity_persons": 155,
+        "status": "Open / Verified",
+        "contact_authority": "Tarakeshwar Municipality Disaster Management Committee",
+        "description": "Open Ground in Tarakeshwar Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.259219,
+          27.734281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-075",
+        "name": "Ramkot Community Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Tarakeshwar Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 603,
+        "capacity_persons": 201,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Tarakeshwar Municipality Disaster Management Committee",
+        "description": "Open Ground in Tarakeshwar Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.27404,
+          27.751013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-076",
+        "name": "Nagarjun Forest Gate Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Nagarjun Municipality",
+        "type": "Park",
+        "usable_area_sqm": 698,
+        "capacity_persons": 233,
+        "status": "Open / Verified",
+        "contact_authority": "Nagarjun Municipality Disaster Management Committee",
+        "description": "Park in Nagarjun Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.246865,
+          27.732388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-077",
+        "name": "Balambu Open Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Nagarjun Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 642,
+        "capacity_persons": 214,
+        "status": "Open / Verified",
+        "contact_authority": "Nagarjun Municipality Disaster Management Committee",
+        "description": "Open Ground in Nagarjun Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.236832,
+          27.742484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-078",
+        "name": "Thankot Open Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Chandragiri Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 557,
+        "capacity_persons": 186,
+        "status": "Open / Verified",
+        "contact_authority": "Chandragiri Municipality Disaster Management Committee",
+        "description": "Open Ground in Chandragiri Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.224493,
+          27.666243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-079",
+        "name": "Satungal Community Ground",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Chandragiri Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 448,
+        "capacity_persons": 149,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Chandragiri Municipality Disaster Management Committee",
+        "description": "Open Ground in Chandragiri Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.22453,
+          27.669893
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-080",
+        "name": "Jorpati Open Space",
+        "province": "Bagmati",
+        "district": "Kathmandu",
+        "municipality": "Kageshwori Manohara Municipality",
+        "type": "Open Ground",
+        "usable_area_sqm": 619,
+        "capacity_persons": 206,
+        "status": "Open / Verified",
+        "contact_authority": "Kageshwori Manohara Municipality Disaster Management Committee",
+        "description": "Open Ground in Kageshwori Manohara Municipality, Kathmandu District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.412552,
+          27.734883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-081",
+        "name": "Suryabinayak Temple Ground",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Suryabinayak Municipality",
+        "type": "Institutional Compound",
+        "usable_area_sqm": 566,
+        "capacity_persons": 189,
+        "status": "Open / Verified",
+        "contact_authority": "Suryabinayak Municipality Disaster Management Committee",
+        "description": "Institutional Compound in Suryabinayak Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.436661,
+          27.663737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-082",
+        "name": "Changunarayan Temple Open Ground",
+        "province": "Bagmati",
+        "district": "Bhaktapur",
+        "municipality": "Changunarayan Municipality",
+        "type": "Institutional Compound",
+        "usable_area_sqm": 631,
+        "capacity_persons": 210,
+        "status": "Open / Verified",
+        "contact_authority": "Changunarayan Municipality Disaster Management Committee",
+        "description": "Institutional Compound in Changunarayan Municipality, Bhaktapur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.429751,
+          27.726225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-083",
+        "name": "Godawari Botanical Garden Ground",
+        "province": "Bagmati",
+        "district": "Lalitpur",
+        "municipality": "Godawari Municipality",
+        "type": "Park",
+        "usable_area_sqm": 487,
+        "capacity_persons": 162,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Godawari Municipality Disaster Management Committee",
+        "description": "Park in Godawari Municipality, Lalitpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.388338,
+          27.598541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-084",
+        "name": "Bhojpur District Ground",
+        "province": "Koshi",
+        "district": "Bhojpur",
+        "municipality": "Bhojpur District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 487,
+        "capacity_persons": 162,
+        "status": "Open / Verified",
+        "contact_authority": "Bhojpur District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Bhojpur District Headquarters, Bhojpur District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.057104,
+          27.174729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-085",
+        "name": "Dhankuta District Ground",
+        "province": "Koshi",
+        "district": "Dhankuta",
+        "municipality": "Dhankuta District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 442,
+        "capacity_persons": 147,
+        "status": "Open / Verified",
+        "contact_authority": "Dhankuta District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Dhankuta District Headquarters, Dhankuta District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.342563,
+          26.97765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-086",
+        "name": "Ilam District Ground",
+        "province": "Koshi",
+        "district": "Ilam",
+        "municipality": "Ilam District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 616,
+        "capacity_persons": 205,
+        "status": "Open / Verified",
+        "contact_authority": "Ilam District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Ilam District Headquarters, Ilam District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.921795,
+          26.917674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-087",
+        "name": "Jhapa District Ground",
+        "province": "Koshi",
+        "district": "Jhapa",
+        "municipality": "Jhapa District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 637,
+        "capacity_persons": 212,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Jhapa District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Jhapa District Headquarters, Jhapa District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.963514,
+          26.548531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-088",
+        "name": "Khotang District Ground",
+        "province": "Koshi",
+        "district": "Khotang",
+        "municipality": "Khotang District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 516,
+        "capacity_persons": 172,
+        "status": "Open / Verified",
+        "contact_authority": "Khotang District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Khotang District Headquarters, Khotang District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.818297,
+          27.049886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-089",
+        "name": "Morang District Ground",
+        "province": "Koshi",
+        "district": "Morang",
+        "municipality": "Morang District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 662,
+        "capacity_persons": 221,
+        "status": "Open / Verified",
+        "contact_authority": "Morang District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Morang District Headquarters, Morang District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.279911,
+          26.449392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-090",
+        "name": "Okhaldhunga District Ground",
+        "province": "Koshi",
+        "district": "Okhaldhunga",
+        "municipality": "Okhaldhunga District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 618,
+        "capacity_persons": 206,
+        "status": "Open / Verified",
+        "contact_authority": "Okhaldhunga District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Okhaldhunga District Headquarters, Okhaldhunga District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.507293,
+          27.320903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-091",
+        "name": "Panchthar District Ground",
+        "province": "Koshi",
+        "district": "Panchthar",
+        "municipality": "Panchthar District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 409,
+        "capacity_persons": 136,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Panchthar District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Panchthar District Headquarters, Panchthar District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.740575,
+          27.140545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-092",
+        "name": "Sankhuwasabha District Ground",
+        "province": "Koshi",
+        "district": "Sankhuwasabha",
+        "municipality": "Sankhuwasabha District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 666,
+        "capacity_persons": 222,
+        "status": "Open / Verified",
+        "contact_authority": "Sankhuwasabha District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Sankhuwasabha District Headquarters, Sankhuwasabha District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.215432,
+          27.330124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-093",
+        "name": "Solukhumbu District Ground",
+        "province": "Koshi",
+        "district": "Solukhumbu",
+        "municipality": "Solukhumbu District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 642,
+        "capacity_persons": 214,
+        "status": "Open / Verified",
+        "contact_authority": "Solukhumbu District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Solukhumbu District Headquarters, Solukhumbu District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.595501,
+          27.551189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-094",
+        "name": "Sunsari District Ground",
+        "province": "Koshi",
+        "district": "Sunsari",
+        "municipality": "Sunsari District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 495,
+        "capacity_persons": 165,
+        "status": "Open / Verified",
+        "contact_authority": "Sunsari District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Sunsari District Headquarters, Sunsari District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.290129,
+          26.666381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-095",
+        "name": "Taplejung District Ground",
+        "province": "Koshi",
+        "district": "Taplejung",
+        "municipality": "Taplejung District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 532,
+        "capacity_persons": 177,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Taplejung District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Taplejung District Headquarters, Taplejung District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.667101,
+          27.357754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-096",
+        "name": "Terhathum District Ground",
+        "province": "Koshi",
+        "district": "Terhathum",
+        "municipality": "Terhathum District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 592,
+        "capacity_persons": 197,
+        "status": "Open / Verified",
+        "contact_authority": "Terhathum District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Terhathum District Headquarters, Terhathum District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.547106,
+          27.110942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-097",
+        "name": "Udayapur District Ground",
+        "province": "Koshi",
+        "district": "Udayapur",
+        "municipality": "Udayapur District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 530,
+        "capacity_persons": 177,
+        "status": "Open / Verified",
+        "contact_authority": "Udayapur District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Udayapur District Headquarters, Udayapur District, Koshi Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.941275,
+          26.895669
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-098",
+        "name": "Bara District Ground",
+        "province": "Madhesh",
+        "district": "Bara",
+        "municipality": "Bara District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 620,
+        "capacity_persons": 207,
+        "status": "Open / Verified",
+        "contact_authority": "Bara District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Bara District Headquarters, Bara District, Madhesh Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.99516,
+          27.039463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-099",
+        "name": "Dhanusha District Ground",
+        "province": "Madhesh",
+        "district": "Dhanusha",
+        "municipality": "Dhanusha District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 678,
+        "capacity_persons": 226,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Dhanusha District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Dhanusha District Headquarters, Dhanusha District, Madhesh Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.927983,
+          26.727074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-100",
+        "name": "Mahottari District Ground",
+        "province": "Madhesh",
+        "district": "Mahottari",
+        "municipality": "Mahottari District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 654,
+        "capacity_persons": 218,
+        "status": "Open / Verified",
+        "contact_authority": "Mahottari District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Mahottari District Headquarters, Mahottari District, Madhesh Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.804072,
+          26.640436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-101",
+        "name": "Parsa District Ground",
+        "province": "Madhesh",
+        "district": "Parsa",
+        "municipality": "Parsa District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 427,
+        "capacity_persons": 142,
+        "status": "Open / Verified",
+        "contact_authority": "Parsa District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Parsa District Headquarters, Parsa District, Madhesh Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.882082,
+          27.000008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-102",
+        "name": "Rautahat District Ground",
+        "province": "Madhesh",
+        "district": "Rautahat",
+        "municipality": "Rautahat District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 539,
+        "capacity_persons": 180,
+        "status": "Open / Verified",
+        "contact_authority": "Rautahat District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Rautahat District Headquarters, Rautahat District, Madhesh Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.270673,
+          26.836357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-103",
+        "name": "Saptari District Ground",
+        "province": "Madhesh",
+        "district": "Saptari",
+        "municipality": "Saptari District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 694,
+        "capacity_persons": 231,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Saptari District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Saptari District Headquarters, Saptari District, Madhesh Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.74065,
+          26.529904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-104",
+        "name": "Sarlahi District Ground",
+        "province": "Madhesh",
+        "district": "Sarlahi",
+        "municipality": "Sarlahi District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 452,
+        "capacity_persons": 151,
+        "status": "Open / Verified",
+        "contact_authority": "Sarlahi District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Sarlahi District Headquarters, Sarlahi District, Madhesh Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.562228,
+          26.857017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-105",
+        "name": "Siraha District Ground",
+        "province": "Madhesh",
+        "district": "Siraha",
+        "municipality": "Siraha District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 603,
+        "capacity_persons": 201,
+        "status": "Open / Verified",
+        "contact_authority": "Siraha District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Siraha District Headquarters, Siraha District, Madhesh Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.202175,
+          26.656925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-106",
+        "name": "Chitwan District Ground",
+        "province": "Bagmati",
+        "district": "Chitwan",
+        "municipality": "Chitwan District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 524,
+        "capacity_persons": 175,
+        "status": "Open / Verified",
+        "contact_authority": "Chitwan District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Chitwan District Headquarters, Chitwan District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.442279,
+          27.67857
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-107",
+        "name": "Dhading District Ground",
+        "province": "Bagmati",
+        "district": "Dhading",
+        "municipality": "Dhading District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 419,
+        "capacity_persons": 140,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Dhading District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Dhading District Headquarters, Dhading District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.912459,
+          27.85741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-108",
+        "name": "Dolakha District Ground",
+        "province": "Bagmati",
+        "district": "Dolakha",
+        "municipality": "Dolakha District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 449,
+        "capacity_persons": 150,
+        "status": "Open / Verified",
+        "contact_authority": "Dolakha District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Dolakha District Headquarters, Dolakha District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.037836,
+          27.657558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-109",
+        "name": "Kavrepalanchok District Ground",
+        "province": "Bagmati",
+        "district": "Kavrepalanchok",
+        "municipality": "Kavrepalanchok District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 521,
+        "capacity_persons": 174,
+        "status": "Open / Verified",
+        "contact_authority": "Kavrepalanchok District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Kavrepalanchok District Headquarters, Kavrepalanchok District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.538117,
+          27.627395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-110",
+        "name": "Makwanpur District Ground",
+        "province": "Bagmati",
+        "district": "Makwanpur",
+        "municipality": "Makwanpur District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 516,
+        "capacity_persons": 172,
+        "status": "Open / Verified",
+        "contact_authority": "Makwanpur District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Makwanpur District Headquarters, Makwanpur District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.040597,
+          27.433139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-111",
+        "name": "Nuwakot District Ground",
+        "province": "Bagmati",
+        "district": "Nuwakot",
+        "municipality": "Nuwakot District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 630,
+        "capacity_persons": 210,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Nuwakot District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Nuwakot District Headquarters, Nuwakot District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.184698,
+          27.919064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-112",
+        "name": "Ramechhap District Ground",
+        "province": "Bagmati",
+        "district": "Ramechhap",
+        "municipality": "Ramechhap District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 584,
+        "capacity_persons": 195,
+        "status": "Open / Verified",
+        "contact_authority": "Ramechhap District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Ramechhap District Headquarters, Ramechhap District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.084414,
+          27.324493
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-113",
+        "name": "Rasuwa District Ground",
+        "province": "Bagmati",
+        "district": "Rasuwa",
+        "municipality": "Rasuwa District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 576,
+        "capacity_persons": 192,
+        "status": "Open / Verified",
+        "contact_authority": "Rasuwa District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Rasuwa District Headquarters, Rasuwa District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.308566,
+          28.097996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-114",
+        "name": "Sindhuli District Ground",
+        "province": "Bagmati",
+        "district": "Sindhuli",
+        "municipality": "Sindhuli District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 593,
+        "capacity_persons": 198,
+        "status": "Open / Verified",
+        "contact_authority": "Sindhuli District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Sindhuli District Headquarters, Sindhuli District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.971576,
+          27.251957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-115",
+        "name": "Sindhupalchok District Ground",
+        "province": "Bagmati",
+        "district": "Sindhupalchok",
+        "municipality": "Sindhupalchok District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 529,
+        "capacity_persons": 176,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Sindhupalchok District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Sindhupalchok District Headquarters, Sindhupalchok District, Bagmati Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.678521,
+          27.822367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-116",
+        "name": "Baglung District Ground",
+        "province": "Gandaki",
+        "district": "Baglung",
+        "municipality": "Baglung District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 473,
+        "capacity_persons": 158,
+        "status": "Open / Verified",
+        "contact_authority": "Baglung District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Baglung District Headquarters, Baglung District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.591912,
+          28.257286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-117",
+        "name": "Gorkha District Ground",
+        "province": "Gandaki",
+        "district": "Gorkha",
+        "municipality": "Gorkha District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 617,
+        "capacity_persons": 206,
+        "status": "Open / Verified",
+        "contact_authority": "Gorkha District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Gorkha District Headquarters, Gorkha District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.639517,
+          27.992422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-118",
+        "name": "Kaski District Ground",
+        "province": "Gandaki",
+        "district": "Kaski",
+        "municipality": "Kaski District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 605,
+        "capacity_persons": 202,
+        "status": "Open / Verified",
+        "contact_authority": "Kaski District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Kaski District Headquarters, Kaski District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.976416,
+          28.214858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-119",
+        "name": "Lamjung District Ground",
+        "province": "Gandaki",
+        "district": "Lamjung",
+        "municipality": "Lamjung District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 519,
+        "capacity_persons": 173,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Lamjung District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Lamjung District Headquarters, Lamjung District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.379339,
+          28.226877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-120",
+        "name": "Manang District Ground",
+        "province": "Gandaki",
+        "district": "Manang",
+        "municipality": "Manang District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 596,
+        "capacity_persons": 199,
+        "status": "Open / Verified",
+        "contact_authority": "Manang District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Manang District Headquarters, Manang District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.230024,
+          28.557368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-121",
+        "name": "Mustang District Ground",
+        "province": "Gandaki",
+        "district": "Mustang",
+        "municipality": "Mustang District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 669,
+        "capacity_persons": 223,
+        "status": "Open / Verified",
+        "contact_authority": "Mustang District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Mustang District Headquarters, Mustang District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.725664,
+          28.790259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-122",
+        "name": "Myagdi District Ground",
+        "province": "Gandaki",
+        "district": "Myagdi",
+        "municipality": "Myagdi District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 436,
+        "capacity_persons": 145,
+        "status": "Open / Verified",
+        "contact_authority": "Myagdi District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Myagdi District Headquarters, Myagdi District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.563696,
+          28.334006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-123",
+        "name": "Nawalpur District Ground",
+        "province": "Gandaki",
+        "district": "Nawalpur",
+        "municipality": "Nawalpur District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 682,
+        "capacity_persons": 227,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Nawalpur District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Nawalpur District Headquarters, Nawalpur District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.0845,
+          27.625181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-124",
+        "name": "Parbat District Ground",
+        "province": "Gandaki",
+        "district": "Parbat",
+        "municipality": "Parbat District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 614,
+        "capacity_persons": 205,
+        "status": "Open / Verified",
+        "contact_authority": "Parbat District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Parbat District Headquarters, Parbat District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.67454,
+          28.225919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-125",
+        "name": "Syangja District Ground",
+        "province": "Gandaki",
+        "district": "Syangja",
+        "municipality": "Syangja District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 552,
+        "capacity_persons": 184,
+        "status": "Open / Verified",
+        "contact_authority": "Syangja District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Syangja District Headquarters, Syangja District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.875684,
+          28.090979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-126",
+        "name": "Tanahun District Ground",
+        "province": "Gandaki",
+        "district": "Tanahun",
+        "municipality": "Tanahun District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 539,
+        "capacity_persons": 180,
+        "status": "Open / Verified",
+        "contact_authority": "Tanahun District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Tanahun District Headquarters, Tanahun District, Gandaki Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.271089,
+          27.991104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-127",
+        "name": "Arghakhanchi District Ground",
+        "province": "Lumbini",
+        "district": "Arghakhanchi",
+        "municipality": "Arghakhanchi District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 422,
+        "capacity_persons": 141,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Arghakhanchi District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Arghakhanchi District Headquarters, Arghakhanchi District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.129646,
+          27.962417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-128",
+        "name": "Banke District Ground",
+        "province": "Lumbini",
+        "district": "Banke",
+        "municipality": "Banke District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 463,
+        "capacity_persons": 154,
+        "status": "Open / Verified",
+        "contact_authority": "Banke District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Banke District Headquarters, Banke District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.617421,
+          28.044242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-129",
+        "name": "Bardiya District Ground",
+        "province": "Lumbini",
+        "district": "Bardiya",
+        "municipality": "Bardiya District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 587,
+        "capacity_persons": 196,
+        "status": "Open / Verified",
+        "contact_authority": "Bardiya District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Bardiya District Headquarters, Bardiya District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.328935,
+          28.199488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-130",
+        "name": "Dang District Ground",
+        "province": "Lumbini",
+        "district": "Dang",
+        "municipality": "Dang District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 605,
+        "capacity_persons": 202,
+        "status": "Open / Verified",
+        "contact_authority": "Dang District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Dang District Headquarters, Dang District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.482263,
+          28.049761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-131",
+        "name": "Nawalparasi West District Ground",
+        "province": "Lumbini",
+        "district": "Nawalparasi West",
+        "municipality": "Nawalparasi West District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 658,
+        "capacity_persons": 219,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Nawalparasi West District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Nawalparasi West District Headquarters, Nawalparasi West District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.665648,
+          27.56033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-132",
+        "name": "Gulmi District Ground",
+        "province": "Lumbini",
+        "district": "Gulmi",
+        "municipality": "Gulmi District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 658,
+        "capacity_persons": 219,
+        "status": "Open / Verified",
+        "contact_authority": "Gulmi District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Gulmi District Headquarters, Gulmi District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.233576,
+          28.063367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-133",
+        "name": "Kapilvastu District Ground",
+        "province": "Lumbini",
+        "district": "Kapilvastu",
+        "municipality": "Kapilvastu District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 444,
+        "capacity_persons": 148,
+        "status": "Open / Verified",
+        "contact_authority": "Kapilvastu District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Kapilvastu District Headquarters, Kapilvastu District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.052912,
+          27.573227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-134",
+        "name": "Palpa District Ground",
+        "province": "Lumbini",
+        "district": "Palpa",
+        "municipality": "Palpa District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 525,
+        "capacity_persons": 175,
+        "status": "Open / Verified",
+        "contact_authority": "Palpa District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Palpa District Headquarters, Palpa District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.559241,
+          27.857636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-135",
+        "name": "Pyuthan District Ground",
+        "province": "Lumbini",
+        "district": "Pyuthan",
+        "municipality": "Pyuthan District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 427,
+        "capacity_persons": 142,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Pyuthan District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Pyuthan District Headquarters, Pyuthan District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.838251,
+          28.100401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-136",
+        "name": "Rolpa District Ground",
+        "province": "Lumbini",
+        "district": "Rolpa",
+        "municipality": "Rolpa District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 509,
+        "capacity_persons": 170,
+        "status": "Open / Verified",
+        "contact_authority": "Rolpa District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Rolpa District Headquarters, Rolpa District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.626029,
+          28.208368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-137",
+        "name": "Rukum East District Ground",
+        "province": "Lumbini",
+        "district": "Rukum East",
+        "municipality": "Rukum East District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 621,
+        "capacity_persons": 207,
+        "status": "Open / Verified",
+        "contact_authority": "Rukum East District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Rukum East District Headquarters, Rukum East District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.169313,
+          28.626869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-138",
+        "name": "Rupandehi District Ground",
+        "province": "Lumbini",
+        "district": "Rupandehi",
+        "municipality": "Rupandehi District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 591,
+        "capacity_persons": 197,
+        "status": "Open / Verified",
+        "contact_authority": "Rupandehi District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Rupandehi District Headquarters, Rupandehi District, Lumbini Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.456353,
+          27.679093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-139",
+        "name": "Dailekh District Ground",
+        "province": "Karnali",
+        "district": "Dailekh",
+        "municipality": "Dailekh District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 516,
+        "capacity_persons": 172,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Dailekh District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Dailekh District Headquarters, Dailekh District, Karnali Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.714167,
+          28.82344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-140",
+        "name": "Dolpa District Ground",
+        "province": "Karnali",
+        "district": "Dolpa",
+        "municipality": "Dolpa District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 580,
+        "capacity_persons": 193,
+        "status": "Open / Verified",
+        "contact_authority": "Dolpa District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Dolpa District Headquarters, Dolpa District, Karnali Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.924145,
+          28.93585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-141",
+        "name": "Humla District Ground",
+        "province": "Karnali",
+        "district": "Humla",
+        "municipality": "Humla District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 538,
+        "capacity_persons": 179,
+        "status": "Open / Verified",
+        "contact_authority": "Humla District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Humla District Headquarters, Humla District, Karnali Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.820614,
+          29.969537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-142",
+        "name": "Jajarkot District Ground",
+        "province": "Karnali",
+        "district": "Jajarkot",
+        "municipality": "Jajarkot District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 439,
+        "capacity_persons": 146,
+        "status": "Open / Verified",
+        "contact_authority": "Jajarkot District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Jajarkot District Headquarters, Jajarkot District, Karnali Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.206236,
+          28.691882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-143",
+        "name": "Jumla District Ground",
+        "province": "Karnali",
+        "district": "Jumla",
+        "municipality": "Jumla District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 489,
+        "capacity_persons": 163,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Jumla District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Jumla District Headquarters, Jumla District, Karnali Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.175395,
+          29.269563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-144",
+        "name": "Kalikot District Ground",
+        "province": "Karnali",
+        "district": "Kalikot",
+        "municipality": "Kalikot District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 442,
+        "capacity_persons": 147,
+        "status": "Open / Verified",
+        "contact_authority": "Kalikot District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Kalikot District Headquarters, Kalikot District, Karnali Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.613868,
+          29.134115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-145",
+        "name": "Mugu District Ground",
+        "province": "Karnali",
+        "district": "Mugu",
+        "municipality": "Mugu District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 598,
+        "capacity_persons": 199,
+        "status": "Open / Verified",
+        "contact_authority": "Mugu District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Mugu District Headquarters, Mugu District, Karnali Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.090499,
+          29.573461
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-146",
+        "name": "Rukum West District Ground",
+        "province": "Karnali",
+        "district": "Rukum West",
+        "municipality": "Rukum West District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 673,
+        "capacity_persons": 224,
+        "status": "Open / Verified",
+        "contact_authority": "Rukum West District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Rukum West District Headquarters, Rukum West District, Karnali Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.093667,
+          28.608612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-147",
+        "name": "Salyan District Ground",
+        "province": "Karnali",
+        "district": "Salyan",
+        "municipality": "Salyan District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 513,
+        "capacity_persons": 171,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Salyan District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Salyan District Headquarters, Salyan District, Karnali Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.168899,
+          28.377351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-148",
+        "name": "Surkhet District Ground",
+        "province": "Karnali",
+        "district": "Surkhet",
+        "municipality": "Surkhet District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 613,
+        "capacity_persons": 204,
+        "status": "Open / Verified",
+        "contact_authority": "Surkhet District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Surkhet District Headquarters, Surkhet District, Karnali Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.626528,
+          28.608185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-149",
+        "name": "Achham District Ground",
+        "province": "Sudurpashchim",
+        "district": "Achham",
+        "municipality": "Achham District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 675,
+        "capacity_persons": 225,
+        "status": "Open / Verified",
+        "contact_authority": "Achham District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Achham District Headquarters, Achham District, Sudurpashchim Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.291224,
+          29.217776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-150",
+        "name": "Baitadi District Ground",
+        "province": "Sudurpashchim",
+        "district": "Baitadi",
+        "municipality": "Baitadi District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 502,
+        "capacity_persons": 167,
+        "status": "Open / Verified",
+        "contact_authority": "Baitadi District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Baitadi District Headquarters, Baitadi District, Sudurpashchim Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.474424,
+          29.542576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-151",
+        "name": "Bajhang District Ground",
+        "province": "Sudurpashchim",
+        "district": "Bajhang",
+        "municipality": "Bajhang District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 656,
+        "capacity_persons": 219,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Bajhang District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Bajhang District Headquarters, Bajhang District, Sudurpashchim Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.194847,
+          29.545918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-152",
+        "name": "Bajura District Ground",
+        "province": "Sudurpashchim",
+        "district": "Bajura",
+        "municipality": "Bajura District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 506,
+        "capacity_persons": 169,
+        "status": "Open / Verified",
+        "contact_authority": "Bajura District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Bajura District Headquarters, Bajura District, Sudurpashchim Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.466209,
+          29.53768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-153",
+        "name": "Dadeldhura District Ground",
+        "province": "Sudurpashchim",
+        "district": "Dadeldhura",
+        "municipality": "Dadeldhura District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 639,
+        "capacity_persons": 213,
+        "status": "Open / Verified",
+        "contact_authority": "Dadeldhura District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Dadeldhura District Headquarters, Dadeldhura District, Sudurpashchim Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.590839,
+          29.290591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-154",
+        "name": "Darchula District Ground",
+        "province": "Sudurpashchim",
+        "district": "Darchula",
+        "municipality": "Darchula District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 580,
+        "capacity_persons": 193,
+        "status": "Open / Verified",
+        "contact_authority": "Darchula District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Darchula District Headquarters, Darchula District, Sudurpashchim Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.558285,
+          29.848117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-155",
+        "name": "Doti District Ground",
+        "province": "Sudurpashchim",
+        "district": "Doti",
+        "municipality": "Doti District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 481,
+        "capacity_persons": 160,
+        "status": "Open / Limited Capacity",
+        "contact_authority": "Doti District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Doti District Headquarters, Doti District, Sudurpashchim Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.933348,
+          29.27652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-156",
+        "name": "Kailali District Ground",
+        "province": "Sudurpashchim",
+        "district": "Kailali",
+        "municipality": "Kailali District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 569,
+        "capacity_persons": 190,
+        "status": "Open / Verified",
+        "contact_authority": "Kailali District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Kailali District Headquarters, Kailali District, Sudurpashchim Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.605586,
+          28.7065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "nz-157",
+        "name": "Kanchanpur District Ground",
+        "province": "Sudurpashchim",
+        "district": "Kanchanpur",
+        "municipality": "Kanchanpur District Headquarters",
+        "type": "Open Ground",
+        "usable_area_sqm": 695,
+        "capacity_persons": 232,
+        "status": "Open / Verified",
+        "contact_authority": "Kanchanpur District Headquarters Disaster Management Committee",
+        "description": "Open Ground in Kanchanpur District Headquarters, Kanchanpur District, Sudurpashchim Province — usable for temporary shelter and assembly during or after an earthquake."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.16427,
+          28.924098
+        ]
+      }
+    }
+  ]
+}

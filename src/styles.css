@@ -115,6 +115,26 @@
   .font-mono, code, kbd { font-family: var(--font-mono); }
 }
 
+/* Browser autofill (saved name/email/password) ignores our bg-surface /
+   text-foreground classes and forces its own light background + dark text,
+   which reads as near-invisible against the dark theme. Force it back to
+   the current theme's surface/foreground colors. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-foreground);
+  caret-color: var(--color-foreground);
+  box-shadow: 0 0 0px 1000px var(--color-surface) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-surface) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 /* Subtle seismic grid backdrop */
 .bg-seismic {
   background-image:
@@ -122,6 +142,32 @@
     linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
   background-size: 56px 56px;
   background-position: -1px -1px;
+}
+
+/* Site-wide background: epicenter ripples + fault-line streaks + tectonic
+   color wash + base grid. Fully theme-aware — every layer reuses existing
+   design tokens so it adapts automatically between light and dark. */
+.bg-topo {
+  background-color: var(--color-background);
+  background-image:
+    repeating-radial-gradient(circle at 14% 6%,
+      transparent 0,
+      transparent 90px,
+      color-mix(in oklab, var(--color-border) 100%, transparent) 91px,
+      transparent 92px),
+    repeating-linear-gradient(115deg,
+      transparent 0,
+      transparent 160px,
+      color-mix(in oklab, var(--primary) 5%, transparent) 160px,
+      color-mix(in oklab, var(--primary) 5%, transparent) 162px,
+      transparent 162px),
+    radial-gradient(ellipse 900px 600px at 100% 0%,
+      color-mix(in oklab, var(--chart-3) 7%, transparent), transparent 55%),
+    radial-gradient(ellipse 800px 500px at 0% 100%,
+      color-mix(in oklab, var(--primary) 8%, transparent), transparent 55%),
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 56px 56px, 56px 56px;
 }
 
 @keyframes pulse-ring {
@@ -137,6 +183,14 @@
   100% { transform: translateX(-50%); }
 }
 .animate-marquee { animation: marquee 38s linear infinite; }
+.animate-marquee-fast { animation: marquee 16s linear infinite; }
+
+/* Critical advisory flash */
+@keyframes critical-flash {
+  0%, 100% { background-color: var(--destructive); }
+  50% { background-color: color-mix(in oklab, var(--destructive) 78%, black); }
+}
+.animate-critical-flash { animation: critical-flash 1s ease-in-out infinite; }
 
 /* Fade-up reveal */
 @keyframes fade-up {

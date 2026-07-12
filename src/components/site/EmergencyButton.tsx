@@ -1,11 +1,12 @@
 import { Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const contacts = [
+export const EMERGENCY_CONTACTS = [
   ["Nepal Police", "100"],
   ["Fire Brigade", "101"],
   ["Ambulance", "102"],
   ["National Emergency", "1149"],
+  ["DEOC (MoHA)", "1234"],
   ["NDRRMA", "01-4200178"],
   ["Red Cross Nepal", "01-4270650"],
 ];
@@ -34,7 +35,7 @@ export function EmergencyButton() {
               <button onClick={() => setOpen(false)}><X className="w-5 h-5 text-muted-foreground" /></button>
             </div>
             <ul className="divide-y divide-border">
-              {contacts.map(([n, v]) => (
+              {EMERGENCY_CONTACTS.map(([n, v]) => (
                 <li key={n} className="flex items-center justify-between py-3">
                   <span className="text-foreground/90">{n}</span>
                   <a href={`tel:${v}`} className="font-mono text-primary hover:underline">{v}</a>

@@ -12,9 +12,9 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { ThemeProvider } from "../components/site/ThemeProvider";
+import { Toaster } from "../components/ui/sonner";
 
 const themeInitScript = `(function(){try{var t=localStorage.getItem('nepal-seismic-theme')||'system';var d=t==='dark'||(t==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){document.documentElement.classList.add('dark');}})();`;
-
 
 function NotFoundComponent() {
   return (
@@ -81,10 +81,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nepal Seismic — Earthquake Awareness & Preparedness Portal" },
-      { name: "description", content: "Understand earthquakes in Nepal, learn historical case studies, and test your preparedness." },
+      { title: "Nepal Seismic: Earthquake Awareness & Preparedness Portal" },
+      {
+        name: "description",
+        content:
+          "Understand earthquakes in Nepal, learn historical case studies, and test your preparedness.",
+      },
       { property: "og:title", content: "Nepal Seismic Portal" },
-      { property: "og:description", content: "Earthquake awareness, historical data, and preparedness for Nepal." },
+      {
+        property: "og:description",
+        content: "Earthquake awareness, historical data, and preparedness for Nepal.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -92,7 +99,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -124,8 +134,8 @@ function RootComponent() {
       <ThemeProvider>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
+        <Toaster />
       </ThemeProvider>
     </QueryClientProvider>
   );
 }
-

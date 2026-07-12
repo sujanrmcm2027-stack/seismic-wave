@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Outside the Lovable sandbox (e.g. Vercel's own build), nitro is skipped unless
+  // explicitly enabled — pin it to the Vercel preset so Vercel gets a real SSR function
+  // instead of a client-only build (which 404s on every route).
+  nitro: { preset: "vercel" },
 });
