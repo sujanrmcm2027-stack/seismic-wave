@@ -11,11 +11,22 @@ export function stampWatermark(doc: jsPDF, label = "NEPAL SEISMIC PORTAL") {
   const pageWidth = doc.internal.pageSize.getWidth();
   const pageHeight = doc.internal.pageSize.getHeight();
 
+  const prevSize = doc.getFontSize();
+  const prevFont = doc.getFont();
+  const prevColor = doc.getTextColor ? doc.getTextColor() : "#000000";
+
   doc.setFont("helvetica", "bold");
   doc.setFontSize(44);
   doc.setTextColor(215, 215, 215);
   doc.text(label, pageWidth / 2, pageHeight / 2, { angle: 35, align: "center" });
-  doc.setTextColor(0, 0, 0);
+  
+  if (typeof prevColor === "string") {
+    doc.setTextColor(prevColor);
+  } else {
+    doc.setTextColor(0, 0, 0);
+  }
+  doc.setFont(prevFont.fontName, prevFont.fontStyle);
+  doc.setFontSize(prevSize);
 }
 
 export function stampFooter(doc: jsPDF, generatedAt: Date) {

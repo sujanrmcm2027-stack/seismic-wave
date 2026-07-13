@@ -58,7 +58,7 @@ export async function downloadAssessmentPdf({
   doc.setFontSize(10);
   doc.setTextColor(90, 90, 90);
   doc.text(
-    "Nepal Seismic Portal — 20 questions, Nepal-specific scenarios, aligned with international (NDRRMA / Sphere / WHO) standards",
+    "Nepal Seismic Portal - 20 questions, Nepal-specific scenarios, aligned with international (NDRRMA / Sphere / WHO) standards",
     MARGIN,
     y,
   );
@@ -116,7 +116,7 @@ export async function downloadAssessmentPdf({
     wrap(q.q, MARGIN, pageWidth - MARGIN * 2);
     doc.setTextColor(90, 90, 90);
     wrap(
-      `Chosen: ${chosenIdx != null ? q.options[chosenIdx] : "—"}`,
+      `Chosen: ${chosenIdx != null ? q.options[chosenIdx] : "-"}`,
       MARGIN,
       pageWidth - MARGIN * 2,
     );

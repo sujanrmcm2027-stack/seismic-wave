@@ -7,6 +7,52 @@ import { CheckCircle2, XCircle, RotateCcw, ArrowRight, Download } from "lucide-r
 import { downloadAssessmentPdf } from "@/lib/pdf/assessmentPdf";
 import { preloadJsPdf } from "@/lib/pdf/preload";
 
+const SWEET_NOTES = [
+  "Spot on! You're clearly the designated survivor.",
+  "Perfect! Mother Nature is taking notes.",
+  "Correct! Your earthquake readiness is 10/10.",
+  "Nailed it. You've definitely read the survival guide.",
+  "Excellent choice. You're officially the safest person in the room.",
+  "Right on! Tectonic plates have nothing on you.",
+  "Bingo! You're exactly who I want to be standing next to during a tremor.",
+  "Outstanding! You're practically a structural engineer.",
+  "Yes! Emergency responders would be proud of you.",
+  "Absolutely correct. Your family is in good hands.",
+  "Flawless! You're the neighborhood preparedness captain.",
+  "Correct! A textbook response to a crisis.",
+  "You got it! Panic is not in your vocabulary.",
+  "Brilliant! The seismologists applaud you.",
+  "Spot on. You have incredible situational awareness.",
+  "Yes! You've mastered the art of survival.",
+  "Perfect answer. You are completely unflappable.",
+  "Right again! You're a walking disaster-preparedness manual.",
+  "Correct! Mother Nature doesn't stand a chance.",
+  "Amazing! We should hire you to teach this stuff.",
+];
+
+const SARCASTIC_NOTES = [
+  "Not quite... unless your emergency plan involves just hoping for the best.",
+  "Ouch. That's a great strategy if you're trying to win a Darwin Award.",
+  "Incorrect. Please let someone else lead the family evacuation.",
+  "Nope! Let's review the survival guide before the tectonic plates get angry.",
+  "Yikes. If this were a real earthquake, you'd be wearing the ceiling right now.",
+  "Are you sure? Because the rubble strongly disagrees with that choice.",
+  "Wrong. But hey, at least you're consistent...ly in danger.",
+  "That's incorrect. I suggest downloading our Go-Bag checklist immediately.",
+  "Not exactly. Let's hope your survival instincts are better than your quiz skills.",
+  "Incorrect. It's time to stop winging it and start preparing.",
+  "Oops. Please don't give emergency advice to your neighbors.",
+  "No. If this were a drill, you'd have failed it spectacularly.",
+  "Yikes. It might be time to actually read the manual.",
+  "Wrong answer. Panic might actually be a better strategy than what you just chose.",
+  "Incorrect. Let's pretend you misclicked.",
+  "Not even close. We need to have a serious talk about your safety.",
+  "Nope. I highly recommend memorizing the correct answer below.",
+  "Ouch. The fault lines are laughing at that answer.",
+  "Wrong. Please stay far away from heavy furniture.",
+  "Incorrect! But admitting you need to learn is the first step.",
+];
+
 // Google Apps Script Web App URL that appends each result to a Google Sheet in
 // your Drive. Deploy google-apps-script/quiz-to-drive.gs (Deploy ▸ Web app ▸
 // Anyone) and set VITE_QUIZ_WEBHOOK_URL to its /exec URL in .env.local.
@@ -78,12 +124,32 @@ export function Assessment() {
   const pct = (score / QUESTIONS.length) * 100;
   const rating =
     pct >= 85
-      ? { label: "Excellent: Highly Prepared", color: "var(--color-chart-3)" }
+      ? {
+          label: "Excellent: Highly Prepared",
+          color: "var(--color-chart-3)",
+          analysis:
+            "Outstanding! You have a highly sophisticated understanding of earthquake preparedness. You are well-equipped to protect yourself and your family. Your next step should be taking a leadership role in your community to help your neighbors prepare.",
+        }
       : pct >= 65
-        ? { label: "Good: Mostly Prepared", color: "var(--color-chart-4)" }
+        ? {
+            label: "Good: Mostly Prepared",
+            color: "var(--color-chart-4)",
+            analysis:
+             "You have a solid foundation of disaster knowledge, but there are still a few critical blind spots in your plan. We highly recommend reviewing the 'Special Guidance' section above and making sure your Go-Bag is fully stocked.",
+          }
         : pct >= 40
-          ? { label: "Fair: Important Gaps", color: "var(--color-chart-1)" }
-          : { label: "At Risk: Immediate Action Needed", color: "var(--color-destructive)" };
+          ? {
+              label: "Fair: Important Gaps",
+              color: "var(--color-chart-1)",
+              analysis:
+               "You know the basics, but relying on this level of preparedness during a major seismic event is risky. Please take time to study the correct answers below and print out the 72-Hour Go-Bag Checklist today.",
+            }
+          : {
+              label: "At Risk: Immediate Action Needed",
+              color: "var(--color-destructive)",
+              analysis:
+               "Your current understanding of earthquake safety puts you and your family at severe risk. Please do not ignore this. Read through the 'Before, During, and After' guides on this page carefully, and start building your emergency plan immediately.",
+            };
 
   const saveResult = async () => {
     if (!QUIZ_WEBHOOK_URL) {
@@ -200,6 +266,27 @@ export function Assessment() {
               </div>
             </div>
 
+            {submitted && (
+              <div
+                className={`mt-6 p-4 rounded-md border ${
+                  picked === q.answer
+                    ? "bg-chart-3/10 border-chart-3/30 text-chart-3"
+                    : "bg-destructive/10 border-destructive/30 text-destructive"
+                }`}
+              >
+                <p className="font-medium">
+                  {picked === q.answer
+                    ? SWEET_NOTES[i % SWEET_NOTES.length]
+                    : SARCASTIC_NOTES[i % SARCASTIC_NOTES.length]}
+                </p>
+                {picked !== q.answer && (
+                  <p className="text-sm mt-1 opacity-90 text-foreground">
+                    The correct answer is: <strong>{q.options[q.answer]}</strong>
+                  </p>
+                )}
+              </div>
+            )}
+
             <div className="flex items-center justify-between mt-6">
               <div className="text-sm text-muted-foreground">
                 Score so far:{" "}
@@ -241,6 +328,9 @@ export function Assessment() {
               </div>
               <div className="mt-3 font-semibold text-xl text-foreground">{rating.label}</div>
               <div className="mt-2 text-muted-foreground">{Math.round(pct)}% correct</div>
+              <div className="mt-6 p-5 bg-surface-2 rounded-md text-left border border-border text-foreground/90 leading-relaxed text-sm">
+                <strong>Final Analysis:</strong> {rating.analysis}
+              </div>
             </div>
 
             <div className="mt-8">

@@ -28,11 +28,11 @@ export const LOCAL_LEVEL_TYPES = [
 // EMS-98-aligned structural damage grading, the classification used by
 // DUDBC/NRA post-earthquake survey forms and referenced by NBC 105:2020.
 export const DAMAGE_GRADES = [
-  { grade: "G1", label: "Grade 1 — Negligible / No Damage" },
-  { grade: "G2", label: "Grade 2 — Slight (non-structural cracking)" },
-  { grade: "G3", label: "Grade 3 — Moderate (structural cracking)" },
-  { grade: "G4", label: "Grade 4 — Substantial (partial collapse risk)" },
-  { grade: "G5", label: "Grade 5 — Complete Collapse" },
+  { grade: "G1", label: "Grade 1 - Negligible / No Damage" },
+  { grade: "G2", label: "Grade 2 - Slight (non-structural cracking)" },
+  { grade: "G3", label: "Grade 3 - Moderate (structural cracking)" },
+  { grade: "G4", label: "Grade 4 - Substantial (partial collapse risk)" },
+  { grade: "G5", label: "Grade 5 - Complete Collapse" },
 ] as const;
 
 export const IMMEDIATE_NEEDS = [

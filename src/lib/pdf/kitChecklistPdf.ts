@@ -28,7 +28,7 @@ export async function downloadKitChecklistPdf(items: string[], checked: Record<s
   doc.setFontSize(10);
   doc.setTextColor(90, 90, 90);
   doc.text(
-    "Nepal Seismic Portal — Nepal-specific guidance aligned with NDRRMA, Sphere Standards, and WHO/PAHO",
+    "Nepal Seismic Portal - Nepal-specific guidance aligned with NDRRMA, Sphere Standards, and WHO/PAHO",
     MARGIN,
     y,
   );

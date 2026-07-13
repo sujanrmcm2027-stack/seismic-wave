@@ -19,9 +19,9 @@ export const ALERT_SEVERITIES = ["advisory", "warning", "severe"] as const;
 export type AlertSeverity = (typeof ALERT_SEVERITIES)[number];
 
 export const SEVERITY_LABELS: Record<AlertSeverity, string> = {
-  advisory: "Advisory — informational",
-  warning: "Warning — potential threat",
-  severe: "Severe — immediate action required",
+  advisory: "Advisory - informational",
+  warning: "Warning - potential threat",
+  severe: "Severe - immediate action required",
 };
 
 export const alertTriggerInputSchema = z.object({

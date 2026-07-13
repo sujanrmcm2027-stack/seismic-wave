@@ -22,7 +22,7 @@ export const Route = createFileRoute("/safe-zones")({
       {
         name: "description",
         content:
-          "Find the nearest safe evacuation space anywhere in Nepal during or after an earthquake — all 83 named Kathmandu Valley open spaces plus province-wise coverage nationwide, with live GPS distance tracking.",
+          "Find the nearest safe evacuation space anywhere in Nepal during or after an earthquake - all 83 named Kathmandu Valley open spaces plus province-wise coverage nationwide, with live GPS distance tracking.",
       },
     ],
   }),
@@ -65,7 +65,7 @@ function SafeZonesPage() {
               </h1>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
                 Locate the nearest safe evacuation space anywhere in Nepal during or after an
-                earthquake — all 83 named open spaces across the Kathmandu Valley, plus
+                earthquake - all 83 named open spaces across the Kathmandu Valley, plus
                 province-wise coverage for the rest of the country. Enable location access to
                 see live, sorted distances, or filter by province, district, or municipality.
               </p>

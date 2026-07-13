@@ -204,7 +204,7 @@ function Home() {
               </div>
             )}
             <p className="text-[10px] text-muted-foreground font-mono mt-1">
-              Source: {dataSource?.toUpperCase() ?? "—"} · Last updated: {lastUpdatedAt ? formatNpt(lastUpdatedAt) : "—"}
+              Source: {dataSource?.toUpperCase() ?? "-"} · Last updated: {lastUpdatedAt ? formatNpt(lastUpdatedAt) : "-"}
             </p>
           </section>
 
@@ -242,7 +242,7 @@ function Home() {
           <InfrastructureStatus />
 
           <p className="text-xs text-muted-foreground text-center pt-4">
-            ⚡ Lite Mode active — <button onClick={() => {}} className="underline text-primary">disable</button> to view full dashboard
+            ⚡ Lite Mode active - <button onClick={() => {}} className="underline text-primary">disable</button> to view full dashboard
           </p>
         </div>
       </Layout>
@@ -405,7 +405,7 @@ function Home() {
                         </>
                       ) : (
                         <span className="text-muted-foreground/50 text-base font-sans font-normal">
-                          —
+                          -
                         </span>
                       )}
                     </div>
