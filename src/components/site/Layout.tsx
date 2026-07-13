@@ -14,18 +14,18 @@ function LayoutInner({ children }: { children: ReactNode }) {
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <div className="fixed inset-0 -z-10 bg-topo" aria-hidden="true" />
       {/* Crisis bar — very top, sticky, always visible */}
-      <CrisisBar />
+      <div className="print:hidden"><CrisisBar /></div>
       {/* Static advisory banner — below crisis bar */}
-      <AlertBanner />
-      <Header />
+      <div className="print:hidden"><AlertBanner /></div>
+      <div className="print:hidden"><Header /></div>
       {/* Live participant trust bar — shows community activity counts */}
-      <ParticipantTrustBar />
+      <div className="print:hidden"><ParticipantTrustBar /></div>
       <main className="flex-1">{children}</main>
-      <Footer />
+      <div className="print:hidden"><Footer /></div>
       {/* Floating overlays */}
-      <EmergencyContactsBar />
-      <BackToTop />
-      <ChatWidget />
+      <div className="print:hidden"><EmergencyContactsBar /></div>
+      <div className="print:hidden"><BackToTop /></div>
+      <div className="print:hidden"><ChatWidget /></div>
     </div>
   );
 }

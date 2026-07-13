@@ -8,10 +8,9 @@ const nav = [
   { to: "/", label: "Home" },
   { to: "/historical", label: "Historical" },
   { to: "/gis", label: "GIS" },
-  { to: "/damage-assessment", label: "Damage" },
+  { to: "/damage-assessment", label: "Damage Assessment" },
   { to: "/safe-zones", label: "Safe Zones" },
   { to: "/preparedness", label: "Preparedness" },
-  { to: "/test-yourself", label: "Self-Assessment" },
   { to: "/about", label: "About" },
 ] as const;
 

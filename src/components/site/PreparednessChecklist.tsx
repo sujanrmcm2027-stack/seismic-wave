@@ -86,9 +86,9 @@ export function PreparednessChecklist() {
       </div>
 
       <div className="p-5 md:p-6 print:p-8">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-2 print:grid-cols-2 gap-6 md:gap-8">
           {categories.map((category) => (
-            <div key={category} className="space-y-3">
+            <div key={category} className="space-y-3 break-inside-avoid">
               <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-primary border-b border-border pb-1 print:text-black print:border-black">
                 {category}
               </h3>
@@ -126,7 +126,7 @@ export function PreparednessChecklist() {
         </div>
 
         {/* Print-only Emergency Contacts */}
-        <div className="hidden print:block mt-12 pt-8 border-t-2 border-black">
+        <div className="hidden print:block mt-6 pt-6 border-t-2 border-black">
           <h3 className="font-serif text-xl font-bold mb-4 text-black">Emergency Contacts</h3>
           <div className="grid grid-cols-2 gap-6 text-sm text-black">
             <div className="border border-black p-4 rounded">
@@ -139,14 +139,15 @@ export function PreparednessChecklist() {
               <div className="border-b border-dashed border-gray-400 mt-4 mb-2 h-4"></div>
               <div className="border-b border-dashed border-gray-400 mb-2 h-4"></div>
             </div>
-            <div>
+            <div className="leading-relaxed">
               <strong>Nepal Police:</strong> 100<br/>
-              <strong>Ambulance:</strong> 102<br/>
-              <strong>Fire:</strong> 101
+              <strong>Fire Brigade:</strong> 101<br/>
+              <strong>Ambulance:</strong> 102
             </div>
-            <div>
-              <strong>Red Cross:</strong> 01-4270650<br/>
-              <strong>DHM Flood:</strong> 1155
+            <div className="leading-relaxed">
+              <strong>DEOC (MoHA):</strong> 1234<br/>
+              <strong>APF Disaster Management:</strong> 1114<br/>
+              <strong>NRCS Emergency Center:</strong> 1130
             </div>
           </div>
         </div>

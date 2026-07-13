@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { CheckCircle2 } from "lucide-react";
 import { PreparednessChecklist } from "@/components/site/PreparednessChecklist";
+import { Assessment } from "@/components/site/Assessment";
 
 
 
@@ -194,7 +195,7 @@ function Preparedness() {
 
   return (
     <Layout>
-      <section className="border-b border-border bg-surface/40">
+      <section className="border-b border-border bg-surface/40 print:hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
           <SectionLabel number="06" label="PREPAREDNESS" />
           <h1 className="font-serif text-4xl md:text-6xl font-bold mb-4">
@@ -207,7 +208,7 @@ function Preparedness() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-12">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 print:hidden">
         <div className="inline-flex bg-surface border border-border rounded-lg p-1 mb-10">
           {(Object.keys(phases) as Array<keyof typeof phases>).map((p) => (
             <button
@@ -233,8 +234,8 @@ function Preparedness() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        <SectionLabel number="06b" label="SPECIAL GUIDANCE" />
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 print:hidden">
+        <SectionLabel number="06a" label="SPECIAL GUIDANCE" />
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-8">
           Preparedness for Every Community
         </h2>
@@ -273,10 +274,14 @@ function Preparedness() {
 
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 print:px-0 print:py-0">
         <div className="print:hidden">
-          <SectionLabel number="06c" label="CHECKLIST" />
+          <SectionLabel number="06b" label="CHECKLIST" />
         </div>
         <PreparednessChecklist />
       </section>
+
+      <div className="print:hidden">
+        <Assessment />
+      </div>
     </Layout>
   );
 }

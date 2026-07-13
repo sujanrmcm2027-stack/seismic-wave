@@ -112,7 +112,7 @@ function About() {
     <Layout>
       <section className="border-b border-border bg-surface/40">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
-          <SectionLabel number="08" label="ABOUT" />
+          <SectionLabel number="07" label="ABOUT" />
           <h1 className="font-serif text-4xl md:text-6xl font-bold mb-4">About This Portal</h1>
           <p className="text-muted-foreground max-w-3xl leading-relaxed">
             A public interest platform built to reduce earthquake casualties and improve community
@@ -185,7 +185,7 @@ function About() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        <SectionLabel number="08a" label="OUR RATIONALE" />
+        <SectionLabel number="07a" label="OUR RATIONALE" />
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-8">Why This Portal Exists</h2>
         <div className="grid md:grid-cols-2 gap-10 text-foreground/85 leading-relaxed">
           <p>
@@ -205,7 +205,7 @@ function About() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        <SectionLabel number="08b" label="A HISTORICAL LESSON" />
+        <SectionLabel number="07b" label="A HISTORICAL LESSON" />
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-8">
           The 1988 Nepal Earthquake
         </h2>
@@ -227,7 +227,7 @@ function About() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        <SectionLabel number="08c" label="MEET THE TEAM" />
+        <SectionLabel number="07c" label="MEET THE TEAM" />
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-8">The People Behind the Portal</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {TEAM.map((member) => (
@@ -290,7 +290,7 @@ function About() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        <SectionLabel number="08d" label="GET IN TOUCH" />
+        <SectionLabel number="07d" label="GET IN TOUCH" />
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-8">Get in Touch</h2>
         <div className="grid lg:grid-cols-2 gap-8">
           <form onSubmit={handleSubmit} className="space-y-5">

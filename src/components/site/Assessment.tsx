@@ -1,5 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Layout } from "@/components/site/Layout";
+import { Link } from "@tanstack/react-router";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
@@ -8,26 +7,12 @@ import { CheckCircle2, XCircle, RotateCcw, ArrowRight, Download } from "lucide-r
 import { downloadAssessmentPdf } from "@/lib/pdf/assessmentPdf";
 import { preloadJsPdf } from "@/lib/pdf/preload";
 
-export const Route = createFileRoute("/test-yourself")({
-  head: () => ({
-    meta: [
-      { title: "Earthquake Preparedness Assessment: Nepal Seismic" },
-      {
-        name: "description",
-        content:
-          "20-question Nepal-specific earthquake preparedness assessment with personalised recommendations.",
-      },
-    ],
-  }),
-  component: Quiz,
-});
-
 // Google Apps Script Web App URL that appends each result to a Google Sheet in
 // your Drive. Deploy google-apps-script/quiz-to-drive.gs (Deploy ▸ Web app ▸
 // Anyone) and set VITE_QUIZ_WEBHOOK_URL to its /exec URL in .env.local.
 const QUIZ_WEBHOOK_URL = import.meta.env.VITE_QUIZ_WEBHOOK_URL ?? "";
 
-function Quiz() {
+export function Assessment() {
   const [i, setI] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -137,10 +122,10 @@ function Quiz() {
   };
 
   return (
-    <Layout>
+    <>
       <section className="border-b border-border bg-surface/40">
         <div className="max-w-5xl mx-auto px-4 md:px-8 py-16">
-          <SectionLabel number="07" label="SELF-ASSESSMENT" />
+          <SectionLabel number="06c" label="SELF-ASSESSMENT" />
           <h1 className="font-serif text-4xl md:text-6xl font-bold mb-4">
             Earthquake Preparedness Assessment
           </h1>
@@ -365,6 +350,6 @@ function Quiz() {
           </div>
         )}
       </section>
-    </Layout>
+    </>
   );
 }

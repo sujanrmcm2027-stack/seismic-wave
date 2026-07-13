@@ -334,7 +334,7 @@ function Home() {
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <Link
-                  to="/test-yourself"
+                  to="/preparedness"
                   className="inline-flex items-center gap-2.5 px-5 py-3 rounded-md bg-card border border-border text-foreground font-semibold text-sm hover:bg-surface"
                 >
                   <CheckCircle2 className="w-4 h-4" />
@@ -1055,7 +1055,7 @@ function Home() {
           understanding of gaps in your household or community preparedness plan.
         </p>
         <Link
-          to="/test-yourself"
+          to="/preparedness"
           className="inline-flex items-center gap-3 px-6 py-3.5 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90"
         >
           Start the Assessment <ArrowRight className="w-4 h-4" />

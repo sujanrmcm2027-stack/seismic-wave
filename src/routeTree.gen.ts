@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TestYourselfRouteImport } from './routes/test-yourself'
 import { Route as SafeZonesRouteImport } from './routes/safe-zones'
 import { Route as PreparednessRouteImport } from './routes/preparedness'
 import { Route as HistoricalRouteImport } from './routes/historical'
@@ -18,11 +17,6 @@ import { Route as DamageAssessmentRouteImport } from './routes/damage-assessment
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
-const TestYourselfRoute = TestYourselfRouteImport.update({
-  id: '/test-yourself',
-  path: '/test-yourself',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SafeZonesRoute = SafeZonesRouteImport.update({
   id: '/safe-zones',
   path: '/safe-zones',
@@ -67,7 +61,6 @@ export interface FileRoutesByFullPath {
   '/historical': typeof HistoricalRoute
   '/preparedness': typeof PreparednessRoute
   '/safe-zones': typeof SafeZonesRoute
-  '/test-yourself': typeof TestYourselfRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -77,7 +70,6 @@ export interface FileRoutesByTo {
   '/historical': typeof HistoricalRoute
   '/preparedness': typeof PreparednessRoute
   '/safe-zones': typeof SafeZonesRoute
-  '/test-yourself': typeof TestYourselfRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -88,7 +80,6 @@ export interface FileRoutesById {
   '/historical': typeof HistoricalRoute
   '/preparedness': typeof PreparednessRoute
   '/safe-zones': typeof SafeZonesRoute
-  '/test-yourself': typeof TestYourselfRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -100,7 +91,6 @@ export interface FileRouteTypes {
     | '/historical'
     | '/preparedness'
     | '/safe-zones'
-    | '/test-yourself'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -110,7 +100,6 @@ export interface FileRouteTypes {
     | '/historical'
     | '/preparedness'
     | '/safe-zones'
-    | '/test-yourself'
   id:
     | '__root__'
     | '/'
@@ -120,7 +109,6 @@ export interface FileRouteTypes {
     | '/historical'
     | '/preparedness'
     | '/safe-zones'
-    | '/test-yourself'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -131,18 +119,10 @@ export interface RootRouteChildren {
   HistoricalRoute: typeof HistoricalRoute
   PreparednessRoute: typeof PreparednessRoute
   SafeZonesRoute: typeof SafeZonesRoute
-  TestYourselfRoute: typeof TestYourselfRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/test-yourself': {
-      id: '/test-yourself'
-      path: '/test-yourself'
-      fullPath: '/test-yourself'
-      preLoaderRoute: typeof TestYourselfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/safe-zones': {
       id: '/safe-zones'
       path: '/safe-zones'
@@ -203,7 +183,6 @@ const rootRouteChildren: RootRouteChildren = {
   HistoricalRoute: HistoricalRoute,
   PreparednessRoute: PreparednessRoute,
   SafeZonesRoute: SafeZonesRoute,
-  TestYourselfRoute: TestYourselfRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
