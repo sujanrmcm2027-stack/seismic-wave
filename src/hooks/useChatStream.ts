@@ -1,7 +1,10 @@
 import { useCallback, useRef, useState } from "react";
-import { streamChatReply } from "@/lib/chatbot/serverFns";
+
 import { buildNearbySafeZonesBlock, LOW_BANDWIDTH_NOTE } from "@/lib/chatbot/systemPrompt";
+import { getLocalReply } from "@/lib/chatbot/knowledgeBase";
 import type { SafeZone } from "@/data/evacuationZones";
+import { syncChatMessage } from "@/services/dataService";
+
 
 export type ChatRole = "user" | "assistant";
 
@@ -23,79 +26,132 @@ function makeId() {
     : `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 }
 
+// ── Chat history persistence ──────────────────────────────────────────
+const CHAT_HISTORY_KEY = "chat_history";
+const CHAT_MAX = 100; // messages kept across sessions
+
+function loadChatHistory(): ChatMessage[] {
+  try {
+    return JSON.parse(localStorage.getItem(CHAT_HISTORY_KEY) ?? "[]") as ChatMessage[];
+  } catch {
+    return [];
+  }
+}
+
+function saveChatHistory(messages: ChatMessage[]) {
+  // Only save "done" messages (not streaming placeholders)
+  const toSave = messages
+    .filter((m) => m.status === "done" || m.status === "error")
+    .slice(0, CHAT_MAX);
+  try {
+    localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(toSave));
+  } catch {
+    try {
+      localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(toSave.slice(0, CHAT_MAX / 2)));
+    } catch { /* give up */ }
+  }
+}
+
+export function clearChatHistory() {
+  localStorage.removeItem(CHAT_HISTORY_KEY);
+}
+
+
+// Simulates streaming by revealing the reply character-by-character so the
+// chat bubble animates naturally instead of popping in all at once.
+async function* fakeStream(text: string, lowBandwidth: boolean): AsyncGenerator<string> {
+  if (lowBandwidth) {
+    yield text;
+    return;
+  }
+  // Stream word-by-word for a natural feel
+  const words = text.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    yield (i === 0 ? "" : " ") + words[i];
+    // Slight pause every few words to feel natural
+    if (i % 6 === 5) {
+      await new Promise((r) => setTimeout(r, 30));
+    }
+  }
+}
+
 export function useChatStream() {
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>(() => loadChatHistory());
   const [isStreaming, setIsStreaming] = useState(false);
-  // Full conversation so far, in the plain { role, content } shape the
-  // server forwards straight into the Anthropic `messages` array.
-  const historyRef = useRef<{ role: ChatRole; content: string }[]>([]);
+  const historyRef = useRef<{ role: ChatRole; content: string }[]>(
+    // Restore conversation history for the AI context too
+    loadChatHistory().map((m) => ({ role: m.role, content: m.content }))
+  );
+
+  // Helper that updates state AND persists atomically
+  const setAndSave = useCallback((updater: (prev: ChatMessage[]) => ChatMessage[]) => {
+    setMessages((prev) => {
+      const next = updater(prev);
+      saveChatHistory(next);
+      return next;
+    });
+  }, []);
 
   const sendMessage = useCallback(async (rawText: string, options: SendMessageOptions) => {
     const text = rawText.trim();
     if (!text) return;
 
-    // The live nearest-zones ranking (already computed by EvacuationMap's
-    // Haversine pass) and the low-bandwidth flag ride along as user-turn
-    // context rather than mutating the system prompt, so the frozen system
-    // prompt stays cache-friendly across requests.
+    // Build context-enriched message (nearest zones + low-bandwidth flag)
     const contextBlocks = [
       buildNearbySafeZonesBlock(options.nearestZones),
       options.lowBandwidth ? LOW_BANDWIDTH_NOTE : "",
     ].filter(Boolean);
-    const messageForModel = contextBlocks.length ? `${contextBlocks.join("\n")}\n\n${text}` : text;
+    const enrichedText = contextBlocks.length
+      ? `${contextBlocks.join("\n")}\n\n${text}`
+      : text;
 
-    const userMessage: ChatMessage = { id: makeId(), role: "user", content: text, status: "done" };
+    const userMessage: ChatMessage = {
+      id: makeId(),
+      role: "user",
+      content: text,
+      status: "done",
+    };
     const assistantId = makeId();
 
-    historyRef.current = [...historyRef.current, { role: "user", content: messageForModel }];
-    setMessages((prev) => [
+    historyRef.current = [...historyRef.current, { role: "user", content: enrichedText }];
+    setAndSave((prev) => [
       ...prev,
       userMessage,
       { id: assistantId, role: "assistant", content: "", status: "streaming" },
     ]);
     setIsStreaming(true);
+    void syncChatMessage("user", text);
 
     try {
-      const response = await streamChatReply({
-        data: { turns: historyRef.current, lowBandwidth: options.lowBandwidth },
-      });
-      const reader = response.body?.getReader();
-      if (!reader) throw new Error("Response had no readable body");
+      // Get the reply from the local knowledge base (no API, always works)
+      const reply = getLocalReply(text);
 
-      const decoder = new TextDecoder();
       let fullText = "";
-
-      // Reads UTF-8 bytes off the network as they arrive and appends each
-      // chunk to the assistant bubble immediately — this loop is the whole
-      // mechanism that makes the reply feel instant instead of waiting for
-      // the full response before showing anything.
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        fullText += decoder.decode(value, { stream: true });
+      for await (const chunk of fakeStream(reply, options.lowBandwidth)) {
+        fullText += chunk;
+        const snap = fullText;
+        // Don't persist during streaming — just update state
         setMessages((prev) =>
-          prev.map((m) => (m.id === assistantId ? { ...m, content: fullText } : m)),
+          prev.map((m) => (m.id === assistantId ? { ...m, content: snap } : m)),
         );
       }
 
       historyRef.current = [...historyRef.current, { role: "assistant", content: fullText }];
-      setMessages((prev) =>
+      // Persist once streaming is done
+      setAndSave((prev) =>
         prev.map((m) => (m.id === assistantId ? { ...m, status: "done" } : m)),
       );
+      void syncChatMessage("assistant", fullText);
     } catch (error) {
-      // The bubble always shows the calm public-facing fallback — the real
-      // cause (missing API key, network failure, quota, etc.) goes to the
-      // console instead, so a developer can tell those apart without
-      // guessing. The server also logs "Server Fn Error!" with the same
-      // error to its own terminal.
-      console.error("Chat request failed:", error);
-      setMessages((prev) =>
+
+      console.error("Chat error:", error);
+      setAndSave((prev) =>
         prev.map((m) =>
           m.id === assistantId
             ? {
                 ...m,
                 content:
-                  "Couldn't reach the assistant. If this is urgent, call Police 100 or National Emergency 1149.",
+                  "Something went wrong. For emergencies, call Police 100 or National Emergency 1149.",
                 status: "error",
               }
             : m,
@@ -106,5 +162,5 @@ export function useChatStream() {
     }
   }, []);
 
-  return { messages, isStreaming, sendMessage };
+  return { messages, isStreaming, sendMessage, setAndSave };
 }

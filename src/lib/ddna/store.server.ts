@@ -65,7 +65,7 @@ export function listReportsServer(): DdnaDamageReport[] {
   );
 }
 
-export function addReportServer(input: DdnaReportInput): DdnaDamageReport {
+export async function addReportServer(input: DdnaReportInput): Promise<DdnaDamageReport> {
   const submittedTimestamp = new Date().toISOString();
   const { hoursSinceEvent, within72Hours } = computeReportingWindow(
     input.eventTimestamp,
@@ -83,5 +83,25 @@ export function addReportServer(input: DdnaReportInput): DdnaDamageReport {
   };
 
   reports.unshift(report);
+
+  // Send data to Google Apps Script Database if configured
+  const scriptUrl = process.env.VITE_GOOGLE_APPS_SCRIPT_URL || (import.meta as any).env?.VITE_GOOGLE_APPS_SCRIPT_URL;
+  if (scriptUrl) {
+    try {
+      await fetch(scriptUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        // We use JSON.stringify twice if we're dealing with strict CORS, 
+        // but simple JSON is fine since the Apps Script uses JSON.parse(e.postData.contents).
+        // Apps Script prefers text/plain to avoid CORS preflight, so we stringify.
+        body: JSON.stringify(report),
+      });
+    } catch (error) {
+      console.error("Failed to sync DDNA report to Google Sheets:", error);
+    }
+  }
+
   return report;
 }

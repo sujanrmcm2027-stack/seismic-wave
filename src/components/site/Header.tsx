@@ -1,15 +1,14 @@
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, Search, X, Waves } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { searchIndex } from "@/data/searchIndex";
-import logo from "@/assets/logo.jpeg";
 
 const nav = [
   { to: "/", label: "Home" },
   { to: "/historical", label: "Historical" },
   { to: "/gis", label: "GIS" },
-  { to: "/damage-assessment", label: "Damage Assessment" },
+  { to: "/damage-assessment", label: "Damage" },
   { to: "/safe-zones", label: "Safe Zones" },
   { to: "/preparedness", label: "Preparedness" },
   { to: "/test-yourself", label: "Self-Assessment" },
@@ -48,9 +47,9 @@ function HeaderSearch({
   }
 
   return (
-    <div ref={containerRef} className={`relative ${isDesktop ? "w-48 xl:w-56" : "mb-2 md:hidden"}`}>
-      <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-surface-2 border border-border focus-within:border-primary">
-        <Search className="w-4 h-4 text-muted-foreground shrink-0" />
+    <div ref={containerRef} className={`relative ${isDesktop ? "w-44 xl:w-52" : "mb-2 md:hidden"}`}>
+      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border/60 focus-within:border-primary/60 transition-colors">
+        <Search className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
         <input
           value={query}
           onChange={(e) => {
@@ -66,14 +65,14 @@ function HeaderSearch({
               handleSelect(results[0].to);
             }
           }}
-          placeholder={isDesktop ? "Search topics..." : "Search pages..."}
+          placeholder="Search…"
           aria-label="Search the portal"
-          className="bg-transparent outline-none text-sm text-foreground placeholder:text-muted-foreground flex-1 min-w-0"
+          className="bg-transparent outline-none text-xs text-foreground placeholder:text-muted-foreground flex-1 min-w-0"
         />
       </div>
       {isOpen && query.trim() && (
         <div
-          className={`z-50 rounded-md border border-border bg-card shadow-lg overflow-hidden ${
+          className={`z-50 rounded-xl border border-border bg-card shadow-xl overflow-hidden ${
             isDesktop ? "absolute left-0 right-0 top-full mt-2" : "mt-2"
           }`}
         >
@@ -108,24 +107,27 @@ function HeaderSearch({
 export function Header() {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-background/90 border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center gap-4 md:gap-6">
-        <Link to="/" className="flex items-center gap-2.5 shrink-0 min-w-0">
-          <img
-            src={logo}
-            alt="Nepal Seismic logo"
-            className="w-9 h-9 rounded-md object-cover shadow-sm shrink-0"
-          />
-          <span className="leading-tight min-w-0">
-            <span className="block font-serif font-bold text-foreground text-sm truncate">
+    <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border/50">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 h-14 flex items-center gap-4">
+
+        {/* ── LOGO ─────────────────────────────────────── */}
+        <Link to="/" className="flex items-center gap-2 shrink-0 group">
+          <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+            <Waves className="w-4 h-4 text-primary" />
+          </div>
+          <div className="hidden sm:block leading-none">
+            <span className="block font-bold text-foreground text-sm tracking-tight">
               Nepal Seismic
             </span>
-            <span className="hidden sm:block font-mono text-[9px] tracking-[0.18em] text-muted-foreground uppercase">
-              National Disaster Portal
+            <span className="block font-mono text-[9px] tracking-[0.15em] text-muted-foreground uppercase mt-0.5">
+              Disaster Portal
             </span>
-          </span>
+          </div>
         </Link>
+
+        {/* ── NAV (desktop) ─────────────────────────────── */}
         <nav className="hidden lg:flex items-center gap-0.5 mx-auto">
           {nav.map((n) => {
             const active = pathname === n.to || (n.to !== "/" && pathname.startsWith(n.to));
@@ -133,10 +135,10 @@ export function Header() {
               <Link
                 key={n.to}
                 to={n.to}
-                className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                className={`px-2.5 py-1.5 text-[13px] font-medium rounded-md transition-all ${
                   active
                     ? "bg-primary/10 text-primary"
-                    : "text-foreground/75 hover:text-foreground hover:bg-surface"
+                    : "text-foreground/60 hover:text-foreground hover:bg-surface"
                 }`}
               >
                 {n.label}
@@ -144,14 +146,19 @@ export function Header() {
             );
           })}
         </nav>
+
+        {/* ── RIGHT CONTROLS (desktop) ──────────────────── */}
         <div className="hidden md:flex items-center gap-2 ml-auto lg:ml-0">
           <HeaderSearch variant="desktop" />
+          <div className="w-px h-4 bg-border" />
           <ThemeToggle />
         </div>
+
+        {/* ── MOBILE CONTROLS ───────────────────────────── */}
         <div className="flex items-center gap-1 lg:hidden ml-auto">
           <ThemeToggle />
           <button
-            className="p-2 text-foreground rounded-md hover:bg-surface"
+            className="p-1.5 text-foreground rounded-md hover:bg-surface transition-colors"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -159,10 +166,13 @@ export function Header() {
           </button>
         </div>
       </div>
+
+      {/* ── MOBILE MENU ───────────────────────────────────── */}
       {open && (
-        <div className="lg:hidden border-t border-border bg-background animate-fade-up">
-          <nav className="px-4 py-3 flex flex-col gap-1">
+        <div className="lg:hidden border-t border-border/50 bg-background/95 backdrop-blur-md">
+          <nav className="px-4 py-3 flex flex-col gap-0.5">
             <HeaderSearch variant="mobile" onNavigate={() => setOpen(false)} />
+            <div className="h-2" />
             {nav.map((n) => {
               const active = pathname === n.to || (n.to !== "/" && pathname.startsWith(n.to));
               return (
@@ -170,7 +180,11 @@ export function Header() {
                   key={n.to}
                   to={n.to}
                   onClick={() => setOpen(false)}
-                  className={`px-3 py-2.5 rounded-md text-sm font-medium ${active ? "bg-primary/10 text-primary" : "text-foreground hover:bg-surface-2"}`}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    active
+                      ? "bg-primary/10 text-primary"
+                      : "text-foreground/70 hover:text-foreground hover:bg-surface"
+                  }`}
                 >
                   {n.label}
                 </Link>

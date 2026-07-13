@@ -313,6 +313,24 @@ function DamageAssessmentPage() {
           </section>
           <DamageIncidentFeed incidents={filteredIncidents} />
         </div>
+
+        {/* Map disclaimer — Government of Nepal */}
+        <div className="mt-4 flex items-start gap-3 rounded-lg border border-amber-500/30 bg-amber-500/5 px-5 py-4">
+          <span className="mt-0.5 shrink-0 text-amber-500" aria-hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </span>
+          <p className="text-xs leading-relaxed text-amber-700 dark:text-amber-400">
+            <span className="font-semibold uppercase tracking-wide">Map Disclaimer: </span>
+            The map boundaries and territorial representations displayed here are sourced from USGS (United States Geological Survey) and OpenStreetMap data feeds and
+            <span className="font-semibold"> may not reflect the official map of Nepal as published and recognised by the Government of Nepal (Survey Department, Ministry of Land Management)</span>.
+            This portal does not endorse or validate any particular depiction of Nepal's international boundaries. For the official and legally recognised map of Nepal,
+            please refer to the <span className="font-semibold">Survey Department of Nepal</span> at <span className="font-mono">survey.gov.np</span>.
+          </p>
+        </div>
       </section>
 
       <section className="border-t border-border bg-surface/30">

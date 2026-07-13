@@ -37,8 +37,9 @@ export const Route = createFileRoute("/about")({
 // inbox (nepaljobmatchy@gmail.com). Submissions are emailed to the address tied
 // to this key. The key is meant to be used in the browser and is safe to expose.
 // Set VITE_WEB3FORMS_ACCESS_KEY in a .env file, or replace the fallback below.
-const WEB3FORMS_ACCESS_KEY =
-  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? "YOUR_WEB3FORMS_ACCESS_KEY";
+// Web3Forms access key — hardcoded so it works in any hosting environment
+// (Vite env vars only work when the app is built with the var present).
+const WEB3FORMS_ACCESS_KEY = "59e90924-abf0-45c6-b8d8-a9fecabcd1d0";
 
 const TEAM = [
   {
@@ -62,8 +63,8 @@ const TEAM = [
   {
     name: "Som Prasad Sapkota",
     photo: somPhoto,
-    role: "Contributing Expert | Former Nepali Army Officer & Disaster Responder",
-    bio: "Som serves as a Contributing Expert, drawing on a 20-year career in the Nepali Army to provide historical seismic data and build civil-military coordination mechanisms. A veteran responder, he led frontline rescue operations in Sindhupalchok during the 2015 earthquake and served as a UN Military Police Investigator in Central Africa. Som is committed to ensuring this portal bridges historical emergency data with active frontline responders to better prepare Nepal for future crises.",
+    role: "Contributing Expert | Nepali Army Officer & Disaster Responder",
+    bio: "Som serves as a Contributing Expert, currently serving in the Nepali Army, drawing on over 20 years of active military service to provide historical seismic data and build civil-military coordination mechanisms. A frontline responder, he led rescue operations in Sindhupalchok during the 2015 earthquake and served as a UN Military Police Investigator in Central Africa. Som is committed to ensuring this portal bridges real-time emergency data with active frontline responders to better prepare Nepal for future crises.",
     links: {},
   },
   {

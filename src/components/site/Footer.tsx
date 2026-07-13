@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Activity, Twitter, Github, Instagram, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 import {
   Dialog,
   DialogContent,
@@ -373,38 +374,17 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr] pb-12 border-b border-border/60">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <span className="w-12 h-12 rounded-lg bg-primary grid place-items-center shrink-0">
-                <Activity className="w-6 h-6 text-primary-foreground" />
-              </span>
+              <img
+                src={logo}
+                alt="Nepal Seismic Portal logo"
+                className="w-12 h-12 rounded-lg object-cover shadow-sm shrink-0"
+              />
               <div>
                 <div className="font-serif text-lg font-bold text-foreground">Nepal Seismic Portal</div>
                 <p className="text-sm text-muted-foreground mt-1 max-w-sm">
                   A national resource for earthquake awareness, preparedness, and resilience in Nepal.
                 </p>
               </div>
-            </div>
-            <div className="flex gap-3">
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="w-9 h-9 grid place-items-center rounded-full border border-border/60 text-muted-foreground hover:border-primary hover:text-primary transition"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="GitHub"
-                className="w-9 h-9 grid place-items-center rounded-full border border-border/60 text-muted-foreground hover:border-primary hover:text-primary transition"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="w-9 h-9 grid place-items-center rounded-full border border-border/60 text-muted-foreground hover:border-primary hover:text-primary transition"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
             </div>
           </div>
 

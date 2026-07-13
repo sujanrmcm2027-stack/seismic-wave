@@ -3,7 +3,13 @@ import { Layout } from "@/components/site/Layout";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { StatCounter } from "@/components/site/StatCounter";
 import { SeismicPulse } from "@/components/site/SeismicPulse";
+import { SafetyReporter } from "@/components/site/SafetyReporter";
+import { InfrastructureStatus } from "@/components/site/InfrastructureStatus";
+import { DidYouFeelIt } from "@/components/site/DidYouFeelIt";
+import { SafetyBoard } from "@/components/site/SafetyBoard";
 import { useLiveNepalEarthquakes, type NepalEarthquake } from "@/hooks/useLiveNepalEarthquakes";
+import { useCrisisMode } from "@/hooks/useCrisisMode";
+import { t } from "@/lib/i18n/translations";
 import {
   Activity,
   ArrowRight,
@@ -21,7 +27,7 @@ import {
   Waves,
   BookOpen,
 } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState, Suspense, lazy } from "react";
 import {
   BarChart,
   Bar,
@@ -39,10 +45,9 @@ import {
   Area,
   AreaChart,
 } from "recharts";
-import { MapContainer, TileLayer, Popup, CircleMarker, useMap } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
 import tectonicSettingImg from "@/assets/tectonic-setting.png";
+
+const EarthquakeMap = lazy(() => import('@/components/site/EarthquakeMap'));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -119,31 +124,7 @@ const tooltipStyle = {
   fontSize: 12,
 };
 
-const DEFAULT_CENTER: [number, number] = [28.3949, 84.124];
-const DEFAULT_ZOOM = 7;
 
-function getMagnitudeColor(magnitude: number) {
-  if (magnitude >= 6.0) return "var(--color-destructive)";
-  if (magnitude >= 5.0) return "var(--color-chart-5)";
-  if (magnitude >= 3.0) return "var(--color-chart-4)";
-  return "var(--color-chart-2)";
-}
-
-function NepalMapController({ events }: { events: NepalEarthquake[] }) {
-  const map = useMap();
-
-  useEffect(() => {
-    if (!events.length) {
-      map.setView(DEFAULT_CENTER, DEFAULT_ZOOM);
-      return;
-    }
-
-    const bounds = L.latLngBounds(events.map((event) => [event.latitude, event.longitude]));
-    map.fitBounds(bounds, { padding: [20, 20], maxZoom: 8 });
-  }, [events, map]);
-
-  return null;
-}
 
 function Home() {
   const {
@@ -153,11 +134,122 @@ function Home() {
     error,
     lastUpdatedAt,
     now,
+    isQuiet,
     statusBadge,
+    dataSource,
     formatNpt,
     formatUtc,
     formatTimeAgo,
   } = useLiveNepalEarthquakes();
+  const { liteMode, lang } = useCrisisMode();
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => setIsMounted(true), []);
+
+  // ── LITE MODE: lightweight semantic HTML view ──────────────────────
+  if (liteMode) {
+    return (
+      <Layout>
+        <div className="max-w-3xl mx-auto px-4 py-8 space-y-6 text-foreground">
+          {/* Status indicator */}
+          <div className={`flex items-center gap-2 p-3 rounded border text-sm font-medium ${
+            (latestEvent?.magnitude ?? 0) >= 5
+              ? "bg-red-50 dark:bg-red-950/30 border-red-300 dark:border-red-800 text-red-700 dark:text-red-400"
+              : (latestEvent?.magnitude ?? 0) >= 4
+              ? "bg-amber-50 dark:bg-amber-950/30 border-amber-300 dark:border-amber-800 text-amber-700 dark:text-amber-400"
+              : "bg-emerald-50 dark:bg-emerald-950/30 border-emerald-300 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400"
+          }`}>
+            <span className={`w-2 h-2 rounded-full ${
+              (latestEvent?.magnitude ?? 0) >= 5 ? "bg-red-500 animate-pulse"
+              : (latestEvent?.magnitude ?? 0) >= 4 ? "bg-amber-500 animate-pulse"
+              : "bg-emerald-500 animate-pulse"
+            }`} />
+            {loading
+              ? t("status.loading", lang)
+              : (latestEvent?.magnitude ?? 0) >= 5
+              ? t("status.red", lang)
+              : (latestEvent?.magnitude ?? 0) >= 4
+              ? t("status.amber", lang)
+              : t("status.green", lang)}
+          </div>
+
+          {/* Recent quakes table */}
+          <section>
+            <h2 className="font-bold text-lg mb-2">{t("home.lite_events_title", lang)}</h2>
+            {events.length === 0 ? (
+              <p className="text-muted-foreground text-sm">{t("home.lite_no_events", lang)}</p>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-border rounded">
+                  <thead>
+                    <tr className="bg-surface font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+                      <th className="px-3 py-2 text-left border-b border-border">{t("home.lite_mag", lang)}</th>
+                      <th className="px-3 py-2 text-left border-b border-border">{t("home.lite_location", lang)}</th>
+                      <th className="px-3 py-2 text-left border-b border-border">{t("home.lite_time", lang)}</th>
+                      <th className="px-3 py-2 text-left border-b border-border">{t("home.lite_depth", lang)}</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border">
+                    {events.map((ev) => (
+                      <tr key={ev.id} className="hover:bg-surface/50">
+                        <td className={`px-3 py-2 font-bold font-mono ${
+                          ev.magnitude >= 6 ? "text-red-600" : ev.magnitude >= 5 ? "text-amber-600" : ev.magnitude >= 3 ? "text-chart-4" : "text-emerald-600"
+                        }`}>M{ev.magnitude.toFixed(1)}</td>
+                        <td className="px-3 py-2 text-foreground">{ev.place}</td>
+                        <td className="px-3 py-2 text-muted-foreground text-xs">{formatNpt(ev.timeMs)}</td>
+                        <td className="px-3 py-2 text-muted-foreground">{ev.depth.toFixed(0)} km</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+            <p className="text-[10px] text-muted-foreground font-mono mt-1">
+              Source: {dataSource?.toUpperCase() ?? "—"} · Last updated: {lastUpdatedAt ? formatNpt(lastUpdatedAt) : "—"}
+            </p>
+          </section>
+
+          {/* Safety reporter in lite mode */}
+          <div>
+            <SafetyReporter />
+            <SafetyBoard />
+          </div>
+
+          {/* Emergency numbers */}
+          <section>
+            <h2 className="font-bold text-lg mb-3">Emergency Numbers</h2>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                ["100", "Nepal Police"],
+                ["101", "Fire Brigade"],
+                ["102", "Ambulance"],
+                ["1149", "National Emergency"],
+                ["1155", "DHM Flood"],
+                ["01-4270650", "Red Cross"],
+              ].map(([num, name]) => (
+                <a
+                  key={num}
+                  href={`tel:${num}`}
+                  className="flex items-center gap-3 p-3 rounded border border-border bg-surface hover:bg-surface/80 transition"
+                >
+                  <span className="font-mono font-bold text-primary text-lg">{num}</span>
+                  <span className="text-sm text-muted-foreground">{name}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          {/* Infrastructure status in lite mode */}
+          <InfrastructureStatus />
+
+          <p className="text-xs text-muted-foreground text-center pt-4">
+            ⚡ Lite Mode active — <button onClick={() => {}} className="underline text-primary">disable</button> to view full dashboard
+          </p>
+        </div>
+      </Layout>
+    );
+  }
+
+  // ── FULL MODE ──────────────────────────────────────────────────────
   return (
     <Layout>
       {/* HERO — DASHBOARD STYLE */}
@@ -175,12 +267,44 @@ function Home() {
             <span className="opacity-40">|</span>
             <span>USGS FEED: {error && !events.length ? "Offline" : "Connected"}</span>
             <span className="opacity-40">|</span>
+            {dataSource && (
+              <>
+                <span className="uppercase">SOURCE: {dataSource}</span>
+                <span className="opacity-40">|</span>
+              </>
+            )}
             <span>LIVE EVENTS: {events.length}</span>
             <span className="opacity-40">|</span>
             <span>LAST UPDATE: {lastUpdatedAt ? formatNpt(lastUpdatedAt) : "Waiting"}</span>
             <span className="opacity-40">|</span>
             <span>AUTO REFRESH: 60s</span>
           </div>
+
+          {/* Active status indicator */}
+          {!loading && (
+            <div className={`mb-6 flex items-center gap-2.5 px-4 py-2.5 rounded-lg border text-sm font-medium ${
+              (latestEvent?.magnitude ?? 0) >= 5
+                ? "bg-red-600/10 border-red-500/40 text-red-400"
+                : isQuiet
+                ? "bg-emerald-600/10 border-emerald-500/30 text-emerald-400"
+                : "bg-amber-500/10 border-amber-500/30 text-amber-400"
+            }`}>
+              <span className={`w-2 h-2 rounded-full shrink-0 ${
+                (latestEvent?.magnitude ?? 0) >= 5
+                  ? "bg-red-500 animate-ping"
+                  : isQuiet
+                  ? "bg-emerald-400 animate-pulse"
+                  : "bg-amber-400 animate-pulse"
+              }`} />
+              {loading
+                ? t("status.loading", lang)
+                : (latestEvent?.magnitude ?? 0) >= 5
+                ? t("status.red", lang)
+                : isQuiet
+                ? t("status.green", lang)
+                : t("status.amber", lang)}
+            </div>
+          )}
 
           <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-12 items-start">
             {/* LEFT — headline */}
@@ -457,58 +581,59 @@ function Home() {
                     </div>
                     <MapPin className="w-3 h-3 text-muted-foreground" />
                   </div>
-                  <div className="h-44 px-3 pb-3">
-                    <div className="h-full overflow-hidden rounded-md border border-border">
-                      <MapContainer
-                        center={DEFAULT_CENTER}
-                        zoom={DEFAULT_ZOOM}
-                        scrollWheelZoom={false}
-                        className="h-full w-full"
-                        attributionControl={false}
-                      >
-                        <TileLayer
-                          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        />
-                        <NepalMapController events={events} />
-                        {events.map((event) => {
-                          const color = getMagnitudeColor(event.magnitude);
-                          return (
-                            <CircleMarker
-                              key={event.id}
-                              center={[event.latitude, event.longitude]}
-                              radius={Math.max(4, Math.min(12, 4 + event.magnitude * 1.1))}
-                              pathOptions={{
-                                color,
-                                fillColor: color,
-                                fillOpacity: 0.35,
-                                weight: 1.5,
-                              }}
-                            >
-                              <Popup>
-                                <div className="space-y-1 text-sm">
-                                  <div className="font-semibold text-foreground">{event.place}</div>
-                                  <div className="text-muted-foreground">
-                                    M{event.magnitude.toFixed(1)} · {event.depth.toFixed(0)} km
-                                  </div>
-                                  <div className="text-muted-foreground">
-                                    {formatNpt(event.timeMs)}
-                                  </div>
-                                </div>
-                              </Popup>
-                            </CircleMarker>
-                          );
-                        })}
-                      </MapContainer>
+                  <div className="px-3 pb-3" style={{ height: '200px' }}>
+                    <div className="overflow-hidden rounded-md border border-border bg-surface" style={{ height: '176px' }}>
+                      {isMounted ? (
+                        <Suspense fallback={<div className="flex items-center justify-center h-full text-xs text-muted-foreground">Loading map…</div>}>
+                          <EarthquakeMap events={events} formatNpt={formatNpt} />
+                        </Suspense>
+                      ) : (
+                        <div className="flex items-center justify-center h-full text-xs text-muted-foreground">
+                          Loading map…
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
               </div>
+
               <div className="mt-3 text-[10px] font-mono text-muted-foreground tracking-wider uppercase text-right">
                 * Live data from the USGS Nepal feed · auto-refresh every 60s
               </div>
+              {/* Map disclaimer — Government of Nepal */}
+              <div className="mt-4 flex items-start gap-2.5 rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3">
+                <span className="mt-0.5 shrink-0 text-amber-500" aria-hidden>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                  </svg>
+                </span>
+                <p className="text-[10px] leading-relaxed text-amber-700 dark:text-amber-400">
+                  <span className="font-semibold uppercase tracking-wide">Map Disclaimer: </span>
+                  Map boundaries shown are from USGS &amp; OpenStreetMap and
+                  <span className="font-semibold"> may not reflect the official map of Nepal</span> as recognised by the Government of Nepal.
+                  For the official map, refer to the Survey Department of Nepal at <span className="font-mono">survey.gov.np</span>.
+                </p>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CROWDSOURCED STATUS + INFRASTRUCTURE */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-10">
+        <SectionLabel number="01x" label="CRISIS STATUS" />
+        <h2 className="font-serif text-3xl md:text-4xl font-bold mb-2">Community & Infrastructure Status</h2>
+        <p className="text-muted-foreground text-sm max-w-2xl mb-8">
+          Real-time crowdsourced safety reports and critical infrastructure monitoring for informed emergency response.
+        </p>
+        <div className="grid lg:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-4">
+            <SafetyReporter />
+            <SafetyBoard />
+          </div>
+          <InfrastructureStatus />
         </div>
       </section>
 

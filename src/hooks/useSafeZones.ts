@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
-import {
-  SAFE_ZONES_GEOJSON_URL,
-  type SafeZone,
-  type SafeZoneCollection,
-} from "@/data/evacuationZones";
+import type { SafeZone, SafeZoneCollection } from "@/data/evacuationZones";
+import { fetchSafeZones } from "@/services/dataService";
 
 type SafeZonesState = {
   /** Raw FeatureCollection, handed to react-leaflet's <GeoJSON> for map rendering. */
@@ -12,31 +9,42 @@ type SafeZonesState = {
   zones: SafeZone[];
   loading: boolean;
   error: string | null;
+  isOfflineFallback: boolean;
 };
 
-/**
- * Fetches the nationwide safe-zone dataset once on mount and normalizes
- * every GeoJSON Point feature (whether one of the 83 named Kathmandu Valley
- * spaces or a rest-of-Nepal district entry) into a flat
- * { lat, lng, ...properties } record, since GeoJSON stores coordinates as
- * [lng, lat] and nested inside `feature.geometry` — inconvenient for the
- * Haversine/sort/filter logic the sidebar and distance ranking need.
- */
+// High-Performance Client Cache:
+// Store the full array in local memory outside the hook so it is fetched
+// exactly ONCE when the app initializes, regardless of component remounts.
+let cachedCollection: SafeZoneCollection | null = null;
+let cachedZones: SafeZone[] | null = null;
+let fetchPromise: Promise<{ data: SafeZoneCollection; isOfflineFallback: boolean }> | null = null;
+let wasOfflineFallback = false;
+
 export function useSafeZones(): SafeZonesState {
-  const [collection, setCollection] = useState<SafeZoneCollection | null>(null);
-  const [zones, setZones] = useState<SafeZone[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [state, setState] = useState<SafeZonesState>({
+    collection: cachedCollection,
+    zones: cachedZones ?? [],
+    loading: !cachedCollection,
+    error: null,
+    isOfflineFallback: wasOfflineFallback,
+  });
 
   useEffect(() => {
+    // If already loaded in memory, do not re-fetch.
+    if (cachedCollection && cachedZones) {
+      return;
+    }
+
     let cancelled = false;
 
-    fetch(SAFE_ZONES_GEOJSON_URL)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Request failed with status ${response.status}`);
-        return response.json() as Promise<SafeZoneCollection>;
-      })
-      .then((data) => {
+    // Use a shared promise to prevent parallel requests if multiple
+    // components mount `useSafeZones` simultaneously.
+    if (!fetchPromise) {
+      fetchPromise = fetchSafeZones();
+    }
+
+    fetchPromise
+      .then(({ data, isOfflineFallback }) => {
         if (cancelled) return;
 
         const flattened = data.features.map((feature) => ({
@@ -45,14 +53,25 @@ export function useSafeZones(): SafeZonesState {
           lat: feature.geometry.coordinates[1],
         }));
 
-        setCollection(data);
-        setZones(flattened);
-        setLoading(false);
+        cachedCollection = data;
+        cachedZones = flattened;
+        wasOfflineFallback = isOfflineFallback;
+
+        setState({
+          collection: data,
+          zones: flattened,
+          loading: false,
+          error: null,
+          isOfflineFallback,
+        });
       })
-      .catch(() => {
+      .catch((err) => {
         if (cancelled) return;
-        setError("Unable to load the national safe zones dataset.");
-        setLoading(false);
+        setState((prev) => ({
+          ...prev,
+          loading: false,
+          error: "Unable to load the national safe zones dataset.",
+        }));
       });
 
     return () => {
@@ -60,5 +79,5 @@ export function useSafeZones(): SafeZonesState {
     };
   }, []);
 
-  return { collection, zones, loading, error };
+  return state;
 }

@@ -3,30 +3,10 @@ import { Layout } from "@/components/site/Layout";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { CheckCircle2, Download } from "lucide-react";
-import { downloadKitChecklistPdf } from "@/lib/pdf/kitChecklistPdf";
-import { preloadJsPdf } from "@/lib/pdf/preload";
+import { CheckCircle2 } from "lucide-react";
+import { PreparednessChecklist } from "@/components/site/PreparednessChecklist";
 
-const KIT_ITEMS = [
-  "Drinking water (3L per person per day)",
-  "Non-perishable food (3-day supply)",
-  "Battery / hand-crank radio",
-  "Flashlight + spare batteries",
-  "First aid kit + medications",
-  "Whistle to signal for help",
-  "Dust mask, plastic sheeting, duct tape",
-  "Wrench / pliers to turn off utilities",
-  "Manual can opener",
-  "Local maps and contact list",
-  "Mobile phone with backup charger",
-  "Cash in small denominations",
-  "Copies of documents (sealed bag)",
-  "Sturdy shoes, gloves, warm clothing",
-  "Sleeping bag / blanket per person",
-  "Personal hygiene + sanitation",
-  "Important medical equipment",
-  "Helmet (especially for children)",
-];
+
 
 export const Route = createFileRoute("/preparedness")({
   head: () => ({
@@ -211,22 +191,6 @@ const groups = {
 function Preparedness() {
   const [phase, setPhase] = useState<keyof typeof phases>("Before");
   const [group, setGroup] = useState<keyof typeof groups>("General Public");
-  const [checked, setChecked] = useState<Record<string, boolean>>({});
-  const packedCount = KIT_ITEMS.filter((i) => checked[i]).length;
-  const toggleItem = (item: string) => setChecked((c) => ({ ...c, [item]: !c[item] }));
-
-  useEffect(() => {
-    preloadJsPdf();
-  }, []);
-
-  const downloadPdf = async () => {
-    try {
-      await downloadKitChecklistPdf(KIT_ITEMS, checked);
-      toast.success("Emergency kit checklist PDF downloaded");
-    } catch {
-      toast.error("Couldn't generate the PDF. Please try again.");
-    }
-  };
 
   return (
     <Layout>
@@ -307,41 +271,11 @@ function Preparedness() {
         )}
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        <SectionLabel number="06c" label="CHECKLIST" />
-        <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
-          <div>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-2">
-              72-Hour Emergency Kit
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              {packedCount} / {KIT_ITEMS.length} items packed · aligned with NDRRMA, Sphere
-              Standards, and WHO/PAHO household kit guidance
-            </p>
-          </div>
-          <button
-            onClick={downloadPdf}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 whitespace-nowrap"
-          >
-            <Download className="w-4 h-4" /> Download PDF (watermarked)
-          </button>
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 print:px-0 print:py-0">
+        <div className="print:hidden">
+          <SectionLabel number="06c" label="CHECKLIST" />
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {KIT_ITEMS.map((i) => (
-            <label
-              key={i}
-              className="flex items-center gap-3 bg-surface border border-border rounded-md px-4 py-3 cursor-pointer hover:border-primary/40"
-            >
-              <input
-                type="checkbox"
-                checked={!!checked[i]}
-                onChange={() => toggleItem(i)}
-                className="w-4 h-4 accent-[color:var(--color-primary)]"
-              />
-              <span className="text-sm text-foreground/85">{i}</span>
-            </label>
-          ))}
-        </div>
+        <PreparednessChecklist />
       </section>
     </Layout>
   );

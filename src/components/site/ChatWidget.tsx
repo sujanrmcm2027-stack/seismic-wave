@@ -1,11 +1,17 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AlertTriangle, Bot, MessageCircle, Phone, Send, Wifi, WifiOff, X } from "lucide-react";
-import { useChatStream, type ChatMessage } from "@/hooks/useChatStream";
+import { AlertTriangle, Bot, MessageCircle, Phone, Send, Trash2, Wifi, WifiOff, X } from "lucide-react";
+import { useChatStream, clearChatHistory, type ChatMessage } from "@/hooks/useChatStream";
 import { useSafeZones } from "@/hooks/useSafeZones";
 import { useGeolocation } from "@/hooks/useGeolocation";
 import { haversineDistanceKm } from "@/lib/geo/haversine";
 import { EMERGENCY_ASSISTANT_NAME } from "@/lib/chatbot/systemPrompt";
-import { EMERGENCY_CONTACTS } from "@/components/site/EmergencyButton";
+
+const EMERGENCY_CONTACTS = [
+  ["Police", "100"],
+  ["Fire Brigade", "101"],
+  ["Ambulance", "102"],
+  ["National Emergency", "1149"],
+];
 
 const QUICK_REPLIES = [
   {
@@ -31,10 +37,15 @@ export function ChatWidget() {
   const [lowBandwidth, setLowBandwidth] = useState(false);
   const [showEmergency, setShowEmergency] = useState(false);
   const [input, setInput] = useState("");
-  const { messages, isStreaming, sendMessage } = useChatStream();
+  const { messages, isStreaming, sendMessage, setAndSave } = useChatStream();
   const { zones } = useSafeZones();
   const { position } = useGeolocation();
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  function handleClearHistory() {
+    clearChatHistory();
+    setAndSave(() => []);
+  }
 
   // Reuses the same Haversine ranking as EvacuationMap so "nearest safe
   // zone" in chat matches what the map/sidebar shows, rather than the
@@ -92,7 +103,18 @@ export function ChatWidget() {
               </div>
             </div>
             <div className="flex shrink-0 items-center gap-1">
-              {/* High-visibility Emergency button — always reachable, one tap from anywhere in the widget. */}
+              {/* Clear history button */}
+              {messages.length > 0 && (
+                <button
+                  onClick={handleClearHistory}
+                  title="Clear chat history"
+                  className="rounded-md p-1.5 text-muted-foreground hover:bg-surface hover:text-destructive transition-colors"
+                  aria-label="Clear chat history"
+                >
+                  <Trash2 className="h-3.5 w-3.5" />
+                </button>
+              )}
+              {/* High-visibility Emergency button */}
               <button
                 onClick={() => setShowEmergency(true)}
                 className="flex items-center gap-1 rounded-md bg-destructive px-2.5 py-1.5 text-xs font-semibold text-destructive-foreground hover:opacity-90"
@@ -216,20 +238,114 @@ export function ChatWidget() {
   );
 }
 
+// Lightweight markdown → JSX renderer (no external lib needed)
+function renderMarkdown(text: string): React.ReactNode[] {
+  const lines = text.split("\n");
+  const nodes: React.ReactNode[] = [];
+  let tableBuffer: string[] = [];
+
+  function flushTable() {
+    if (tableBuffer.length === 0) return;
+    const [header, , ...rows] = tableBuffer;
+    const headers = header.split("|").map((h) => h.trim()).filter(Boolean);
+    nodes.push(
+      <table key={nodes.length} className="w-full text-xs border-collapse my-1">
+        <thead>
+          <tr>
+            {headers.map((h, i) => (
+              <th key={i} className="border border-border/40 px-2 py-1 text-left bg-surface/60 font-semibold">
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, ri) => (
+            <tr key={ri}>
+              {row.split("|").map((c) => c.trim()).filter(Boolean).map((c, ci) => (
+                <td key={ci} className="border border-border/40 px-2 py-1">
+                  {inlineFormat(c)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+    tableBuffer = [];
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    // Table row
+    if (line.trim().startsWith("|")) {
+      tableBuffer.push(line);
+      continue;
+    }
+    flushTable();
+
+    // Heading (## or ###)
+    if (/^#{2,3}\s/.test(line)) {
+      nodes.push(<p key={i} className="font-semibold text-foreground mt-2 mb-0.5">{inlineFormat(line.replace(/^#{2,3}\s/, ""))}</p>);
+    }
+    // Numbered list
+    else if (/^\d+\.\s/.test(line)) {
+      nodes.push(
+        <div key={i} className="flex gap-2">
+          <span className="shrink-0 font-mono text-primary">{line.match(/^(\d+\.)/)?.[1]}</span>
+          <span>{inlineFormat(line.replace(/^\d+\.\s/, ""))}</span>
+        </div>
+      );
+    }
+    // Bullet list
+    else if (/^[-*]\s/.test(line)) {
+      nodes.push(
+        <div key={i} className="flex gap-2">
+          <span className="shrink-0 text-primary mt-0.5">•</span>
+          <span>{inlineFormat(line.replace(/^[-*]\s/, ""))}</span>
+        </div>
+      );
+    }
+    // Blank line
+    else if (line.trim() === "") {
+      nodes.push(<div key={i} className="h-1.5" />);
+    }
+    // Normal paragraph
+    else {
+      nodes.push(<p key={i} className="leading-snug">{inlineFormat(line)}</p>);
+    }
+  }
+  flushTable();
+  return nodes;
+}
+
+// Handles **bold** and `code` inline
+function inlineFormat(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith("`") && part.endsWith("`")) {
+      return <code key={i} className="bg-surface/80 rounded px-0.5 font-mono">{part.slice(1, -1)}</code>;
+    }
+    return part;
+  });
+}
+
 function ChatBubble({ message, lowBandwidth }: { message: ChatMessage; lowBandwidth: boolean }) {
   const isUser = message.role === "user";
 
   return (
     <div className={`flex items-end gap-2 ${isUser ? "flex-row-reverse" : ""}`}>
-      {/* Avatars are a Low-Bandwidth Mode casualty — skip them so there's
-          nothing to paint besides the text itself. */}
       {!lowBandwidth && !isUser && (
         <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
           <Bot className="h-3.5 w-3.5" />
         </span>
       )}
       <div
-        className={`max-w-[85%] whitespace-pre-wrap rounded-lg px-3 py-2 text-sm ${
+        className={`max-w-[85%] rounded-lg px-3 py-2 text-sm space-y-0.5 ${
           isUser
             ? "bg-primary text-primary-foreground"
             : message.status === "error"
@@ -237,7 +353,10 @@ function ChatBubble({ message, lowBandwidth }: { message: ChatMessage; lowBandwi
               : "bg-surface text-foreground"
         }`}
       >
-        {message.content}
+        {isUser
+          ? <span className="whitespace-pre-wrap">{message.content}</span>
+          : renderMarkdown(message.content)
+        }
         {message.status === "streaming" && !lowBandwidth && (
           <span className="ml-0.5 inline-block h-3 w-1.5 animate-pulse bg-current align-middle" />
         )}
