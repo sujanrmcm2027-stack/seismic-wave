@@ -10,6 +10,7 @@
  *   - dyfi           : Did You Feel It? intensity reports
  *   - chat_message   : Suraksha chatbot messages (anonymised)
  *   - earthquake_log : USGS events seen by users
+ *   - contact        : "Get in Touch" messages from the About page
  *
  * Each type gets its own Sheet tab so data never mixes.
  * All responses include CORS headers so the browser can call directly.
@@ -21,22 +22,18 @@ const SHEET = {
   DYFI    : "DYFIReports",
   CHAT    : "ChatMessages",
   EQ_LOG  : "EarthquakeLog",
+  CONTACT : "ContactMessages",
   COUNTS  : "PublicCounts",  // single-row summary anyone can read
 };
 
-// ── CORS headers added to every response ─────────────────────────────────────
-function cors(output) {
-  return output
-    .addHeader("Access-Control-Allow-Origin", "*")
-    .addHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-    .addHeader("Access-Control-Allow-Headers", "Content-Type");
-}
+// Inbox that receives "Get in Touch" submissions. Must be an address the
+// script's own Google account (the one this is deployed under) can send as.
+const CONTACT_NOTIFY_EMAIL = "nepaljobmatchy@gmail.com";
 
+// ── CORS headers added to every response ─────────────────────────────────────
 function jsonResponse(data) {
-  return cors(
-    ContentService.createTextOutput(JSON.stringify(data))
-      .setMimeType(ContentService.MimeType.JSON)
-  );
+  return ContentService.createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
 // ── Ensure a sheet tab exists with the right headers ─────────────────────────
@@ -72,6 +69,9 @@ function initSheets() {
   ensureSheet(ss, SHEET.EQ_LOG, [
     "EventID", "First Seen (UTC)", "Magnitude", "Place",
     "Latitude", "Longitude", "Depth (km)", "MagType", "USGS URL"
+  ]);
+  ensureSheet(ss, SHEET.CONTACT, [
+    "ID", "Timestamp (UTC)", "Timestamp (NPT)", "Name", "Email", "Subject", "Message"
   ]);
   ensureSheet(ss, SHEET.COUNTS, [
     "Last Updated", "Total Safe Reports", "Total Help Reports",
@@ -221,12 +221,44 @@ function doPost(e) {
       return jsonResponse({ ok: true, logged });
     }
 
+    if (action === "contact") {
+      const name    = String(body.name    || "").trim();
+      const email   = String(body.email   || "").trim();
+      const subject = String(body.subject || "New message from the Nepal Seismic contact form").trim();
+      const message = String(body.message || "").trim();
+
+      if (!name || !email || !message) {
+        return jsonResponse({ ok: false, error: "Missing required field(s)." });
+      }
+
+      const sheet = ss.getSheetByName(SHEET.CONTACT);
+      sheet.appendRow([
+        Utilities.getUuid(), nowUtc(), nowNpt(), name, email, subject, message,
+      ]);
+
+      try {
+        MailApp.sendEmail({
+          to: CONTACT_NOTIFY_EMAIL,
+          replyTo: email,
+          subject: "[Nepal Seismic Portal] " + subject,
+          body: "New contact form submission\n\n" +
+                "Name: " + name + "\n" +
+                "Email: " + email + "\n" +
+                "Time (NPT): " + nowNpt() + "\n\n" +
+                "Message:\n" + message,
+        });
+      } catch (mailErr) {
+        // Message is already saved to the sheet even if email delivery fails.
+        return jsonResponse({ ok: true, emailSent: false, error: String(mailErr) });
+      }
+
+      return jsonResponse({ ok: true, emailSent: true });
+    }
+
     return jsonResponse({ ok: false, error: "Unknown action: " + action });
   } catch (err) {
     return jsonResponse({ ok: false, error: String(err) });
   }
 }
 
-function doOptions() {
-  return cors(ContentService.createTextOutput(""));
-}
+

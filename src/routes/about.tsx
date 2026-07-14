@@ -18,6 +18,7 @@ import dhanRajPhoto from "@/assets/team/dhan-raj-tamang.png";
 import sujanPhoto from "@/assets/team/sujan-rayamajhi.jpeg";
 import somPhoto from "@/assets/team/som-prasad-sapkota.jpeg";
 import pramodPhoto from "@/assets/team/pramod-ghimire.jpeg";
+import { syncContactMessage } from "@/services/dataService";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -32,14 +33,6 @@ export const Route = createFileRoute("/about")({
   }),
   component: About,
 });
-
-// Web3Forms access key — create one free at https://web3forms.com using your
-// inbox (nepaljobmatchy@gmail.com). Submissions are emailed to the address tied
-// to this key. The key is meant to be used in the browser and is safe to expose.
-// Set VITE_WEB3FORMS_ACCESS_KEY in a .env file, or replace the fallback below.
-// Web3Forms access key — hardcoded so it works in any hosting environment
-// (Vite env vars only work when the app is built with the var present).
-const WEB3FORMS_ACCESS_KEY = "59e90924-abf0-45c6-b8d8-a9fecabcd1d0";
 
 const TEAM = [
   {
@@ -83,21 +76,17 @@ function About() {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.append("access_key", WEB3FORMS_ACCESS_KEY);
-    data.append("from_name", "Nepal Seismic Portal");
-    if (!data.get("subject")) {
-      data.set("subject", "New message from the Nepal Seismic contact form");
-    }
+    const subject = (data.get("subject") as string) || "New message from the Nepal Seismic contact form";
 
     setStatus("sending");
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: data,
+      const ok = await syncContactMessage({
+        name: (data.get("name") as string) || "",
+        email: (data.get("email") as string) || "",
+        subject,
+        message: (data.get("message") as string) || "",
       });
-      const json = await res.json();
-      if (json.success) {
+      if (ok) {
         setStatus("success");
         form.reset();
       } else {

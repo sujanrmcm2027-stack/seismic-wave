@@ -114,6 +114,16 @@ export async function syncChatMessage(role: "user" | "assistant", message: strin
   return post({ action: "chat", role, message: message.slice(0, 300) });
 }
 
+// ── Contact Form Message (Write) ────────────────────────────────────────
+export async function syncContactMessage(payload: {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}): Promise<boolean> {
+  return post({ action: "contact", ...payload });
+}
+
 // ── Earthquake Events Batch Upload (Write) ──────────────────────────────
 let eqSyncPending = false;
 
