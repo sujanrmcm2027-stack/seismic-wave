@@ -11,6 +11,7 @@ import { TectonicStressSandbox } from "@/components/site/TectonicStressSandbox";
 import { useLiveNepalEarthquakes, type NepalEarthquake } from "@/hooks/useLiveNepalEarthquakes";
 import { useCrisisMode } from "@/hooks/useCrisisMode";
 import { t } from "@/lib/i18n/translations";
+import { T } from "@/components/ui/T";
 import {
   Activity,
   ArrowRight,
@@ -315,15 +316,16 @@ function Home() {
                 National Earthquake Awareness Portal
               </div>
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
-                Earthquakes in Nepal:
-                <br />
-                Understanding, Preparing,
-                <br className="hidden md:block" /> and Building{" "}
-                <em className="text-destructive not-italic font-bold italic">Resilience</em>
+                <T 
+                  en={<>Earthquakes in Nepal:<br />Understanding, Preparing,<br className="hidden md:block" /> and Building <em className="text-destructive not-italic font-bold italic">Resilience</em></>}
+                  ne={<>नेपालमा भूकम्प:<br />बुझाइ, पूर्वतयारी,<br className="hidden md:block" /> र <em className="text-destructive not-italic font-bold italic">प्रतिरोध क्षमता</em> निर्माण</>}
+                />
               </h1>
               <p className="mt-6 md:mt-8 text-muted-foreground max-w-2xl text-base md:text-lg leading-relaxed">
-                Learn the science behind earthquakes, Nepal's seismic risks, historical events, and
-                life-saving preparedness measures. Knowledge is our first line of defence.
+                <T 
+                  en="Learn the science behind earthquakes, Nepal's seismic risks, historical events, and life-saving preparedness measures. Knowledge is our first line of defence."
+                  ne="भूकम्प पछाडिको विज्ञान, नेपालको भूकम्पीय जोखिम, ऐतिहासिक घटनाहरू र जीवन बचाउने पूर्वतयारीका उपायहरू बारे जान्नुहोस्। ज्ञान नै हाम्रो सुरक्षाको पहिलो आधार हो।"
+                />
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -331,7 +333,7 @@ function Home() {
                   className="group inline-flex items-center gap-2.5 px-5 py-3 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 shadow-sm"
                 >
                   <BookOpen className="w-4 h-4" />
-                  Learn About Earthquakes
+                  <T en="Learn About Earthquakes" ne="भूकम्पको बारेमा जान्नुहोस्" />
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <Link
@@ -339,14 +341,14 @@ function Home() {
                   className="inline-flex items-center gap-2.5 px-5 py-3 rounded-md bg-card border border-border text-foreground font-semibold text-sm hover:bg-surface"
                 >
                   <CheckCircle2 className="w-4 h-4" />
-                  Test Your Preparedness
+                  <T en="Test Your Preparedness" ne="आफ्नो पूर्वतयारी परीक्षण गर्नुहोस्" />
                 </Link>
                 <a
                   href="#emergency"
                   className="inline-flex items-center gap-2.5 px-5 py-3 rounded-md border border-destructive/40 text-destructive font-semibold text-sm hover:bg-destructive/10"
                 >
                   <AlertTriangle className="w-4 h-4" />
-                  Emergency Resources
+                  <T en="Emergency Resources" ne="आपतकालीन स्रोतहरू" />
                 </a>
               </div>
 
@@ -644,42 +646,41 @@ function Home() {
 
       {/* WHAT IS EARTHQUAKE */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
-        <SectionLabel number="01a" label="SCIENCE" />
-        <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4">What is an Earthquake?</h2>
+        <SectionLabel number="01a" label={<T en="SCIENCE" ne="विज्ञान" />} />
+        <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4">
+          <T en="What is an Earthquake?" ne="भूकम्प भनेको के हो?" />
+        </h2>
         <p className="text-muted-foreground max-w-3xl">
-          An earthquake is a sudden and violent shaking of the ground caused by the movement of
-          tectonic plates along fault lines deep within the Earth. When stress accumulated in the
-          crust exceeds the strength of rock, it fractures and releases enormous amounts of energy
-          in the form of seismic waves. Nepal sits at the heart of one of the most seismically
-          active zones on the planet, where the Indian Plate collides with the Eurasian Plate a
-          geological reality that has shaped the Himalayas and continues to pose a persistent and
-          serious threat to millions of lives.
+          <T 
+            en="An earthquake is a sudden and violent shaking of the ground caused by the movement of tectonic plates along fault lines deep within the Earth. When stress accumulated in the crust exceeds the strength of rock, it fractures and releases enormous amounts of energy in the form of seismic waves. Nepal sits at the heart of one of the most seismically active zones on the planet, where the Indian Plate collides with the Eurasian Plate a geological reality that has shaped the Himalayas and continues to pose a persistent and serious threat to millions of lives."
+            ne="पृथ्वीको गहिराइमा रहेका फल्ट लाइनहरूमा टेक्टोनिक प्लेटहरूको चालका कारण जमिनमा अचानक र हिंस्रक रूपमा आउने कम्पनलाई भूकम्प भनिन्छ। जब पृथ्वीको क्रस्टमा जम्मा भएको दबाब चट्टानको क्षमताभन्दा बढी हुन्छ, यो फुट्छ र भूकम्पीय तरंगको रूपमा विशाल ऊर्जा बाहिर निस्कन्छ। नेपाल पृथ्वीकै सबैभन्दा धेरै भूकम्पीय जोखिम भएको क्षेत्रको केन्द्रमा अवस्थित छ, जहाँ इन्डियन प्लेट र युरेसियन प्लेट आपसमा ठोक्किन्छन्—यही भौगर्भिक वास्तविकताले हिमालयको निर्माण गरेको छ र आज पनि लाखौं मानिसहरूको जीवनमा निरन्तर गम्भीर खतरा बनिरहेको छ।"
+          />
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
           {[
             {
               icon: Zap,
-              t: "Definition",
-              d: "Earthquakes occur when stored energy in the Earth's crust is suddenly released, usually because rocks sliding past one another along a fault line get locked by friction, build up immense stress, and finally slip. This sudden rupture generates the seismic waves that radiate outward, causing the ground shaking we experience on the surface.",
+              t: <T en="Definition" ne="परिभाषा" />,
+              d: <T en="Earthquakes occur when stored energy in the Earth's crust is suddenly released, usually because rocks sliding past one another along a fault line get locked by friction, build up immense stress, and finally slip. This sudden rupture generates the seismic waves that radiate outward, causing the ground shaking we experience on the surface." ne="भूकम्प त्यतिबेला जान्छ जब पृथ्वीको क्रस्टमा जम्मा भएको ऊर्जा अचानक बाहिर निस्कन्छ। सामान्यतया फल्ट लाइनमा चट्टानहरू सर्दा घर्षणका कारण अड्किन्छन्, अत्यधिक दबाब जम्मा हुन्छ र अन्ततः चिप्लिन्छन्। यो अचानक फुट्ने प्रक्रियाले भूकम्पीय तरंगहरू उत्पन्न गर्छ जुन चारैतिर फैलिन्छ, जसको कारण हामी सतहमा जमिन हल्लिएको महसुस गर्छौं।" />,
             },
             {
               icon: Activity,
-              t: "Seismic Waves",
-              d: "Seismic waves are powerful pulses of energy released during earthquakes. They are split into deep-traveling body waves including fast P-waves that pass through solids and liquids, and slower S-waves that are blocked by liquids and slow-moving surface waves like Love and Rayleigh waves. Because surface waves ripple directly along the Earth's crust where human structures are built, they are responsible for the vast majority of violent ground shaking and structural damage.",
+              t: <T en="Seismic Waves" ne="भूकम्पीय तरंगहरू" />,
+              d: <T en="Seismic waves are powerful pulses of energy released during earthquakes. They are split into deep-traveling body waves including fast P-waves that pass through solids and liquids, and slower S-waves that are blocked by liquids and slow-moving surface waves like Love and Rayleigh waves. Because surface waves ripple directly along the Earth's crust where human structures are built, they are responsible for the vast majority of violent ground shaking and structural damage." ne="भूकम्पको समयमा निस्कने ऊर्जाको शक्तिशाली कम्पनलाई भूकम्पीय तरंग भनिन्छ। यी छिटो कुद्ने P-तरंग र अलि ढिलो S-तरंग (बडी वेभ्स) र जमिनको सतहमा कुद्ने लभ तथा रेले तरंग (सर्फेस वेभ्स) मा विभाजित हुन्छन्। सर्फेस वेभ्स सतहमा सिधै गुड्ने हुनाले मानव निर्मित संरचनाहरूमा सबैभन्दा धेरै क्षति पुर्‍याउने प्रमुख कारण यिनै हुन्।" />,
             },
             {
               icon: Layers,
-              t: "Tectonic Plates",
-              d: "Earth's outer shell is broken into roughly fifteen major tectonic plates and dozens of minor ones, all floating on the partially molten asthenosphere beneath. These plates drift at speeds comparable to fingernail growth a few centimeters per year driven by mantle convection, slab pull, and ridge push. Most earthquakes originate at plate boundaries where plates collide, separate, or slide past each other. Nepal lies at the convergent boundary between the Indian and Eurasian plates, one of the most seismically active zones on Earth.",
+              t: <T en="Tectonic Plates" ne="टेक्टोनिक प्लेटहरू" />,
+              d: <T en="Earth's outer shell is broken into roughly fifteen major tectonic plates and dozens of minor ones, all floating on the partially molten asthenosphere beneath. These plates drift at speeds comparable to fingernail growth a few centimeters per year driven by mantle convection, slab pull, and ridge push. Most earthquakes originate at plate boundaries where plates collide, separate, or slide past each other. Nepal lies at the convergent boundary between the Indian and Eurasian plates, one of the most seismically active zones on Earth." ne="पृथ्वीको बाहिरी तह करिब १५ वटा प्रमुख र दर्जनौं साना टेक्टोनिक प्लेटहरूमा विभाजित छ। यी प्लेटहरू म्यान्टल कन्भेक्सनको कारणले नङ बढ्ने गतिमा (वर्षमा केही सेन्टिमिटर) निरन्तर सर्छन्। धेरैजसो भूकम्पहरू प्लेटका सिमानाहरूमा जान्छन् जहाँ प्लेटहरू ठोक्किने, छुट्टिने वा चिप्लिने गर्छन्। नेपाल इन्डियन र युरेसियन प्लेटहरू ठोक्किने सिमानामा अवस्थित छ, जुन संसारकै सबैभन्दा बढी भूकम्पीय जोखिम भएको क्षेत्र हो।" />,
             },
             {
               icon: TrendingUp,
-              t: "Magnitude vs Intensity",
-              d: "Magnitude is a single quantitative measurement of the energy released at the earthquake's source, calculated logarithmically using seismometer data. A one-unit increase represents roughly thirty-two times more energy release. Intensity, by contrast, is a qualitative description of the earthquake's effects at a specific location, described by the Modified Mercalli Intensity (MMI) scale from I (not felt) to XII (total destruction). Intensity decreases with distance from the epicenter and varies with local soil conditions, building quality, and depth of focus.",
+              t: <T en="Magnitude vs Intensity" ne="म्याग्निच्युड र तीव्रता" />,
+              d: <T en="Magnitude is a single quantitative measurement of the energy released at the earthquake's source, calculated logarithmically using seismometer data. A one-unit increase represents roughly thirty-two times more energy release. Intensity, by contrast, is a qualitative description of the earthquake's effects at a specific location, described by the Modified Mercalli Intensity (MMI) scale from I (not felt) to XII (total destruction). Intensity decreases with distance from the epicenter and varies with local soil conditions, building quality, and depth of focus." ne="म्याग्निच्युड भनेको भूकम्पको केन्द्रविन्दुबाट निस्कने ऊर्जाको मापन हो, जुन एउटा मात्र हुन्छ। म्याग्निच्युड १ ले बढ्दा ऊर्जा लगभग ३२ गुणाले बढी निस्कन्छ। अर्कोतर्फ, तीव्रता (Intensity) भनेको कुनै निश्चित स्थानमा भूकम्पले कस्तो असर गर्‍यो भन्ने कुराको मापन हो। यो केन्द्रविन्दुबाट जति टाढा भयो उति कम हुँदै जान्छ र त्यहाँको माटोको अवस्था तथा संरचनाको बलियोपनमा भर पर्छ।" />,
             },
-          ].map(({ icon: Icon, t, d }) => (
+          ].map(({ icon: Icon, t, d }, index) => (
             <div
-              key={t}
+              key={index}
               className="bg-surface border border-border rounded-lg p-6 hover:border-primary/40 transition"
             >
               <div className="w-10 h-10 rounded-md bg-primary/15 grid place-items-center mb-5">
@@ -738,38 +739,38 @@ function Home() {
 
       {/* WHY NEPAL */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
-        <SectionLabel number="01c" label="NEPAL'S GEOLOGY" />
+        <SectionLabel number="01c" label={<T en="NEPAL'S GEOLOGY" ne="नेपालको भौगर्भिक अवस्था" />} />
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <h2 className="font-serif text-4xl md:text-5xl font-bold mb-5">
-              Why Does Nepal Experience Frequent Earthquakes?
+              <T en="Why Does Nepal Experience Frequent Earthquakes?" ne="नेपालमा किन बारम्बार भूकम्प जान्छ?" />
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Nepal sits directly atop one of Earth's most active tectonic boundaries. The Indian
-              Plate collides with the Eurasian Plate, storing roughly 1.8 to 2.1 cm of active strain
-              per year directly along the Himalayan arc a geological force that built the Himalayas
-              and continues to drive seismic hazard.
+              <T 
+                en="Nepal sits directly atop one of Earth's most active tectonic boundaries. The Indian Plate collides with the Eurasian Plate, storing roughly 1.8 to 2.1 cm of active strain per year directly along the Himalayan arc a geological force that built the Himalayas and continues to drive seismic hazard."
+                ne="नेपाल पृथ्वीकै सबैभन्दा सक्रिय टेक्टोनिक सिमानामा अवस्थित छ। इन्डियन प्लेट युरेसियन प्लेटसँग ठोक्किँदा हिमालय क्षेत्रमा हरेक वर्ष करिब १.८ देखि २.१ सेन्टिमिटर भूकम्पीय दबाब जम्मा हुन्छ।"
+              />
             </p>
             <ul className="space-y-5">
               {[
                 [
-                  "Himalayan Tectonic Collision",
-                  "The Indian Plate, once a separate continent, began colliding with Eurasia roughly 50 million years ago and continues to push northward today. This ongoing convergence compresses and thickens the crust, uplifting the Himalayas by several millimeters each year while simultaneously storing enormous quantities of elastic strain energy deep underground. The rate of convergence among the highest of any continental collision on Earth makes the Himalayan arc one of the planet's most dangerous seismic belts.",
+                  <T en="Himalayan Tectonic Collision" ne="हिमालयन टेक्टोनिक टक्कर" />,
+                  <T en="The Indian Plate, once a separate continent, began colliding with Eurasia roughly 50 million years ago and continues to push northward today. This ongoing convergence compresses and thickens the crust, uplifting the Himalayas by several millimeters each year while simultaneously storing enormous quantities of elastic strain energy deep underground. The rate of convergence among the highest of any continental collision on Earth makes the Himalayan arc one of the planet's most dangerous seismic belts." ne="पहिले छुट्टै महादेश रहेको इन्डियन प्लेट करिब ५ करोड वर्ष अघि युरेसियासँग ठोक्किन थाल्यो र अझै उत्तरतिर धकेलिँदैछ। यसले हिमालयलाई माथि उठाउनुका साथै ठूलो मात्रामा ऊर्जा सञ्चय गरिरहेको छ। यही कारण हिमालय क्षेत्र पृथ्वीकै सबैभन्दा खतरनाक भूकम्पीय क्षेत्र हो।" />,
                 ],
                 [
-                  "Main Himalayan Thrust (MHT)",
-                  "The MHT is a gently dipping megathrust fault that separates the Indian Plate beneath from the overriding Himalayan wedge above. Historical earthquakes in 1255, 1934, and 2015 all ruptured sections of this fault. Paleoseismic studies suggest that segments in western and eastern Nepal that have not broken in centuries may now hold enough accumulated strain to produce magnitude 8 or greater events, potentially affecting millions.",
+                  <T en="Main Himalayan Thrust (MHT)" ne="मेन हिमालयन थ्रस्ट (MHT)" />,
+                  <T en="The MHT is a gently dipping megathrust fault that separates the Indian Plate beneath from the overriding Himalayan wedge above. Historical earthquakes in 1255, 1934, and 2015 all ruptured sections of this fault. Paleoseismic studies suggest that segments in western and eastern Nepal that have not broken in centuries may now hold enough accumulated strain to produce magnitude 8 or greater events, potentially affecting millions." ne="MHT एउटा ठूलो फल्ट लाइन हो जसले इन्डियन प्लेट र हिमालयन वेजलाई छुट्याउँछ। १२५५, १९३४ र २०१५ का ठूला भूकम्पहरू यही फल्टमा गएका थिए। शताब्दीयौंदेखि नफुटेका पश्चिम र पूर्वी नेपालका खण्डहरूमा म्याग्निच्युड ८ वा सोभन्दा ठूलो भूकम्प ल्याउन सक्ने ऊर्जा जम्मा भएको अनुमान छ।" />,
                 ],
                 [
-                  "Active Fault Systems",
-                  "Beyond the MHT, Nepal is crisscrossed by major fault systems including the Main Central Thrust, Main Boundary Thrust, and the surface-breaking Himalayan Frontal Thrust. Each of these structures has generated large earthquakes in the geological past and remains capable of producing magnitude 7 or greater events. Additionally, numerous unmapped minor faults and blind thrusts beneath the Kathmandu Valley add layers of complexity to hazard assessment.",
+                  <T en="Active Fault Systems" ne="सक्रिय फल्ट प्रणालीहरू" />,
+                  <T en="Beyond the MHT, Nepal is crisscrossed by major fault systems including the Main Central Thrust, Main Boundary Thrust, and the surface-breaking Himalayan Frontal Thrust. Each of these structures has generated large earthquakes in the geological past and remains capable of producing magnitude 7 or greater events. Additionally, numerous unmapped minor faults and blind thrusts beneath the Kathmandu Valley add layers of complexity to hazard assessment." ne="MHT बाहेक, नेपालमा मेन सेन्ट्रल थ्रस्ट, मेन बाउन्ड्री थ्रस्ट र हिमालयन फ्रन्टल थ्रस्ट जस्ता प्रमुख फल्ट प्रणालीहरू छन्। यी प्रत्येकले विगतमा ठूला भूकम्पहरू ल्याएका छन् र अझै पनि म्याग्निच्युड ७ वा सोभन्दा ठूला भूकम्प ल्याउन सक्छन्।" />,
                 ],
                 [
-                  "Geological Vulnerability",
-                  "The Kathmandu Valley sits atop hundreds of meters of soft lake sediments and unconsolidated gravel deposited by ancient rivers and landslides. These soft deposits dramatically amplify seismic waves through a phenomenon called site amplification, causing stronger shaking than would occur on solid bedrock. During the 2015 Gorkha earthquake, this amplification contributed to severe damage in the valley even though the epicenter was 80 kilometers away.",
+                  <T en="Geological Vulnerability" ne="भौगर्भिक संवेदनशीलता" />,
+                  <T en="The Kathmandu Valley sits atop hundreds of meters of soft lake sediments and unconsolidated gravel deposited by ancient rivers and landslides. These soft deposits dramatically amplify seismic waves through a phenomenon called site amplification, causing stronger shaking than would occur on solid bedrock. During the 2015 Gorkha earthquake, this amplification contributed to severe damage in the valley even though the epicenter was 80 kilometers away." ne="काठमाडौं उपत्यका सयौं मिटर गहिरो तालको माटो र कमलो बालुवामाथि अवस्थित छ। यस्तो कमलो माटोले भूकम्पीय तरंगहरूलाई झन् शक्तिशाली बनाउँछ (साइट एम्प्लिफिकेसन), जसले कडा चट्टानमा भन्दा धेरै कम्पन गराउँछ। २०१५ को भूकम्पमा केन्द्रविन्दु ८० किमि टाढा हुँदा पनि उपत्यकामा धेरै क्षति हुनुको मुख्य कारण यही थियो।" />,
                 ],
-              ].map(([t, d]) => (
-                <li key={t} className="flex gap-3">
+              ].map(([t, d], i) => (
+                <li key={i} className="flex gap-3">
                   <ChevronRight className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                   <div>
                     <div className="font-semibold text-foreground">{t}</div>
@@ -788,20 +789,20 @@ function Home() {
                 loading="lazy"
               />
               <div className="absolute top-4 left-4 font-mono text-[10px] tracking-widest text-foreground/60">
-                HIMALAYAN RANGE
+                <T en="HIMALAYAN RANGE" ne="हिमालयन क्षेत्र" />
               </div>
             </div>
             <div className="font-mono text-xs tracking-widest text-muted-foreground mb-4">
-              TECTONIC SETTING
+              <T en="TECTONIC SETTING" ne="टेक्टोनिक सेटिङ" />
             </div>
             <div className="grid grid-cols-3 gap-3">
               {[
-                ["~2.0 cm/yr", "Localized Shortening Rate"],
-                ["~15 km", "MHT Depth (Kathmandu)"],
-                ["Very High", "Seismic Hazard Zone"],
-              ].map(([v, l]) => (
+                [<T en="~2.0 cm/yr" ne="~२.० सेमी/वर्ष" />, <T en="Localized Shortening Rate" ne="स्थानीय खुम्चिने दर" />],
+                [<T en="~15 km" ne="~१५ किमी" />, <T en="MHT Depth (Kathmandu)" ne="MHT को गहिराइ (काठमाडौं)" />],
+                [<T en="Very High" ne="अत्यन्त उच्च" />, <T en="Seismic Hazard Zone" ne="भूकम्पीय जोखिम क्षेत्र" />],
+              ].map(([v, l], i) => (
                 <div
-                  key={l}
+                  key={i}
                   className="bg-surface-2 border border-border rounded-md p-3 text-center"
                 >
                   <div className="font-mono text-primary text-sm font-bold">{v}</div>
@@ -1047,6 +1048,7 @@ function Home() {
             * Real-time tracking active. Data is synchronized directly with the USGS global seismic
             network and local monitoring stations.
           </p>
+
         </div>
       </section>
 

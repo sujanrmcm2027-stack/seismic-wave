@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Mukta:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -35,9 +36,9 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --font-serif: "Libre Baskerville", Georgia, serif;
-  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-serif: "Libre Baskerville", "Mukta", Georgia, serif;
+  --font-sans: "IBM Plex Sans", "Mukta", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Mukta", ui-monospace, monospace;
 }
 
 :root {

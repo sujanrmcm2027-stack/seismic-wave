@@ -1,4 +1,5 @@
-export function SectionLabel({ number, label }: { number: string; label: string }) {
+import React from "react";
+export function SectionLabel({ number, label }: { number: string; label: React.ReactNode }) {
   return (
     <div className="flex items-center gap-4 mb-4">
       <span className="font-mono text-primary text-sm">{number}.</span>
