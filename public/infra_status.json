@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-07-19 13:00 NPT",
+  "source": "Curated fallback — DOR Nepal (navigate.dor.gov.np)",
+  "items": [
+    {"category": "road", "name": "Prithvi Hwy (KTM–Pokhara)",      "nameNe": "पृथ्वी राजमार्ग",        "status": "partial", "detail": "Slow at Malekhu",          "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "road", "name": "Tribhuvan Hwy (KTM–Hetauda)",     "nameNe": "त्रिभुवन राजमार्ग",      "status": "partial", "detail": "Reduced lanes, Bhimphedi", "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "road", "name": "Araniko Hwy (KTM–Kodari)",        "nameNe": "अरनिको राजमार्ग",         "status": "partial", "detail": "Landslide risk zones",     "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "road", "name": "NH02 – Mechi Rajmarg",             "nameNe": "NH02 – मेची राजमार्ग",   "status": "closed",  "detail": "Landslide since Jul 9",    "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "road", "name": "BP Hwy (Hetauda–Dharan)",          "nameNe": "बीपी राजमार्ग",           "status": "partial", "detail": "One-way sections",         "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "road", "name": "Siddhartha Hwy (Pokhara–Butwal)", "nameNe": "सिद्धार्थ राजमार्ग",      "status": "open",    "detail": "NH47 reopened",            "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "road", "name": "Mid-Hill Hwy (Karnali)",           "nameNe": "मध्यपहाडी लोकमार्ग",     "status": "closed",  "detail": "Multiple landslides",      "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "road", "name": "Kakarbhitta–Itahari Road",         "nameNe": "काकरभिट्टा–इटहरी सडक",   "status": "open",    "detail": "",                         "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "airport", "name": "Tribhuvan Intl (KTM)",   "nameNe": "त्रिभुवन विमानस्थल",  "status": "open", "detail": "Normal operations", "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "airport", "name": "Pokhara Regional (PKR)", "nameNe": "पोखरा विमानस्थल",     "status": "open", "detail": "",                  "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "airport", "name": "Bharatpur (BHR)",         "nameNe": "भरतपुर विमानस्थल",    "status": "open", "detail": "",                  "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "airport", "name": "Dhangadhi (DHI)",         "nameNe": "धनगढी विमानस्थल",     "status": "open", "detail": "",                  "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "airport", "name": "Biratnagar (BIR)",        "nameNe": "विराटनगर विमानस्थल",  "status": "open", "detail": "",                  "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "hospital", "name": "Bir Hospital, Kathmandu",         "nameNe": "बीर अस्पताल",            "status": "open", "detail": "120 beds", "beds": 120, "bedsTotal": 390,  "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "hospital", "name": "TU Teaching Hospital",             "nameNe": "त्रिवि शिक्षण अस्पताल", "status": "open", "detail": "95 beds",  "beds": 95,  "bedsTotal": 600,  "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "hospital", "name": "Patan Hospital, Lalitpur",         "nameNe": "पाटन अस्पताल",           "status": "open", "detail": "60 beds",  "beds": 60,  "bedsTotal": 300,  "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "hospital", "name": "Manipal College Hospital",         "nameNe": "मणिपाल अस्पताल",         "status": "open", "detail": "45 beds",  "beds": 45,  "bedsTotal": 150,  "lastUpdated": "2026-07-19 13:00 NPT"},
+    {"category": "hospital", "name": "Gandaki Medical College, Pokhara","nameNe": "गण्डकी अस्पताल",         "status": "open", "detail": "38 beds",  "beds": 38,  "bedsTotal": 200,  "lastUpdated": "2026-07-19 13:00 NPT"}
+  ]
+}

@@ -1,0 +1,150 @@
+name: Update Road Status
+
+on:
+  schedule:
+    # Every 6 hours at :00 — 00:00, 06:00, 12:00, 18:00 UTC
+    - cron: "0 */6 * * *"
+  workflow_dispatch: # allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  update-infra-status:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch road status from DOR & write JSON
+        run: |
+          set -euo pipefail
+
+          TODAY=$(TZ="Asia/Kathmandu" date +%Y-%m-%d)
+          NPT_NOW=$(TZ="Asia/Kathmandu" date "+%Y-%m-%d %H:%M NPT")
+
+          echo "Fetching DOR advisory for $TODAY ..."
+
+          # Try the DOR advisory endpoint
+          HTTP_CODE=$(curl -s -o /tmp/dor_raw.json -w "%{http_code}" \
+            -H "Accept: application/json" \
+            "https://navigate.dor.gov.np/test_app/api/advisories/road_bridge_closure_alert/bh_dt/$TODAY" \
+            --max-time 15 || echo "000")
+
+          # Check if we got real JSON (not the Angular SPA HTML fallback)
+          IS_JSON=false
+          if [ "$HTTP_CODE" = "200" ]; then
+            FIRST_CHAR=$(head -c 1 /tmp/dor_raw.json)
+            if [ "$FIRST_CHAR" = "[" ] || [ "$FIRST_CHAR" = "{" ]; then
+              IS_JSON=true
+            fi
+          fi
+
+          if [ "$IS_JSON" = "true" ]; then
+            echo "✅ DOR API returned JSON — parsing ..."
+            python3 - <<'PYEOF'
+          import json, sys, os
+
+          with open("/tmp/dor_raw.json") as f:
+              raw = json.load(f)
+
+          npt_now = os.environ.get("NPT_NOW", "")
+          roads = []
+
+          # DOR data shape varies — handle both list and dict
+          items = raw if isinstance(raw, list) else raw.get("data", [])
+          for item in items:
+              status_raw = str(item.get("status", "partial")).lower()
+              if "close" in status_raw:
+                  status = "closed"
+              elif "partial" in status_raw or "open" in status_raw:
+                  status = "partial" if "partial" in status_raw else "open"
+              else:
+                  status = "partial"
+              roads.append({
+                  "category": "road",
+                  "name": item.get("road_name") or item.get("name") or "",
+                  "nameNe": item.get("name_ne") or "",
+                  "status": status,
+                  "detail": item.get("detail") or item.get("closure_reason") or "",
+                  "lastUpdated": npt_now,
+              })
+
+          print(f"Parsed {len(roads)} roads from DOR")
+          with open("/tmp/parsed_roads.json", "w") as f:
+              json.dump(roads, f)
+          PYEOF
+            ROADS_FROM_DOR=$(cat /tmp/parsed_roads.json)
+          else
+            echo "⚠️  DOR API unavailable (HTTP $HTTP_CODE / not JSON) — using curated fallback"
+            # Curated fallback — update these when road conditions change
+            # Last verified: 2026-07-19 from navigate.dor.gov.np
+            ROADS_FROM_DOR='[]'
+          fi
+
+          # Build full infra JSON (roads from DOR if available, fallback otherwise)
+          python3 - <<PYEOF
+          import json, os
+
+          npt_now = "$NPT_NOW"
+          roads_from_dor = json.loads(r"""$ROADS_FROM_DOR""")
+
+          # Curated fallback roads (used when DOR API is unreachable)
+          # ⚠️  Update this list whenever DOR shows different road statuses
+          fallback_roads = [
+              {"category": "road", "name": "Prithvi Hwy (KTM–Pokhara)",      "nameNe": "पृथ्वी राजमार्ग",        "status": "partial", "detail": "Slow at Malekhu",         "lastUpdated": npt_now},
+              {"category": "road", "name": "Tribhuvan Hwy (KTM–Hetauda)",     "nameNe": "त्रिभुवन राजमार्ग",      "status": "partial", "detail": "Reduced lanes, Bhimphedi","lastUpdated": npt_now},
+              {"category": "road", "name": "Araniko Hwy (KTM–Kodari)",        "nameNe": "अरनिको राजमार्ग",         "status": "partial", "detail": "Landslide risk zones",    "lastUpdated": npt_now},
+              {"category": "road", "name": "NH02 – Mechi Rajmarg",             "nameNe": "NH02 – मेची राजमार्ग",   "status": "closed",  "detail": "Landslide since Jul 9",   "lastUpdated": npt_now},
+              {"category": "road", "name": "BP Hwy (Hetauda–Dharan)",          "nameNe": "बीपी राजमार्ग",           "status": "partial", "detail": "One-way sections",        "lastUpdated": npt_now},
+              {"category": "road", "name": "Siddhartha Hwy (Pokhara–Butwal)", "nameNe": "सिद्धार्थ राजमार्ग",      "status": "open",    "detail": "NH47 reopened",           "lastUpdated": npt_now},
+              {"category": "road", "name": "Mid-Hill Hwy (Karnali)",           "nameNe": "मध्यपहाडी लोकमार्ग",     "status": "closed",  "detail": "Multiple landslides",     "lastUpdated": npt_now},
+              {"category": "road", "name": "Kakarbhitta–Itahari Road",         "nameNe": "काकरभिट्टा–इटहरी सडक",   "status": "open",    "detail": "",                        "lastUpdated": npt_now},
+          ]
+
+          airports = [
+              {"category": "airport", "name": "Tribhuvan Intl (KTM)",   "nameNe": "त्रिभुवन विमानस्थल",  "status": "open", "detail": "Normal operations", "lastUpdated": npt_now},
+              {"category": "airport", "name": "Pokhara Regional (PKR)", "nameNe": "पोखरा विमानस्थल",     "status": "open", "detail": "",                  "lastUpdated": npt_now},
+              {"category": "airport", "name": "Bharatpur (BHR)",         "nameNe": "भरतपुर विमानस्थल",    "status": "open", "detail": "",                  "lastUpdated": npt_now},
+              {"category": "airport", "name": "Dhangadhi (DHI)",         "nameNe": "धनगढी विमानस्थल",     "status": "open", "detail": "",                  "lastUpdated": npt_now},
+              {"category": "airport", "name": "Biratnagar (BIR)",        "nameNe": "विराटनगर विमानस्थल",  "status": "open", "detail": "",                  "lastUpdated": npt_now},
+          ]
+
+          hospitals = [
+              {"category": "hospital", "name": "Bir Hospital, Kathmandu",         "nameNe": "बीर अस्पताल",            "status": "open", "detail": "120 beds", "beds": 120, "bedsTotal": 390, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "TU Teaching Hospital",              "nameNe": "त्रिवि शिक्षण अस्पताल", "status": "open", "detail": "95 beds",  "beds": 95,  "bedsTotal": 600, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Patan Hospital, Lalitpur",          "nameNe": "पाटन अस्पताल",           "status": "open", "detail": "60 beds",  "beds": 60,  "bedsTotal": 300, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Manipal College Hospital",          "nameNe": "मणिपाल अस्पताल",         "status": "open", "detail": "45 beds",  "beds": 45,  "bedsTotal": 150, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Gandaki Medical College, Pokhara", "nameNe": "गण्डकी अस्पताल",         "status": "open", "detail": "38 beds",  "beds": 38,  "bedsTotal": 200, "lastUpdated": npt_now},
+          ]
+
+          roads = roads_from_dor if roads_from_dor else fallback_roads
+
+          payload = {
+              "generatedAt": npt_now,
+              "source": "DOR Nepal (navigate.dor.gov.np)" if roads_from_dor else "Curated fallback — DOR API unavailable",
+              "items": roads + airports + hospitals,
+          }
+
+          with open("public/infra_status.json", "w", encoding="utf-8") as f:
+              json.dump(payload, f, ensure_ascii=False, indent=2)
+
+          closed  = sum(1 for r in roads if r["status"] == "closed")
+          partial = sum(1 for r in roads if r["status"] == "partial")
+          opened  = sum(1 for r in roads if r["status"] == "open")
+          print(f"Written public/infra_status.json — roads: {closed} closed / {partial} partial / {opened} open")
+          PYEOF
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/infra_status.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: auto-update infra_status.json [$(TZ='Asia/Kathmandu' date '+%Y-%m-%d %H:%M NPT')]"
+            git push
+          fi

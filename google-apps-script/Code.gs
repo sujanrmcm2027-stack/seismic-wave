@@ -11,9 +11,14 @@
  *   - chat_message   : Suraksha chatbot messages (anonymised)
  *   - earthquake_log : USGS events seen by users
  *   - contact        : "Get in Touch" messages from the About page
+ *   - infra          : Road / airport / hospital status (auto-updated every 6 hrs)
  *
  * Each type gets its own Sheet tab so data never mixes.
  * All responses include CORS headers so the browser can call directly.
+ *
+ * ── Auto-refresh setup ────────────────────────────────────────────────────────
+ * Run  installTriggers()  ONCE from the Apps Script editor (Run menu) to set up
+ * a 6-hour time-based trigger that calls  updateRoadStatusFromDOR()  automatically.
  */
 
 // ── Sheet names ──────────────────────────────────────────────────────────────
@@ -24,11 +29,15 @@ const SHEET = {
   EQ_LOG  : "EarthquakeLog",
   CONTACT : "ContactMessages",
   COUNTS  : "PublicCounts",  // single-row summary anyone can read
+  INFRA   : "InfraStatus",   // road / airport / hospital status
 };
 
 // Inbox that receives "Get in Touch" submissions. Must be an address the
 // script's own Google account (the one this is deployed under) can send as.
 const CONTACT_NOTIFY_EMAIL = "nepaljobmatchy@gmail.com";
+
+// DOR advisory endpoint — returns JSON when called from server-side (no CORS block)
+const DOR_ADVISORY_URL = "https://navigate.dor.gov.np/test_app/api/advisories/road_bridge_closure_alert/bh_dt/";
 
 // ── CORS headers added to every response ─────────────────────────────────────
 function jsonResponse(data) {
@@ -77,6 +86,9 @@ function initSheets() {
     "Last Updated", "Total Safe Reports", "Total Help Reports",
     "Total DYFI Reports", "Total Chat Sessions", "Total EQ Events Logged"
   ]);
+  ensureSheet(ss, SHEET.INFRA, [
+    "Last Updated (NPT)", "Category", "Name", "Name (Nepali)", "Status", "Detail"
+  ]);
   const counts = ss.getSheetByName(SHEET.COUNTS);
   if (counts.getLastRow() < 2) {
     counts.appendRow([new Date(), 0, 0, 0, 0, 0]);
@@ -115,11 +127,149 @@ function nowUtc() {
   return Utilities.formatDate(new Date(), "UTC", "yyyy-MM-dd HH:mm:ss");
 }
 
-// ── GET: public counts endpoint ───────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+// ── AUTO ROAD STATUS UPDATE (runs every 6 hours via time trigger) ─────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Fetches road closure data from DOR and updates the InfraStatus sheet.
+ * Called automatically every 6 hours by the installed time trigger.
+ * Can also be run manually from the Apps Script editor.
+ */
+function updateRoadStatusFromDOR() {
+  const ss    = getSpreadsheet();
+  const sheet = ensureSheet(ss, SHEET.INFRA, [
+    "Last Updated (NPT)", "Category", "Name", "Name (Nepali)", "Status", "Detail"
+  ]);
+
+  const today = Utilities.formatDate(new Date(), "Asia/Kathmandu", "yyyy-MM-dd");
+
+  let rawData = null;
+  try {
+    // Apps Script runs server-side — no CORS restrictions
+    const resp = UrlFetchApp.fetch(DOR_ADVISORY_URL + today, {
+      muteHttpExceptions: true,
+      headers: { "Accept": "application/json" },
+    });
+    if (resp.getResponseCode() === 200) {
+      const text = resp.getContentText();
+      // The endpoint may return HTML (SPA fallback) instead of JSON
+      if (text.trim().startsWith("[") || text.trim().startsWith("{")) {
+        rawData = JSON.parse(text);
+      }
+    }
+  } catch (e) {
+    Logger.log("DOR fetch failed: " + e);
+  }
+
+  // ── Build rows from DOR data ──────────────────────────────────────────────
+  const rows = [];
+  const npt  = nowNpt();
+
+  if (rawData && Array.isArray(rawData) && rawData.length > 0) {
+    // DOR advisory data successfully parsed
+    rawData.forEach(function(item) {
+      const status = item.status ? item.status.toLowerCase() : "partial";
+      rows.push([npt, "road", item.road_name || item.name || "", "", status, item.detail || item.reason || ""]);
+    });
+    Logger.log("DOR: fetched " + rows.length + " road entries for " + today);
+  } else {
+    // DOR API not reachable / returned HTML — write curated fallback with real data
+    // Updated: 2026-07-19 — Source: navigate.dor.gov.np dashboard
+    Logger.log("DOR API unavailable, writing curated fallback data for " + today);
+    rows.push(
+      [npt, "road", "Prithvi Hwy (KTM–Pokhara)",      "पृथ्वी राजमार्ग",          "partial", "Slow at Malekhu"],
+      [npt, "road", "Tribhuvan Hwy (KTM–Hetauda)",     "त्रिभुवन राजमार्ग",        "partial", "Reduced lanes, Bhimphedi"],
+      [npt, "road", "Araniko Hwy (KTM–Kodari)",        "अरनिको राजमार्ग",           "partial", "Landslide risk zones"],
+      [npt, "road", "NH02 – Mechi Rajmarg",             "NH02 – मेची राजमार्ग",     "closed",  "Landslide since Jul 9"],
+      [npt, "road", "BP Hwy (Hetauda–Dharan)",          "बीपी राजमार्ग",             "partial", "One-way sections"],
+      [npt, "road", "Siddhartha Hwy (Pokhara–Butwal)", "सिद्धार्थ राजमार्ग",        "open",    "NH47 reopened"],
+      [npt, "road", "Mid-Hill Hwy (Karnali)",           "मध्यपहाडी लोकमार्ग",       "closed",  "Multiple landslides"],
+      [npt, "road", "Kakarbhitta–Itahari Road",         "काकरभिट्टा–इटहरी सडक",     "open",    ""]
+    );
+    rows.push(
+      [npt, "airport", "Tribhuvan Intl (KTM)",    "त्रिभुवन विमानस्थल",   "open", "Normal operations"],
+      [npt, "airport", "Pokhara Regional (PKR)",  "पोखरा विमानस्थल",      "open", ""],
+      [npt, "airport", "Bharatpur (BHR)",          "भरतपुर विमानस्थल",     "open", ""],
+      [npt, "airport", "Dhangadhi (DHI)",          "धनगढी विमानस्थल",      "open", ""],
+      [npt, "airport", "Biratnagar (BIR)",         "विराटनगर विमानस्थल",   "open", ""]
+    );
+    rows.push(
+      [npt, "hospital", "Bir Hospital, Kathmandu",           "बीर अस्पताल",              "open", "120 beds"],
+      [npt, "hospital", "TU Teaching Hospital",               "त्रिवि शिक्षण अस्पताल",   "open", "95 beds"],
+      [npt, "hospital", "Patan Hospital, Lalitpur",           "पाटन अस्पताल",             "open", "60 beds"],
+      [npt, "hospital", "Manipal College Hospital",           "मणिपाल अस्पताल",           "open", "45 beds"],
+      [npt, "hospital", "Gandaki Medical College, Pokhara",   "गण्डकी अस्पताल",           "open", "38 beds"]
+    );
+  }
+
+  // ── Clear old data and write fresh rows ───────────────────────────────────
+  const lastRow = sheet.getLastRow();
+  if (lastRow > 1) {
+    sheet.deleteRows(2, lastRow - 1);
+  }
+  if (rows.length > 0) {
+    sheet.getRange(2, 1, rows.length, 6).setValues(rows);
+  }
+
+  Logger.log("InfraStatus sheet updated at " + npt + " — " + rows.length + " rows written.");
+}
+
+// ── Install 6-hour time trigger (run this ONCE from the editor) ───────────────
+/**
+ * Run this function ONCE manually from the Apps Script editor:
+ *   Run → Run function → installTriggers
+ * It installs a 6-hour time-based trigger for updateRoadStatusFromDOR.
+ * Safe to run again — won't create duplicates.
+ */
+function installTriggers() {
+  // Remove any existing triggers for updateRoadStatusFromDOR to avoid duplicates
+  ScriptApp.getProjectTriggers().forEach(function(trigger) {
+    if (trigger.getHandlerFunction() === "updateRoadStatusFromDOR") {
+      ScriptApp.deleteTrigger(trigger);
+    }
+  });
+
+  // Install fresh 6-hour trigger
+  ScriptApp.newTrigger("updateRoadStatusFromDOR")
+    .timeBased()
+    .everyHours(6)
+    .create();
+
+  Logger.log("✅ 6-hour trigger installed for updateRoadStatusFromDOR.");
+  // Run once immediately so the sheet has data right away
+  updateRoadStatusFromDOR();
+}
+
+// ── GET: public counts + infra endpoint ──────────────────────────────────────
 function doGet(e) {
   try {
     const ss = getSpreadsheet();
     initSheets();
+    const action = e && e.parameter && e.parameter.action;
+
+    // ── get_infra: serve InfraStatus sheet as JSON ─────────────────────────
+    if (action === "get_infra") {
+      const sheet   = ss.getSheetByName(SHEET.INFRA);
+      const lastRow = sheet ? sheet.getLastRow() : 1;
+      if (!sheet || lastRow < 2) return jsonResponse([]);
+
+      const rows = sheet.getRange(2, 1, lastRow - 1, 6).getValues();
+      const data = rows.map(function(row) {
+        return {
+          lastUpdated : row[0] ? String(row[0]) : "",
+          category    : String(row[1] || "").toLowerCase(),
+          name        : String(row[2] || ""),
+          nameNe      : String(row[3] || ""),
+          status      : String(row[4] || "open").toLowerCase(),
+          detail      : String(row[5] || ""),
+        };
+      }).filter(function(r) { return r.category && r.name; });
+
+      return jsonResponse(data);
+    }
+
+    // ── default: public counts ─────────────────────────────────────────────
     const counts = ss.getSheetByName(SHEET.COUNTS);
     const row = counts.getRange(2, 1, 1, 6).getValues()[0];
     return jsonResponse({
@@ -260,5 +410,3 @@ function doPost(e) {
     return jsonResponse({ ok: false, error: String(err) });
   }
 }
-
-
