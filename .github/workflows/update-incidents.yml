@@ -1,0 +1,149 @@
+name: Update Live Incidents
+
+on:
+  schedule:
+    # Run every 30 minutes
+    - cron: "*/30 * * * *"
+  workflow_dispatch: # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-incidents:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: pip install requests feedparser
+
+      - name: Fetch Incidents and Update JSON
+        run: |
+          python3 - <<'PYEOF'
+          import requests
+          import feedparser
+          import json
+          import os
+          import uuid
+          from datetime import datetime, timezone
+          import urllib.parse
+          import random
+          
+          def generate_id():
+              return f"live-{uuid.uuid4().hex[:8]}"
+
+          def fetch_bipad():
+              incidents = []
+              try:
+                  url = "https://bipadportal.gov.np/api/v1/incident/?limit=50"
+                  headers = {"User-Agent": "Mozilla/5.0"}
+                  response = requests.get(url, headers=headers, timeout=10)
+                  if response.status_code == 200:
+                      data = response.json().get('results', [])
+                      for item in data:
+                          # Filter for earthquake or structural related hazards if possible
+                          hazard_name = item.get('hazard', {}).get('title', '').lower()
+                          title = item.get('title', '')
+                          desc = item.get('description', '') or ''
+                          
+                          if 'earthquake' in hazard_name or 'landslide' in hazard_name or 'fire' in hazard_name or 'structural' in hazard_name:
+                              # Map to our DamageIncident schema
+                              point = item.get('point', {})
+                              coords = point.get('coordinates', [0, 0]) if point else [0, 0]
+                              
+                              if len(coords) == 2 and coords[0] != 0:
+                                  lng, lat = coords[0], coords[1]
+                                  
+                                  category = "Landslide"
+                                  if 'fire' in hazard_name:
+                                      category = "Structural Failure"
+                                  elif 'earthquake' in hazard_name:
+                                      category = "Structural Failure"
+                                  
+                                  incidents.append({
+                                      "id": generate_id(),
+                                      "district": item.get('district', {}).get('title', 'Unknown') if item.get('district') else 'Unknown',
+                                      "place": item.get('municipality', {}).get('title', 'Nepal') if item.get('municipality') else 'Nepal',
+                                      "lat": lat,
+                                      "lng": lng,
+                                      "phase": "Aftermath",
+                                      "category": category,
+                                      "verification": "official",
+                                      "source": "BIPAD Portal",
+                                      "headline": title[:100],
+                                      "detail": desc[:200] if desc else title,
+                                      "time": item.get('incident_on', datetime.now(timezone.utc).isoformat())
+                                  })
+              except Exception as e:
+                  print(f"BIPAD Error: {e}")
+              return incidents
+
+          def fetch_news():
+              incidents = []
+              try:
+                  query = urllib.parse.quote("earthquake nepal OR landslide nepal")
+                  url = f"https://news.google.com/rss/search?q={query}&hl=en-US&gl=US&ceid=US:en"
+                  feed = feedparser.parse(url)
+                  
+                  for entry in feed.entries[:10]: # Top 10 news
+                      title = entry.title
+                      source = entry.source.title if hasattr(entry, 'source') else "News Portal"
+                      
+                      # Approximate location in Nepal (since news doesn't give coords, we jitter around KTM center)
+                      lat = 27.7 + (random.random() - 0.5) * 2
+                      lng = 85.3 + (random.random() - 0.5) * 2
+                      
+                      incidents.append({
+                          "id": generate_id(),
+                          "district": "Multiple",
+                          "place": "Reported area",
+                          "lat": lat,
+                          "lng": lng,
+                          "phase": "Aftermath",
+                          "category": "Structural Failure" if 'earthquake' in title.lower() else "Landslide",
+                          "verification": "media",
+                          "source": source,
+                          "headline": title[:100],
+                          "detail": getattr(entry, 'summary', title)[:200],
+                          "time": datetime.now(timezone.utc).isoformat()
+                      })
+              except Exception as e:
+                  print(f"News Error: {e}")
+              return incidents
+
+          if __name__ == "__main__":
+              bipad_incidents = fetch_bipad()
+              news_incidents = fetch_news()
+              
+              all_incidents = bipad_incidents + news_incidents
+              all_incidents.sort(key=lambda x: x['time'], reverse=True)
+              
+              output_path = "public/live_incidents.json"
+              print(f"Found {len(bipad_incidents)} BIPAD incidents and {len(news_incidents)} news incidents.")
+              
+              with open(output_path, "w", encoding="utf-8") as f:
+                  json.dump(all_incidents, f, ensure_ascii=False, indent=2)
+              
+              print(f"Written to {output_path}")
+          PYEOF
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/live_incidents.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: auto-update live_incidents.json [$(TZ='Asia/Kathmandu' date '+%Y-%m-%d %H:%M NPT')]"
+            git push
+          fi

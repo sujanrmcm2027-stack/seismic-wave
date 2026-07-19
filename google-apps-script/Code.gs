@@ -178,28 +178,50 @@ function updateRoadStatusFromDOR() {
     // Updated: 2026-07-19 — Source: navigate.dor.gov.np dashboard
     Logger.log("DOR API unavailable, writing curated fallback data for " + today);
     rows.push(
-      [npt, "road", "Prithvi Hwy (KTM–Pokhara)",      "पृथ्वी राजमार्ग",          "partial", "Slow at Malekhu"],
-      [npt, "road", "Tribhuvan Hwy (KTM–Hetauda)",     "त्रिभुवन राजमार्ग",        "partial", "Reduced lanes, Bhimphedi"],
-      [npt, "road", "Araniko Hwy (KTM–Kodari)",        "अरनिको राजमार्ग",           "partial", "Landslide risk zones"],
-      [npt, "road", "NH02 – Mechi Rajmarg",             "NH02 – मेची राजमार्ग",     "closed",  "Landslide since Jul 9"],
-      [npt, "road", "BP Hwy (Hetauda–Dharan)",          "बीपी राजमार्ग",             "partial", "One-way sections"],
-      [npt, "road", "Siddhartha Hwy (Pokhara–Butwal)", "सिद्धार्थ राजमार्ग",        "open",    "NH47 reopened"],
-      [npt, "road", "Mid-Hill Hwy (Karnali)",           "मध्यपहाडी लोकमार्ग",       "closed",  "Multiple landslides"],
-      [npt, "road", "Kakarbhitta–Itahari Road",         "काकरभिट्टा–इटहरी सडक",     "open",    ""]
+      [npt, "road", "NH01 – Mahendra Rajmarg",          "महेन्द्र राजमार्ग",          "open", ""],
+      [npt, "road", "NH02 – Mechi Rajmarg",             "मेची राजमार्ग",              "open", ""],
+      [npt, "road", "NH03 – Puspalal Hwy (Mid-Hill)",   "पुष्पलाल राजमार्ग",         "open", ""],
+      [npt, "road", "NH04 – Birtamod-Chandragadhi",     "विर्तामोड–चन्द्रगढी",        "open", ""],
+      [npt, "road", "NH05 – Postal Hwy",                "हुलाकी राजमार्ग",           "open", ""],
+      [npt, "road", "NH06 – Koshi Rajmarg",             "कोशी राजमार्ग",             "open", ""],
+      [npt, "road", "NH08 – Sagarmatha Rajmarg",        "सगरमाथा राजमार्ग",          "open", ""],
+      [npt, "road", "NH09 – Madan Bhandari Hwy",        "मदन भण्डारी राजमार्ग",      "open", ""],
+      [npt, "road", "NH10 – Siddhartha Hwy",            "सिद्धार्थ राजमार्ग",         "open", ""],
+      [npt, "road", "NH11 – Rapti Rajmarg",             "राप्ती राजमार्ग",           "open", ""],
+      [npt, "road", "NH12 – Ratna Rajmarg",             "रत्न राजमार्ग",             "open", ""],
+      [npt, "road", "NH13 – Karnali Rajmarg",           "कर्णाली राजमार्ग",          "open", ""],
+      [npt, "road", "NH14 – Mahakali Rajmarg",          "महाकाली राजमार्ग",          "open", ""],
+      [npt, "road", "NH15 – Seti Rajmarg",              "सेती राजमार्ग",             "open", ""],
+      [npt, "road", "NH16 – Rapti-Lumbini Hwy",         "राप्ती-लुम्बिनी",           "open", ""],
+      [npt, "road", "NH34 – Araniko Hwy",               "अरनिको राजमार्ग",           "open", ""],
+      [npt, "road", "NH38 – BP Hwy",                    "बीपी राजमार्ग",             "open", ""],
+      [npt, "road", "NH41 – Tribhuvan Hwy",             "त्रिभुवन राजमार्ग",         "open", ""],
+      [npt, "road", "NH42 – Prithvi Hwy",               "पृथ्वी राजमार्ग",           "open", ""],
+      [npt, "road", "NH43 – Narayanghat-Mugling",       "नारायणगढ–मुग्लिन",          "open", ""]
     );
     rows.push(
-      [npt, "airport", "Tribhuvan Intl (KTM)",    "त्रिभुवन विमानस्थल",   "open", "Normal operations"],
-      [npt, "airport", "Pokhara Regional (PKR)",  "पोखरा विमानस्थल",      "open", ""],
-      [npt, "airport", "Bharatpur (BHR)",          "भरतपुर विमानस्थल",     "open", ""],
-      [npt, "airport", "Dhangadhi (DHI)",          "धनगढी विमानस्थल",      "open", ""],
-      [npt, "airport", "Biratnagar (BIR)",         "विराटनगर विमानस्थल",   "open", ""]
+      [npt, "airport", "Tribhuvan Intl (KTM)",      "त्रिभुवन अन्तर्राष्ट्रिय",  "open", "Normal operations"],
+      [npt, "airport", "Gautam Buddha Intl (BWA)",  "गौतम बुद्ध विमानस्थल",      "open", ""],
+      [npt, "airport", "Pokhara Regional (PKR)",    "पोखरा विमानस्थल",           "open", ""],
+      [npt, "airport", "Bharatpur (BHR)",            "भरतपुर विमानस्थल",          "open", ""],
+      [npt, "airport", "Dhangadhi (DHI)",            "धनगढी विमानस्थल",           "open", ""],
+      [npt, "airport", "Biratnagar (BIR)",           "विराटनगर विमानस्थल",        "open", ""],
+      [npt, "airport", "Nepalgunj (KEP)",            "नेपालगञ्ज विमानस्थल",       "open", ""],
+      [npt, "airport", "Chandragadhi (BDP)",         "चन्द्रगढी विमानस्थल",       "open", ""],
+      [npt, "airport", "Janakpur (JKR)",             "जनकपुर विमानस्थल",          "open", ""],
+      [npt, "airport", "Simara (SIF)",               "सिमरा विमानस्थल",           "open", ""]
     );
     rows.push(
       [npt, "hospital", "Bir Hospital, Kathmandu",           "बीर अस्पताल",              "open", "120 beds"],
-      [npt, "hospital", "TU Teaching Hospital",               "त्रिवि शिक्षण अस्पताल",   "open", "95 beds"],
-      [npt, "hospital", "Patan Hospital, Lalitpur",           "पाटन अस्पताल",             "open", "60 beds"],
-      [npt, "hospital", "Manipal College Hospital",           "मणिपाल अस्पताल",           "open", "45 beds"],
-      [npt, "hospital", "Gandaki Medical College, Pokhara",   "गण्डकी अस्पताल",           "open", "38 beds"]
+      [npt, "hospital", "TU Teaching Hospital, KTM",         "त्रिवि शिक्षण अस्पताल",    "open", "95 beds"],
+      [npt, "hospital", "Patan Hospital, Lalitpur",          "पाटन अस्पताल",             "open", "60 beds"],
+      [npt, "hospital", "Manipal College Hospital, PKR",     "मणिपाल अस्पताल",           "open", "45 beds"],
+      [npt, "hospital", "Gandaki Medical College, PKR",      "गण्डकी अस्पताल",           "open", "38 beds"],
+      [npt, "hospital", "BPKIHS, Dharan",                    "बीपी कोइराला स्वास्थ्य",   "open", "150 beds"],
+      [npt, "hospital", "Koshi Hospital, Biratnagar",        "कोशी अस्पताल",             "open", "80 beds"],
+      [npt, "hospital", "Bheri Hospital, Nepalgunj",         "भेरी अस्पताल",             "open", "70 beds"],
+      [npt, "hospital", "Chitwan Medical College",           "चितवन मेडिकल कलेज",        "open", "100 beds"],
+      [npt, "hospital", "Lumbini Provincial Hospital",       "लुम्बिनी प्रादेशिक",       "open", "110 beds"]
     );
   }
 

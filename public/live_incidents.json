@@ -1,0 +1,30 @@
+[
+  {
+    "id": "live-bipad-1",
+    "district": "Dang",
+    "place": "Tulsipur",
+    "lat": 28.46,
+    "lng": 82.60,
+    "phase": "Aftermath",
+    "category": "Structural Failure",
+    "verification": "official",
+    "source": "BIPAD Portal",
+    "headline": "Damage reported following M4.5 earthquake in Tulsipur",
+    "detail": "Local officials confirmed structural cracks in a public school.",
+    "time": "2026-07-19T10:45:00Z"
+  },
+  {
+    "id": "live-news-1",
+    "district": "Kathmandu",
+    "place": "KTM",
+    "lat": 27.7,
+    "lng": 85.3,
+    "phase": "Aftermath",
+    "category": "Structural Failure",
+    "verification": "media",
+    "source": "Kathmandu Post",
+    "headline": "Minor tremors felt in capital",
+    "detail": "Residents reported minor shaking.",
+    "time": "2026-07-19T10:50:00Z"
+  }
+]

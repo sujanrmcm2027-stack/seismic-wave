@@ -111,20 +111,20 @@ export function InfrastructureStatus() {
     const SCRIPT_URL = import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL;
     setLoading(true);
 
-    // Priority 1: Apps Script (if configured)
+    // Priority 1: /infra_status.json — auto-updated by GitHub Actions
+    const fromJson: Promise<any[]> = fetch("/infra_status.json?t=" + Date.now(), { cache: "no-store" })
+      .then(r => r.json())
+      .then(d => (Array.isArray(d?.items) && d.items.length > 0 ? d.items : Promise.reject("empty json")));
+
+    // Priority 2: Apps Script (if configured)
     const fromScript: Promise<any[]> = SCRIPT_URL
       ? fetch(`${SCRIPT_URL}?action=get_infra`, { cache: "no-store" })
           .then(r => r.json())
-          .then(d => (Array.isArray(d) && d.length > 0 ? d : Promise.reject("empty")))
+          .then(d => (Array.isArray(d) && d.length > 0 ? d : Promise.reject("empty script")))
       : Promise.reject("no script url");
 
-    // Priority 2: /infra_status.json — auto-updated by GitHub Actions every 6 hrs
-    const fromJson: Promise<any[]> = fetch("/infra_status.json", { cache: "no-store" })
-      .then(r => r.json())
-      .then(d => d?.items ?? []);
-
-    fromScript
-      .catch(() => fromJson)
+    fromJson
+      .catch(() => fromScript)
       .then(items => { if (items.length) applyItems(items); })
       .catch(err => console.error("Infrastructure data unavailable:", err))
       .finally(() => setLoading(false));
@@ -164,10 +164,10 @@ export function InfrastructureStatus() {
   return (
     <section
       aria-label="Live infrastructure status"
-      className="rounded-xl border-2 border-border bg-card shadow-sm overflow-hidden"
+      className="rounded-xl border-2 border-border bg-card shadow-sm overflow-hidden flex flex-col h-full"
     >
       {/* ── Header ── */}
-      <div className="bg-surface/60 border-b border-border px-5 py-3 flex items-center justify-between gap-3">
+      <div className="bg-surface/60 border-b border-border px-5 py-3 flex items-center justify-between gap-3 shrink-0">
         <div>
           <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-primary font-bold">
             {t("infra.title", lang)}
@@ -200,11 +200,11 @@ export function InfrastructureStatus() {
       </div>
 
       {/* ── DOR notice: single tight row ── */}
-      <div className="bg-amber-50/70 dark:bg-amber-950/15 border-b border-amber-200/60 dark:border-amber-800/30 px-5 py-1.5 flex items-center gap-3 flex-wrap">
+      <div className="bg-amber-50/70 dark:bg-amber-950/15 border-b border-amber-200/60 dark:border-amber-800/30 px-5 py-1.5 flex items-center gap-3 flex-wrap shrink-0">
         <span className="text-[10px] text-amber-700 dark:text-amber-400">
           {lang === "ne"
-            ? "DOR: ८ बन्द · १२ आंशिक (मनसुन) —"
-            : "DOR: 8 closed · 12 partial (monsoon) —"}
+            ? `DOR: ${closed} बन्द · ${partial} आंशिक —`
+            : `DOR: ${closed} closed · ${partial} partial —`}
         </span>
         <a
           href={DOR_LIVE_URL}
@@ -224,77 +224,93 @@ export function InfrastructureStatus() {
       </div>
 
       {/* ── Content grid ── */}
-      <div className="p-5 grid md:grid-cols-3 gap-6">
+      <div className="p-5 grid md:grid-cols-3 gap-6 flex-1 min-h-0">
 
         {/* Roads */}
-        <div>
-          <SectionLabel title={t("infra.roads", lang)} />
-          <div className="space-y-0">
+        <div className="flex flex-col h-full min-h-0">
+          <div className="shrink-0 mb-2">
+            <SectionLabel title={t("infra.roads", lang)} />
+          </div>
+          <div className="space-y-0 overflow-y-auto pr-2 flex-1 min-h-0">
             {roads.length === 0 && <p className="text-[11px] text-muted-foreground italic">No data</p>}
             {roads.map((r, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between gap-2 py-1.5 border-b border-border/30 last:border-0"
+                className="flex items-start justify-between gap-3 py-2.5 border-b border-border/30 last:border-0"
               >
                 <div className="min-w-0 flex-1">
-                  <span className="text-[11px] font-medium text-foreground">
+                  <div className="text-[11.5px] font-medium text-foreground leading-tight">
                     {lang === "ne" ? r.nameNe : r.name}
-                  </span>
+                  </div>
                   {r.detail && (
-                    <span className="text-[10px] text-muted-foreground/70 ml-1.5">— {r.detail}</span>
+                    <div className="text-[10px] text-muted-foreground/70 mt-0.5 line-clamp-1">
+                      {r.detail}
+                    </div>
                   )}
                 </div>
-                <StatusDot status={r.status} lang={lang} />
+                <div className="shrink-0 mt-0.5">
+                  <StatusDot status={r.status} lang={lang} />
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Airports */}
-        <div>
-          <SectionLabel title={t("infra.airports", lang)} />
-          <div className="space-y-0">
+        <div className="flex flex-col h-full min-h-0">
+          <div className="shrink-0 mb-2">
+            <SectionLabel title={t("infra.airports", lang)} />
+          </div>
+          <div className="space-y-0 overflow-y-auto pr-2 flex-1 min-h-0">
             {airports.length === 0 && <p className="text-[11px] text-muted-foreground italic">No data</p>}
             {airports.map((a, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between gap-2 py-1.5 border-b border-border/30 last:border-0"
+                className="flex items-start justify-between gap-3 py-2.5 border-b border-border/30 last:border-0"
               >
                 <div className="min-w-0 flex-1">
-                  <span className="text-[11px] font-medium text-foreground">
+                  <div className="text-[11.5px] font-medium text-foreground leading-tight">
                     {lang === "ne" ? a.nameNe : a.name}
-                  </span>
+                  </div>
                   {a.detail && (
-                    <span className="text-[10px] text-muted-foreground/70 ml-1.5">— {a.detail}</span>
+                    <div className="text-[10px] text-muted-foreground/70 mt-0.5 line-clamp-1">
+                      {a.detail}
+                    </div>
                   )}
                 </div>
-                <StatusDot status={a.status} lang={lang} />
+                <div className="shrink-0 mt-0.5">
+                  <StatusDot status={a.status} lang={lang} />
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Hospitals */}
-        <div>
-          <SectionLabel title={t("infra.hospitals", lang)} />
-          <div className="space-y-0">
+        <div className="flex flex-col h-full min-h-0">
+          <div className="shrink-0 mb-2">
+            <SectionLabel title={t("infra.hospitals", lang)} />
+          </div>
+          <div className="space-y-0 overflow-y-auto pr-2 flex-1 min-h-0">
             {hospitals.length === 0 && <p className="text-[11px] text-muted-foreground italic">No data</p>}
             {hospitals.map((h, i) => {
               const pct = Math.round((h.beds / h.bedsTotal) * 100);
               const bar = pct > 60 ? "bg-emerald-500" : pct > 30 ? "bg-amber-500" : "bg-red-500";
               return (
-                <div key={i} className="py-1.5 border-b border-border/30 last:border-0">
-                  <div className="flex items-center justify-between gap-2 mb-1">
-                    <span className="text-[11px] font-medium text-foreground truncate">
+                <div key={i} className="py-2 border-b border-border/30 last:border-0">
+                  <div className="flex items-start justify-between gap-2 mb-1.5">
+                    <div className="text-[11.5px] font-medium text-foreground leading-tight line-clamp-1">
                       {lang === "ne" ? h.nameNe : h.name}
-                    </span>
-                    <StatusDot status={h.status} lang={lang} />
+                    </div>
+                    <div className="shrink-0 mt-0.5">
+                      <StatusDot status={h.status} lang={lang} />
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-1 rounded-full bg-border overflow-hidden">
+                  <div className="flex items-center gap-3">
+                    <div className="flex-1 h-1.5 rounded-full bg-border overflow-hidden">
                       <div className={`h-full rounded-full transition-all ${bar}`} style={{ width: `${pct}%` }} />
                     </div>
-                    <span className="font-mono text-[9px] text-muted-foreground shrink-0">
+                    <span className="font-mono text-[9px] text-muted-foreground shrink-0 min-w-[48px] text-right">
                       {h.beds} {t("infra.beds", lang)}
                     </span>
                   </div>
@@ -307,7 +323,7 @@ export function InfrastructureStatus() {
       </div>
 
       {/* ── Footer ── */}
-      <div className="px-5 py-2 bg-surface/30 border-t border-border/50">
+      <div className="px-5 py-2 bg-surface/30 border-t border-border/50 shrink-0">
         <p className="text-[9px] text-muted-foreground/60 font-mono">
           ⚠ {t("infra.source", lang)}
         </p>

@@ -1,9 +1,9 @@
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap, CircleMarker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useMemo } from "react";
 import type { DamageIncident, VerificationStatus } from "@/data/damageAssessment2026";
-
+import type { NepalEarthquake } from "@/hooks/useLiveNepalEarthquakes";
 const NEPAL_CENTER: [number, number] = [28.3949, 84.124];
 const NEPAL_ZOOM = 7;
 
@@ -35,6 +35,14 @@ function getPinIcon(status: VerificationStatus) {
   return icon;
 }
 
+function getMagnitudeColor(magnitude: number) {
+  if (magnitude >= 6.0) return "var(--color-destructive, #ef4444)";
+  if (magnitude >= 5.0) return "var(--color-chart-5, #f97316)";
+  if (magnitude >= 3.0) return "var(--color-chart-4, #eab308)";
+  return "var(--color-chart-2, #3b82f6)";
+}
+
+
 function verificationLabel(status: VerificationStatus) {
   if (status === "official") return "Verified Official";
   if (status === "media") return "Media Verified";
@@ -56,7 +64,13 @@ function FitToIncidents({ incidents }: { incidents: DamageIncident[] }) {
   return null;
 }
 
-export function DamageAssessmentMap({ incidents }: { incidents: DamageIncident[] }) {
+export function DamageAssessmentMap({ 
+  incidents,
+  events = [],
+}: { 
+  incidents: DamageIncident[];
+  events?: NepalEarthquake[];
+}) {
   const sorted = useMemo(
     () => [...incidents].sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()),
     [incidents],
@@ -111,6 +125,34 @@ export function DamageAssessmentMap({ incidents }: { incidents: DamageIncident[]
               </Popup>
             </Marker>
           ))}
+          {events.map((event) => {
+            const color = getMagnitudeColor(event.magnitude);
+            return (
+              <CircleMarker
+                key={event.id}
+                center={[event.latitude, event.longitude]}
+                radius={Math.max(5, Math.min(16, 4 + event.magnitude * 1.3))}
+                pathOptions={{
+                  color,
+                  fillColor: color,
+                  fillOpacity: 0.35,
+                  weight: 1.5,
+                }}
+              >
+                <Popup>
+                  <div className="space-y-1.5">
+                    <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                      Recent Earthquake
+                    </div>
+                    <div className="font-semibold text-foreground">{event.place}</div>
+                    <p className="text-sm text-muted-foreground">
+                      Magnitude {event.magnitude.toFixed(1)} · Depth {event.depth.toFixed(0)} km
+                    </p>
+                  </div>
+                </Popup>
+              </CircleMarker>
+            );
+          })}
         </MapContainer>
 
         <div className="pointer-events-none absolute bottom-3 right-3 z-[1000] rounded-lg border border-border bg-card/95 px-3 py-2.5 shadow-lg backdrop-blur-sm">

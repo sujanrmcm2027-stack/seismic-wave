@@ -633,7 +633,11 @@ function Home() {
             <SafetyReporter />
             <SafetyBoard />
           </div>
-          <InfrastructureStatus />
+          <div className="relative min-h-[600px]">
+            <div className="lg:absolute lg:inset-0">
+              <InfrastructureStatus />
+            </div>
+          </div>
         </div>
       </section>
 

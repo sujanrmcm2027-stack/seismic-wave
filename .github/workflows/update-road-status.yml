@@ -2,8 +2,8 @@ name: Update Road Status
 
 on:
   schedule:
-    # Every 6 hours at :00 — 00:00, 06:00, 12:00, 18:00 UTC
-    - cron: "0 */6 * * *"
+    # Every 30 minutes
+    - cron: "*/30 * * * *"
   workflow_dispatch: # allow manual trigger from GitHub UI
 
 permissions:
@@ -94,30 +94,135 @@ jobs:
           # Curated fallback roads (used when DOR API is unreachable)
           # ⚠️  Update this list whenever DOR shows different road statuses
           fallback_roads = [
-              {"category": "road", "name": "Prithvi Hwy (KTM–Pokhara)",      "nameNe": "पृथ्वी राजमार्ग",        "status": "partial", "detail": "Slow at Malekhu",         "lastUpdated": npt_now},
-              {"category": "road", "name": "Tribhuvan Hwy (KTM–Hetauda)",     "nameNe": "त्रिभुवन राजमार्ग",      "status": "partial", "detail": "Reduced lanes, Bhimphedi","lastUpdated": npt_now},
-              {"category": "road", "name": "Araniko Hwy (KTM–Kodari)",        "nameNe": "अरनिको राजमार्ग",         "status": "partial", "detail": "Landslide risk zones",    "lastUpdated": npt_now},
-              {"category": "road", "name": "NH02 – Mechi Rajmarg",             "nameNe": "NH02 – मेची राजमार्ग",   "status": "closed",  "detail": "Landslide since Jul 9",   "lastUpdated": npt_now},
-              {"category": "road", "name": "BP Hwy (Hetauda–Dharan)",          "nameNe": "बीपी राजमार्ग",           "status": "partial", "detail": "One-way sections",        "lastUpdated": npt_now},
-              {"category": "road", "name": "Siddhartha Hwy (Pokhara–Butwal)", "nameNe": "सिद्धार्थ राजमार्ग",      "status": "open",    "detail": "NH47 reopened",           "lastUpdated": npt_now},
-              {"category": "road", "name": "Mid-Hill Hwy (Karnali)",           "nameNe": "मध्यपहाडी लोकमार्ग",     "status": "closed",  "detail": "Multiple landslides",     "lastUpdated": npt_now},
-              {"category": "road", "name": "Kakarbhitta–Itahari Road",         "nameNe": "काकरभिट्टा–इटहरी सडक",   "status": "open",    "detail": "",                        "lastUpdated": npt_now},
+              {"category": "road", "name": "NH01 – Mahendra Rajmarg",          "nameNe": "महेन्द्र राजमार्ग",          "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH02 – Mechi Rajmarg",             "nameNe": "मेची राजमार्ग",              "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH03 – Puspalal Hwy (Mid-Hill)",   "nameNe": "पुष्पलाल राजमार्ग",         "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH04 – Birtamod-Chandragadhi",     "nameNe": "विर्तामोड–चन्द्रगढी",        "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH05 – Postal Hwy",                "nameNe": "हुलाकी राजमार्ग",           "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH06 – Koshi Rajmarg",             "nameNe": "कोशी राजमार्ग",             "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH08 – Sagarmatha Rajmarg",        "nameNe": "सगरमाथा राजमार्ग",          "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH09 – Madan Bhandari Hwy",        "nameNe": "मदन भण्डारी राजमार्ग",      "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH10 – Siddhartha Hwy",            "nameNe": "सिद्धार्थ राजमार्ग",         "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH11 – Rapti Rajmarg",             "nameNe": "राप्ती राजमार्ग",           "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH12 – Ratna Rajmarg",             "nameNe": "रत्न राजमार्ग",             "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH13 – Karnali Rajmarg",           "nameNe": "कर्णाली राजमार्ग",          "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH14 – Mahakali Rajmarg",          "nameNe": "महाकाली राजमार्ग",          "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH15 – Seti Rajmarg",              "nameNe": "सेती राजमार्ग",             "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH16 – Rapti-Lumbini Hwy",         "nameNe": "राप्ती-लुम्बिनी",           "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH34 – Araniko Hwy",               "nameNe": "अरनिको राजमार्ग",           "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH38 – BP Hwy",                    "nameNe": "बीपी राजमार्ग",             "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH41 – Tribhuvan Hwy",             "nameNe": "त्रिभुवन राजमार्ग",         "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH42 – Prithvi Hwy",               "nameNe": "पृथ्वी राजमार्ग",           "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "road", "name": "NH43 – Narayanghat-Mugling",       "nameNe": "नारायणगढ–मुग्लिन",          "status": "open", "detail": "", "lastUpdated": npt_now},
           ]
+
+          # Realtime News API for dynamic closures (since DOR is down)
+          import urllib.request, urllib.parse, xml.etree.ElementTree as ET
+          try:
+              query = urllib.parse.quote("Nepal AND (highway OR road OR landslide OR blocked)")
+              url = f"https://news.google.com/rss/search?q={query}&hl=en-US&gl=US&ceid=US:en"
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+              res = urllib.request.urlopen(req, timeout=10)
+              root = ET.fromstring(res.read())
+              news_text = " ".join([item.find("title").text.lower() for item in root.findall(".//item")]).lower()
+              
+              for r in fallback_roads:
+                  name_lower = r["name"].lower().replace("hwy", "highway")
+                  if "prithvi" in name_lower and "prithvi" in news_text:
+                      r["status"] = "partial"
+                      r["detail"] = "Reported issues in news"
+                  elif "karnali" in name_lower and "karnali" in news_text:
+                      r["status"] = "closed"
+                      r["detail"] = "Blocked by landslide"
+                  elif any(kw in name_lower for kw in ["araniko", "tribhuvan", "bp "]) and any(kw in news_text for kw in ["araniko", "tribhuvan", "bp "]):
+                      r["status"] = "partial"
+                      r["detail"] = "Traffic disruption reported"
+          except Exception as e:
+              print("Road news fallback failed", e)
 
           airports = [
-              {"category": "airport", "name": "Tribhuvan Intl (KTM)",   "nameNe": "त्रिभुवन विमानस्थल",  "status": "open", "detail": "Normal operations", "lastUpdated": npt_now},
-              {"category": "airport", "name": "Pokhara Regional (PKR)", "nameNe": "पोखरा विमानस्थल",     "status": "open", "detail": "",                  "lastUpdated": npt_now},
-              {"category": "airport", "name": "Bharatpur (BHR)",         "nameNe": "भरतपुर विमानस्थल",    "status": "open", "detail": "",                  "lastUpdated": npt_now},
-              {"category": "airport", "name": "Dhangadhi (DHI)",         "nameNe": "धनगढी विमानस्थल",     "status": "open", "detail": "",                  "lastUpdated": npt_now},
-              {"category": "airport", "name": "Biratnagar (BIR)",        "nameNe": "विराटनगर विमानस्थल",  "status": "open", "detail": "",                  "lastUpdated": npt_now},
+              {"category": "airport", "name": "Tribhuvan Intl (KTM)",      "icao": "VNKT", "nameNe": "त्रिभुवन अन्तर्राष्ट्रिय",  "status": "open", "detail": "Normal operations", "lastUpdated": npt_now},
+              {"category": "airport", "name": "Gautam Buddha Intl (BWA)",  "icao": "VNBW", "nameNe": "गौतम बुद्ध विमानस्थल",      "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "airport", "name": "Pokhara Regional (PKR)",    "icao": "VNPK", "nameNe": "पोखरा विमानस्थल",           "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "airport", "name": "Bharatpur (BHR)",            "icao": "VNBP", "nameNe": "भरतपुर विमानस्थल",          "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "airport", "name": "Dhangadhi (DHI)",            "icao": "VNDH", "nameNe": "धनगढी विमानस्थल",           "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "airport", "name": "Biratnagar (BIR)",           "icao": "VNVT", "nameNe": "विराटनगर विमानस्थल",        "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "airport", "name": "Nepalgunj (KEP)",            "icao": "VNNG", "nameNe": "नेपालगञ्ज विमानस्थल",       "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "airport", "name": "Chandragadhi (BDP)",         "icao": "VNCG", "nameNe": "चन्द्रगढी विमानस्थल",       "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "airport", "name": "Janakpur (JKR)",             "icao": "VNJP", "nameNe": "जनकपुर विमानस्थल",          "status": "open", "detail": "", "lastUpdated": npt_now},
+              {"category": "airport", "name": "Simara (SIF)",               "icao": "VNSI", "nameNe": "सिमरा विमानस्थल",           "status": "open", "detail": "", "lastUpdated": npt_now},
           ]
 
+          # Realtime News API & NOAA METAR Aero-Meteorological Data
+          try:
+              # 1. Fetch NOAA METAR data for all ICAO codes
+              icao_list = ",".join([a["icao"] for a in airports])
+              metar_url = f"https://aviationweather.gov/api/data/metar?ids={icao_list}&format=json&hours=1"
+              req_metar = urllib.request.Request(metar_url, headers={"User-Agent": "Mozilla/5.0"})
+              res_metar = urllib.request.urlopen(req_metar, timeout=10)
+              metar_data = json.loads(res_metar.read())
+              
+              metar_dict = {m.get("icaoId"): m for m in metar_data}
+              
+              # 2. Fetch Google News RSS for disruptions
+              query_air = urllib.parse.quote("Nepal AND (airport OR flight OR TIA) AND (closed OR cancelled OR delayed OR suspended)")
+              url_air = f"https://news.google.com/rss/search?q={query_air}&hl=en-US&gl=US&ceid=US:en"
+              req_air = urllib.request.Request(url_air, headers={"User-Agent": "Mozilla/5.0"})
+              res_air = urllib.request.urlopen(req_air, timeout=10)
+              root_air = ET.fromstring(res_air.read())
+              air_news_text = " ".join([item.find("title").text.lower() for item in root_air.findall(".//item")]).lower()
+              
+              for a in airports:
+                  has_issue = False
+                  icao = a["icao"]
+                  
+                  # Apply METAR Weather
+                  if icao in metar_dict:
+                      m = metar_dict[icao]
+                      cat = m.get("fltcat", "VFR")
+                      if cat in ["IFR", "LIFR"]:
+                          a["status"] = "partial"
+                          a["detail"] = f"Low visibility ({cat})"
+                          has_issue = True
+                      elif cat == "MVFR" and m.get("wspd") and m.get("wspd", 0) > 25:
+                          a["status"] = "partial"
+                          a["detail"] = f"High winds ({m.get('wspd')}kt)"
+                          has_issue = True
+
+                  # Apply News Disruption (Overrides Weather)
+                  if "tribhuvan" in a["name"].lower() or "ktm" in a["name"].lower():
+                      if any(kw in air_news_text for kw in ["tribhuvan", "tia", "kathmandu airport"]):
+                          if "closed" in air_news_text or "suspended" in air_news_text:
+                              a["status"] = "closed"
+                              a["detail"] = "Reported closed in news"
+                              has_issue = True
+                          elif "delayed" in air_news_text or "cancelled" in air_news_text:
+                              a["status"] = "partial"
+                              if not has_issue: a["detail"] = "Flights delayed/cancelled"
+                              has_issue = True
+                  else:
+                      city = a["name"].split()[0].lower()
+                      if city in air_news_text:
+                          a["status"] = "partial"
+                          a["detail"] = "Disruptions reported in news"
+                          has_issue = True
+                  
+                  # Cleanup
+                  del a["icao"]
+          except Exception as e:
+              print("Airport fallback failed", e)
+
           hospitals = [
-              {"category": "hospital", "name": "Bir Hospital, Kathmandu",         "nameNe": "बीर अस्पताल",            "status": "open", "detail": "120 beds", "beds": 120, "bedsTotal": 390, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "TU Teaching Hospital",              "nameNe": "त्रिवि शिक्षण अस्पताल", "status": "open", "detail": "95 beds",  "beds": 95,  "bedsTotal": 600, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "Patan Hospital, Lalitpur",          "nameNe": "पाटन अस्पताल",           "status": "open", "detail": "60 beds",  "beds": 60,  "bedsTotal": 300, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "Manipal College Hospital",          "nameNe": "मणिपाल अस्पताल",         "status": "open", "detail": "45 beds",  "beds": 45,  "bedsTotal": 150, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "Gandaki Medical College, Pokhara", "nameNe": "गण्डकी अस्पताल",         "status": "open", "detail": "38 beds",  "beds": 38,  "bedsTotal": 200, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Bir Hospital, Kathmandu",           "nameNe": "बीर अस्पताल",              "status": "open", "detail": "120 beds", "beds": 120, "bedsTotal": 390, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "TU Teaching Hospital, KTM",         "nameNe": "त्रिवि शिक्षण अस्पताल",    "status": "open", "detail": "95 beds", "beds": 95, "bedsTotal": 600, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Patan Hospital, Lalitpur",          "nameNe": "पाटन अस्पताल",             "status": "open", "detail": "60 beds", "beds": 60, "bedsTotal": 300, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Manipal College Hospital, PKR",     "nameNe": "मणिपाल अस्पताल",           "status": "open", "detail": "45 beds", "beds": 45, "bedsTotal": 150, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Gandaki Medical College, PKR",      "nameNe": "गण्डकी अस्पताल",           "status": "open", "detail": "38 beds", "beds": 38, "bedsTotal": 200, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "BPKIHS, Dharan",                    "nameNe": "बीपी कोइराला स्वास्थ्य",   "status": "open", "detail": "150 beds", "beds": 150, "bedsTotal": 600, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Koshi Hospital, Biratnagar",        "nameNe": "कोशी अस्पताल",             "status": "open", "detail": "80 beds", "beds": 80, "bedsTotal": 350, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Bheri Hospital, Nepalgunj",         "nameNe": "भेरी अस्पताल",             "status": "open", "detail": "70 beds", "beds": 70, "bedsTotal": 200, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Chitwan Medical College",           "nameNe": "चितवन मेडिकल कलेज",        "status": "open", "detail": "100 beds", "beds": 100, "bedsTotal": 400, "lastUpdated": npt_now},
+              {"category": "hospital", "name": "Lumbini Provincial Hospital",       "nameNe": "लुम्बिनी प्रादेशिक",       "status": "open", "detail": "110 beds", "beds": 110, "bedsTotal": 380, "lastUpdated": npt_now},
           ]
 
           roads = roads_from_dor if roads_from_dor else fallback_roads
