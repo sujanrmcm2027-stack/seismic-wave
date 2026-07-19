@@ -50,7 +50,7 @@ export const T: Translations = {
     "infra.open": "Open",
     "infra.partial": "Partial",
     "infra.closed": "Closed",
-    "infra.source": "Data: NDRRMA/Nepal Police API endpoint (mock - update with live feed)",
+    "infra.source": "Data: navigate.dor.gov.np (DOR Nepal) — Reference data, verify live for latest closures",
     "infra.beds": "beds available",
 
     // Emergency Contacts Bar
@@ -118,7 +118,7 @@ export const T: Translations = {
     "infra.open": "खुला",
     "infra.partial": "आंशिक",
     "infra.closed": "बन्द",
-    "infra.source": "डेटा: NDRRMA/नेपाल प्रहरी API (नमूना - लाइभ फिडसँग अपडेट गर्नुहोस्)",
+    "infra.source": "डेटा: navigate.dor.gov.np (DOR नेपाल) — सन्दर्भ डेटा, नवीनतम अवरोधका लागि लाइभ जाँच गर्नुहोस्",
     "infra.beds": "बेड उपलब्ध",
 
     // Emergency Contacts Bar

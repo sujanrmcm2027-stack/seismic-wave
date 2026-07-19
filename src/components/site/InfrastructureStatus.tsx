@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { useCrisisMode } from "@/hooks/useCrisisMode";
 import { t } from "@/lib/i18n/translations";
-import { Clock } from "lucide-react";
+import { Clock, ExternalLink, AlertTriangle } from "lucide-react";
+
+const DOR_LIVE_URL = "https://navigate.dor.gov.np/app/dashboard";
 
 type StatusLevel = "open" | "partial" | "closed";
 
@@ -14,12 +16,18 @@ type InfraItem = {
 
 type HospitalItem = InfraItem & { beds: number; bedsTotal: number };
 
+// ─── Default road data reflects current DOR status (monsoon season) ───────────
+// Source: navigate.dor.gov.np — 8 closed, 12 partial, 42 open out of 62 total
+// NH02 (Mechi Rajmarg) closed due to landslide since Jul 9, 2026
 const DEFAULT_ROADS: InfraItem[] = [
-  { name: "Prithvi Highway (KTM–Pokhara)", nameNe: "पृथ्वी राजमार्ग", status: "partial", detail: "Slow at Malekhu" },
-  { name: "Tribhuvan Highway (KTM–Hetauda)", nameNe: "त्रिभुवन राजमार्ग", status: "open" },
-  { name: "Araniko Highway (KTM–Kodari)", nameNe: "अरनिको राजमार्ग", status: "open" },
-  { name: "BP Highway (Hetauda–Dharan)", nameNe: "बीपी राजमार्ग", status: "open" },
-  { name: "Siddhartha Highway (Pokhara–Butwal)", nameNe: "सिद्धार्थ राजमार्ग", status: "open" },
+  { name: "Prithvi Highway (KTM–Pokhara)", nameNe: "पृथ्वी राजमार्ग", status: "partial", detail: "Slow at Malekhu — debris clearance" },
+  { name: "Tribhuvan Highway (KTM–Hetauda)", nameNe: "त्रिभुवन राजमार्ग", status: "partial", detail: "Reduced lanes near Bhimphedi" },
+  { name: "Araniko Highway (KTM–Kodari)", nameNe: "अरनिको राजमार्ग", status: "partial", detail: "Landslide risk zones active" },
+  { name: "NH02 – Mechi Rajmarg", nameNe: "NH02 – मेची राजमार्ग", status: "closed", detail: "Closed: Landslide (since Jul 9) — est. reopen Jul 20" },
+  { name: "BP Highway (Hetauda–Dharan)", nameNe: "बीपी राजमार्ग", status: "partial", detail: "One-way clearance in sections" },
+  { name: "Siddhartha Highway (Pokhara–Butwal)", nameNe: "सिद्धार्थ राजमार्ग", status: "open", detail: "NH47 section recently opened" },
+  { name: "Mid-Hill Highway (Karnali)", nameNe: "मध्यपहाडी लोकमार्ग", status: "closed", detail: "Blocked: multiple landslides" },
+  { name: "Kakarbhitta–Itahari Road", nameNe: "काकरभिट्टा–इटहरी सडक", status: "open" },
 ];
 
 const DEFAULT_AIRPORTS: InfraItem[] = [
@@ -127,6 +135,13 @@ export function InfrastructureStatus() {
       .finally(() => setLoading(false));
   }, []);
 
+  // Compute road summary stats
+  const roadStats = {
+    closed: roads.filter(r => r.status === "closed").length,
+    partial: roads.filter(r => r.status === "partial").length,
+    open: roads.filter(r => r.status === "open").length,
+  };
+
   const now = new Date().toLocaleString("en-NP", {
     timeZone: "Asia/Kathmandu",
     hour: "2-digit",
@@ -148,10 +163,53 @@ export function InfrastructureStatus() {
             {t("infra.subtitle", lang)}
           </p>
         </div>
-        <div className="flex items-center gap-1.5 text-muted-foreground">
-          {loading && <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse mr-1" />}
-          <Clock className="w-3.5 h-3.5" />
-          <span className="font-mono text-[10px]">{now} NPT</span>
+        <div className="flex items-center gap-2">
+          {loading && <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />}
+          <div className="flex items-center gap-1.5 text-muted-foreground">
+            <Clock className="w-3.5 h-3.5" />
+            <span className="font-mono text-[10px]">{now} NPT</span>
+          </div>
+          <a
+            href={DOR_LIVE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-600 dark:text-blue-400 text-[10px] font-mono font-bold tracking-wider hover:bg-blue-500/20 transition-colors"
+            aria-label="View live road data on DOR Nepal"
+          >
+            <ExternalLink className="w-3 h-3" />
+            DOR LIVE
+          </a>
+        </div>
+      </div>
+
+      {/* DOR Live Data Banner */}
+      <div className="bg-amber-50 dark:bg-amber-950/20 border-b border-amber-200 dark:border-amber-800/50 px-5 py-2 flex items-center justify-between gap-3 flex-wrap">
+        <div className="flex items-center gap-2">
+          <AlertTriangle className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
+          <span className="text-[11px] text-amber-800 dark:text-amber-300">
+            {lang === "ne"
+              ? "DOR अनुसार: ८ राजमार्ग बन्द, १२ आंशिक खुला (मनसुन)। रियल-टाइम डेटाका लागि:"
+              : "Per DOR: 8 roads closed, 12 partially open (monsoon season). For real-time data:"}
+          </span>
+          <a
+            href={DOR_LIVE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] font-semibold text-blue-600 dark:text-blue-400 underline underline-offset-2 hover:text-blue-700 transition-colors whitespace-nowrap"
+          >
+            navigate.dor.gov.np →
+          </a>
+        </div>
+        <div className="flex items-center gap-2 font-mono text-[10px] shrink-0">
+          <span className="px-1.5 py-0.5 rounded bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-800">
+            {roadStats.closed} CLOSED
+          </span>
+          <span className="px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+            {roadStats.partial} PARTIAL
+          </span>
+          <span className="px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+            {roadStats.open} OPEN
+          </span>
         </div>
       </div>
 
@@ -235,10 +293,19 @@ export function InfrastructureStatus() {
       </div>
 
       {/* Footer disclaimer */}
-      <div className="px-5 py-2.5 bg-surface/40 border-t border-border">
-        <p className="text-[10px] text-muted-foreground font-mono text-center">
+      <div className="px-5 py-2.5 bg-surface/40 border-t border-border flex items-center justify-between gap-3 flex-wrap">
+        <p className="text-[10px] text-muted-foreground font-mono">
           ⚠ {t("infra.source", lang)}
         </p>
+        <a
+          href={DOR_LIVE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-[10px] font-mono text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+        >
+          <ExternalLink className="w-3 h-3" />
+          navigate.dor.gov.np
+        </a>
       </div>
     </section>
   );
