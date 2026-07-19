@@ -1,346 +1,346 @@
 {
-  "generatedAt": "2026-07-19 14:00 NPT",
-  "source": "Curated fallback \u2014 Auto-updating via News RSS",
+  "generatedAt": "2026-07-19 23:29 NPT",
+  "source": "Curated fallback — DOR API unavailable",
   "items": [
     {
       "category": "road",
-      "name": "NH01 \u2013 Mahendra Rajmarg",
-      "nameNe": "\u092e\u0939\u0947\u0928\u094d\u0926\u094d\u0930 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH01 – Mahendra Rajmarg",
+      "nameNe": "महेन्द्र राजमार्ग",
       "status": "partial",
       "detail": "Trees Falling at Jitpur Simara-22, Bara",
-      "lastUpdated": "2026-07-19T21:52:10.744172+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH02 \u2013 Mechi Rajmarg",
-      "nameNe": "\u092e\u0947\u091a\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH02 – Mechi Rajmarg",
+      "nameNe": "मेची राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH03 \u2013 Puspalal Hwy (Mid-Hill)",
-      "nameNe": "\u092a\u0941\u0937\u094d\u092a\u0932\u093e\u0932 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH03 – Puspalal Hwy (Mid-Hill)",
+      "nameNe": "पुष्पलाल राजमार्ग",
       "status": "partial",
       "detail": "Landslide at Kanthekhola-5, Baglung",
-      "lastUpdated": "2026-07-19T21:52:10.744172+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH04 \u2013 Birtamod-Chandragadhi",
-      "nameNe": "\u0935\u093f\u0930\u094d\u0924\u093e\u092e\u094b\u0921\u2013\u091a\u0928\u094d\u0926\u094d\u0930\u0917\u0922\u0940",
+      "name": "NH04 – Birtamod-Chandragadhi",
+      "nameNe": "विर्तामोड–चन्द्रगढी",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH05 \u2013 Postal Hwy",
-      "nameNe": "\u0939\u0941\u0932\u093e\u0915\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH05 – Postal Hwy",
+      "nameNe": "हुलाकी राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH06 \u2013 Koshi Rajmarg",
-      "nameNe": "\u0915\u094b\u0936\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH06 – Koshi Rajmarg",
+      "nameNe": "कोशी राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH08 \u2013 Sagarmatha Rajmarg",
-      "nameNe": "\u0938\u0917\u0930\u092e\u093e\u0925\u093e \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH08 – Sagarmatha Rajmarg",
+      "nameNe": "सगरमाथा राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH09 \u2013 Madan Bhandari Hwy",
-      "nameNe": "\u092e\u0926\u0928 \u092d\u0923\u094d\u0921\u093e\u0930\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH09 – Madan Bhandari Hwy",
+      "nameNe": "मदन भण्डारी राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH10 \u2013 Siddhartha Hwy",
-      "nameNe": "\u0938\u093f\u0926\u094d\u0927\u093e\u0930\u094d\u0925 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH10 – Siddhartha Hwy",
+      "nameNe": "सिद्धार्थ राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH11 \u2013 Rapti Rajmarg",
-      "nameNe": "\u0930\u093e\u092a\u094d\u0924\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH11 – Rapti Rajmarg",
+      "nameNe": "राप्ती राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH12 \u2013 Ratna Rajmarg",
-      "nameNe": "\u0930\u0924\u094d\u0928 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH12 – Ratna Rajmarg",
+      "nameNe": "रत्न राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH13 \u2013 Karnali Rajmarg",
-      "nameNe": "\u0915\u0930\u094d\u0923\u093e\u0932\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
-      "status": "closed",
-      "detail": "Blocked by landslide",
-      "lastUpdated": "2026-07-19 14:00 NPT"
-    },
-    {
-      "category": "road",
-      "name": "NH14 \u2013 Mahakali Rajmarg",
-      "nameNe": "\u092e\u0939\u093e\u0915\u093e\u0932\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH13 – Karnali Rajmarg",
+      "nameNe": "कर्णाली राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH15 \u2013 Seti Rajmarg",
-      "nameNe": "\u0938\u0947\u0924\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH14 – Mahakali Rajmarg",
+      "nameNe": "महाकाली राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH16 \u2013 Rapti-Lumbini Hwy",
-      "nameNe": "\u0930\u093e\u092a\u094d\u0924\u0940-\u0932\u0941\u092e\u094d\u092c\u093f\u0928\u0940",
+      "name": "NH15 – Seti Rajmarg",
+      "nameNe": "सेती राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH34 \u2013 Araniko Hwy",
-      "nameNe": "\u0905\u0930\u0928\u093f\u0915\u094b \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH16 – Rapti-Lumbini Hwy",
+      "nameNe": "राप्ती-लुम्बिनी",
+      "status": "open",
+      "detail": "",
+      "lastUpdated": "2026-07-19 23:29 NPT"
+    },
+    {
+      "category": "road",
+      "name": "NH34 – Araniko Hwy",
+      "nameNe": "अरनिको राजमार्ग",
       "status": "closed",
       "detail": "Landslide at Bhotekoshi-2, Sindhupalchok",
-      "lastUpdated": "2026-07-19T21:52:10.744172+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH38 \u2013 BP Hwy",
-      "nameNe": "\u092c\u0940\u092a\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH38 – BP Hwy",
+      "nameNe": "बीपी राजमार्ग",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH41 \u2013 Tribhuvan Hwy",
-      "nameNe": "\u0924\u094d\u0930\u093f\u092d\u0941\u0935\u0928 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH41 – Tribhuvan Hwy",
+      "nameNe": "त्रिभुवन राजमार्ग",
       "status": "partial",
       "detail": "Landslide at Bhimphedi-9, Makwanpur",
-      "lastUpdated": "2026-07-19T21:52:10.744172+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH42 \u2013 Prithvi Hwy",
-      "nameNe": "\u092a\u0943\u0925\u094d\u0935\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
+      "name": "NH42 – Prithvi Hwy",
+      "nameNe": "पृथ्वी राजमार्ग",
       "status": "partial",
       "detail": "Landslide at Aanbookhaireni-2, Tanahu",
-      "lastUpdated": "2026-07-19T21:52:10.744172+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "road",
-      "name": "NH43 \u2013 Narayanghat-Mugling",
-      "nameNe": "\u0928\u093e\u0930\u093e\u092f\u0923\u0917\u0922\u2013\u092e\u0941\u0917\u094d\u0932\u093f\u0928",
+      "name": "NH43 – Narayanghat-Mugling",
+      "nameNe": "नारायणगढ–मुग्लिन",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "airport",
       "name": "Tribhuvan Intl (KTM)",
-      "nameNe": "\u0924\u094d\u0930\u093f\u092d\u0941\u0935\u0928 \u0905\u0928\u094d\u0924\u0930\u094d\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u093f\u092f",
+      "nameNe": "त्रिभुवन अन्तर्राष्ट्रिय",
       "status": "closed",
       "detail": "Reported closed in news",
-      "lastUpdated": "2026-07-19T20:00:46.381402+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "airport",
       "name": "Gautam Buddha Intl (BWA)",
-      "nameNe": "\u0917\u094c\u0924\u092e \u092c\u0941\u0926\u094d\u0927 \u0935\u093f\u092e\u093e\u0928\u0938\u094d\u0925\u0932",
+      "nameNe": "गौतम बुद्ध विमानस्थल",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19T20:00:46.381402+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "airport",
       "name": "Pokhara Regional (PKR)",
-      "nameNe": "\u092a\u094b\u0916\u0930\u093e \u0935\u093f\u092e\u093e\u0928\u0938\u094d\u0925\u0932",
+      "nameNe": "पोखरा विमानस्थल",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19T20:00:46.381402+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "airport",
       "name": "Bharatpur (BHR)",
-      "nameNe": "\u092d\u0930\u0924\u092a\u0941\u0930 \u0935\u093f\u092e\u093e\u0928\u0938\u094d\u0925\u0932",
+      "nameNe": "भरतपुर विमानस्थल",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19T20:00:46.381402+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "airport",
       "name": "Dhangadhi (DHI)",
-      "nameNe": "\u0927\u0928\u0917\u0922\u0940 \u0935\u093f\u092e\u093e\u0928\u0938\u094d\u0925\u0932",
+      "nameNe": "धनगढी विमानस्थल",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19T20:00:46.381402+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "airport",
       "name": "Biratnagar (BIR)",
-      "nameNe": "\u0935\u093f\u0930\u093e\u091f\u0928\u0917\u0930 \u0935\u093f\u092e\u093e\u0928\u0938\u094d\u0925\u0932",
+      "nameNe": "विराटनगर विमानस्थल",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19T20:00:46.381402+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "airport",
       "name": "Nepalgunj (KEP)",
-      "nameNe": "\u0928\u0947\u092a\u093e\u0932\u0917\u091e\u094d\u091c \u0935\u093f\u092e\u093e\u0928\u0938\u094d\u0925\u0932",
+      "nameNe": "नेपालगञ्ज विमानस्थल",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19T20:00:46.381402+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "airport",
       "name": "Chandragadhi (BDP)",
-      "nameNe": "\u091a\u0928\u094d\u0926\u094d\u0930\u0917\u0922\u0940 \u0935\u093f\u092e\u093e\u0928\u0938\u094d\u0925\u0932",
+      "nameNe": "चन्द्रगढी विमानस्थल",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19T20:00:46.381402+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "airport",
       "name": "Janakpur (JKR)",
-      "nameNe": "\u091c\u0928\u0915\u092a\u0941\u0930 \u0935\u093f\u092e\u093e\u0928\u0938\u094d\u0925\u0932",
+      "nameNe": "जनकपुर विमानस्थल",
       "status": "open",
       "detail": "",
-      "lastUpdated": "2026-07-19T20:00:46.381402+05:45"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "airport",
       "name": "Simara (SIF)",
-      "nameNe": "\u0938\u093f\u092e\u0930\u093e \u0935\u093f\u092e\u093e\u0928\u0938\u094d\u0925\u0932",
+      "nameNe": "सिमरा विमानस्थल",
       "status": "partial",
-      "detail": "Disruptions reported",
-      "lastUpdated": "2026-07-19T20:00:46.381402+05:45"
+      "detail": "Disruptions reported in news",
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "hospital",
       "name": "Bir Hospital, Kathmandu",
-      "nameNe": "\u092c\u0940\u0930 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+      "nameNe": "बीर अस्पताल",
       "status": "open",
       "detail": "120 beds",
       "beds": 120,
       "bedsTotal": 390,
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "hospital",
       "name": "TU Teaching Hospital, KTM",
-      "nameNe": "\u0924\u094d\u0930\u093f\u0935\u093f \u0936\u093f\u0915\u094d\u0937\u0923 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+      "nameNe": "त्रिवि शिक्षण अस्पताल",
       "status": "open",
       "detail": "95 beds",
       "beds": 95,
       "bedsTotal": 600,
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "hospital",
       "name": "Patan Hospital, Lalitpur",
-      "nameNe": "\u092a\u093e\u091f\u0928 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+      "nameNe": "पाटन अस्पताल",
       "status": "open",
       "detail": "60 beds",
       "beds": 60,
       "bedsTotal": 300,
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "hospital",
       "name": "Manipal College Hospital, PKR",
-      "nameNe": "\u092e\u0923\u093f\u092a\u093e\u0932 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+      "nameNe": "मणिपाल अस्पताल",
       "status": "open",
       "detail": "45 beds",
       "beds": 45,
       "bedsTotal": 150,
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "hospital",
       "name": "Gandaki Medical College, PKR",
-      "nameNe": "\u0917\u0923\u094d\u0921\u0915\u0940 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+      "nameNe": "गण्डकी अस्पताल",
       "status": "open",
       "detail": "38 beds",
       "beds": 38,
       "bedsTotal": 200,
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "hospital",
       "name": "BPKIHS, Dharan",
-      "nameNe": "\u092c\u0940\u092a\u0940 \u0915\u094b\u0907\u0930\u093e\u0932\u093e \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f",
+      "nameNe": "बीपी कोइराला स्वास्थ्य",
       "status": "open",
       "detail": "150 beds",
       "beds": 150,
       "bedsTotal": 600,
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "hospital",
       "name": "Koshi Hospital, Biratnagar",
-      "nameNe": "\u0915\u094b\u0936\u0940 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+      "nameNe": "कोशी अस्पताल",
       "status": "open",
       "detail": "80 beds",
       "beds": 80,
       "bedsTotal": 350,
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "hospital",
       "name": "Bheri Hospital, Nepalgunj",
-      "nameNe": "\u092d\u0947\u0930\u0940 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+      "nameNe": "भेरी अस्पताल",
       "status": "open",
       "detail": "70 beds",
       "beds": 70,
       "bedsTotal": 200,
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "hospital",
       "name": "Chitwan Medical College",
-      "nameNe": "\u091a\u093f\u0924\u0935\u0928 \u092e\u0947\u0921\u093f\u0915\u0932 \u0915\u0932\u0947\u091c",
+      "nameNe": "चितवन मेडिकल कलेज",
       "status": "open",
       "detail": "100 beds",
       "beds": 100,
       "bedsTotal": 400,
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     },
     {
       "category": "hospital",
       "name": "Lumbini Provincial Hospital",
-      "nameNe": "\u0932\u0941\u092e\u094d\u092c\u093f\u0928\u0940 \u092a\u094d\u0930\u093e\u0926\u0947\u0936\u093f\u0915",
+      "nameNe": "लुम्बिनी प्रादेशिक",
       "status": "open",
       "detail": "110 beds",
       "beds": 110,
       "bedsTotal": 380,
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "lastUpdated": "2026-07-19 23:29 NPT"
     }
   ]
 }
