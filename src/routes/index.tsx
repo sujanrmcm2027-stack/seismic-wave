@@ -7,6 +7,7 @@ import { SafetyReporter } from "@/components/site/SafetyReporter";
 import { InfrastructureStatus } from "@/components/site/InfrastructureStatus";
 import { DidYouFeelIt } from "@/components/site/DidYouFeelIt";
 import { SafetyBoard } from "@/components/site/SafetyBoard";
+import { TectonicStressSandbox } from "@/components/site/TectonicStressSandbox";
 import { useLiveNepalEarthquakes, type NepalEarthquake } from "@/hooks/useLiveNepalEarthquakes";
 import { useCrisisMode } from "@/hooks/useCrisisMode";
 import { t } from "@/lib/i18n/translations";
@@ -807,6 +808,10 @@ function Home() {
                   <div className="text-xs text-muted-foreground mt-1.5">{l}</div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-8">
+              <TectonicStressSandbox />
             </div>
           </div>
         </div>

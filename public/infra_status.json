@@ -6,9 +6,9 @@
       "category": "road",
       "name": "NH01 \u2013 Mahendra Rajmarg",
       "nameNe": "\u092e\u0939\u0947\u0928\u094d\u0926\u094d\u0930 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
-      "status": "open",
-      "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "status": "partial",
+      "detail": "Trees Falling at Jitpur Simara-22, Bara",
+      "lastUpdated": "2026-07-19T21:52:10.744172+05:45"
     },
     {
       "category": "road",
@@ -22,9 +22,9 @@
       "category": "road",
       "name": "NH03 \u2013 Puspalal Hwy (Mid-Hill)",
       "nameNe": "\u092a\u0941\u0937\u094d\u092a\u0932\u093e\u0932 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
-      "status": "open",
-      "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "status": "partial",
+      "detail": "Landslide at Kanthekhola-5, Baglung",
+      "lastUpdated": "2026-07-19T21:52:10.744172+05:45"
     },
     {
       "category": "road",
@@ -126,9 +126,9 @@
       "category": "road",
       "name": "NH34 \u2013 Araniko Hwy",
       "nameNe": "\u0905\u0930\u0928\u093f\u0915\u094b \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
-      "status": "open",
-      "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "status": "closed",
+      "detail": "Landslide at Bhotekoshi-2, Sindhupalchok",
+      "lastUpdated": "2026-07-19T21:52:10.744172+05:45"
     },
     {
       "category": "road",
@@ -142,17 +142,17 @@
       "category": "road",
       "name": "NH41 \u2013 Tribhuvan Hwy",
       "nameNe": "\u0924\u094d\u0930\u093f\u092d\u0941\u0935\u0928 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
-      "status": "open",
-      "detail": "",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "status": "partial",
+      "detail": "Landslide at Bhimphedi-9, Makwanpur",
+      "lastUpdated": "2026-07-19T21:52:10.744172+05:45"
     },
     {
       "category": "road",
       "name": "NH42 \u2013 Prithvi Hwy",
       "nameNe": "\u092a\u0943\u0925\u094d\u0935\u0940 \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917",
       "status": "partial",
-      "detail": "Reported issues in news",
-      "lastUpdated": "2026-07-19 14:00 NPT"
+      "detail": "Landslide at Aanbookhaireni-2, Tanahu",
+      "lastUpdated": "2026-07-19T21:52:10.744172+05:45"
     },
     {
       "category": "road",
