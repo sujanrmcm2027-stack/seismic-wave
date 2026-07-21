@@ -44,7 +44,7 @@ jobs:
 
           if [ "$IS_JSON" = "true" ]; then
             echo "✅ DOR API returned JSON — parsing ..."
-            python3 - <<'PYEOF'
+            python3 -c "import sys, textwrap; exec(textwrap.dedent(sys.stdin.read()))" <<'PYEOF'
           import json, sys, os
 
           with open("/tmp/dor_raw.json") as f:
@@ -85,7 +85,7 @@ jobs:
           fi
 
           # Build full infra JSON (roads from DOR if available, fallback otherwise)
-          python3 - <<PYEOF
+          python3 -c "import sys, textwrap; exec(textwrap.dedent(sys.stdin.read()))" <<PYEOF
           import json, os
 
           npt_now = "$NPT_NOW"
@@ -192,7 +192,7 @@ jobs:
               metar_dict = {m.get("icaoId"): m for m in metar_data}
               
               # 2. Fetch Google News RSS for disruptions
-              query_air = urllib.parse.quote("Nepal AND (airport OR flight OR TIA) AND (closed OR cancelled OR delayed OR suspended)")
+              query_air = urllib.parse.quote("Nepal AND (airport OR flight OR TIA) AND (closed OR cancelled OR delayed OR suspended) when:1d")
               url_air = f"https://news.google.com/rss/search?q={query_air}&hl=en-US&gl=US&ceid=US:en"
               req_air = urllib.request.Request(url_air, headers={"User-Agent": "Mozilla/5.0"})
               res_air = urllib.request.urlopen(req_air, timeout=10)

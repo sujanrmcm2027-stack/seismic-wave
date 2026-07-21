@@ -28,7 +28,7 @@ jobs:
 
       - name: Fetch Incidents and Update JSON
         run: |
-          python3 - <<'PYEOF'
+          python3 -c "import sys, textwrap; exec(textwrap.dedent(sys.stdin.read()))" <<'PYEOF'
           import requests
           import feedparser
           import json
