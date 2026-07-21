@@ -278,5 +278,6 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "chore: auto-update infra_status.json [$(TZ='Asia/Kathmandu' date '+%Y-%m-%d %H:%M NPT')]"
+            git pull --rebase
             git push
           fi

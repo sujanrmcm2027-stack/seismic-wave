@@ -2,8 +2,8 @@ name: Update Live Incidents
 
 on:
   schedule:
-    # Run every 30 minutes
-    - cron: "*/30 * * * *"
+    # Run at minute 15 and 45
+    - cron: "15,45 * * * *"
   workflow_dispatch: # allow manual trigger
 
 permissions:
@@ -145,5 +145,6 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "chore: auto-update live_incidents.json [$(TZ='Asia/Kathmandu' date '+%Y-%m-%d %H:%M NPT')]"
+            git pull --rebase
             git push
           fi
