@@ -67,6 +67,20 @@ function formatTimeAgo(time: string, now: number) {
   return `${diffDays}d ago`;
 }
 
+function parseIncidentDetail(detail: string) {
+  let url = null;
+  // Require a closing quote to ensure the URL wasn't truncated mid-string
+  const urlMatch = detail.match(/href="([^">]+)"/);
+  if (urlMatch) {
+    url = urlMatch[1];
+  }
+  
+  // Remove HTML tags (even if truncated and unclosed)
+  let text = detail.replace(/<[^>]*>?/gm, "").trim();
+  
+  return { text, url };
+}
+
 export function DamageIncidentFeed({ incidents }: { incidents: DamageIncident[] }) {
   const [now, setNow] = useState(() => Date.now());
 
@@ -117,9 +131,28 @@ export function DamageIncidentFeed({ incidents }: { incidents: DamageIncident[] 
               <h3 className="mt-2 text-sm font-semibold leading-snug text-foreground">
                 {incident.headline}
               </h3>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                {incident.detail}
-              </p>
+              {(() => {
+                const { text, url } = parseIncidentDetail(incident.detail);
+                return (
+                  <div className="mt-1">
+                    {text && (
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {text}
+                      </p>
+                    )}
+                    {url && (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 mt-1 text-[11px] font-medium text-primary hover:underline"
+                      >
+                        Read more
+                      </a>
+                    )}
+                  </div>
+                );
+              })()}
 
               {incident.verification === "unverified" && (
                 <div className="mt-2 flex items-center gap-1.5 rounded-md border border-amber-500/25 bg-amber-500/10 px-2 py-1 text-[11px] font-medium text-amber-700 dark:text-amber-300">

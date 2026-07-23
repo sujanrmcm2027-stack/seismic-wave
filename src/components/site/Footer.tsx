@@ -376,11 +376,11 @@ export function Footer() {
             <div className="flex items-center gap-4">
               <img
                 src={logo}
-                alt="Nepal Seismic Portal logo"
+                alt="Nepal Seismic Disaster Portal logo"
                 className="w-12 h-12 rounded-lg object-cover shadow-sm shrink-0"
               />
               <div>
-                <div className="font-serif text-lg font-bold text-foreground">Nepal Seismic Portal</div>
+                <div className="font-serif text-lg font-bold text-foreground">Nepal Seismic Disaster Portal</div>
                 <p className="text-sm text-muted-foreground mt-1 max-w-sm">
                   A national resource for earthquake awareness, preparedness, and resilience in Nepal.
                 </p>

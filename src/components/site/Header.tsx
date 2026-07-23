@@ -1,8 +1,9 @@
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
-import { Menu, Search, X, Waves } from "lucide-react";
+import { Menu, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { searchIndex } from "@/data/searchIndex";
+import logo from "@/assets/logo.jpeg";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -113,15 +114,14 @@ export function Header() {
 
         {/* ── LOGO ─────────────────────────────────────── */}
         <Link to="/" className="flex items-center gap-2 shrink-0 group">
-          <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-            <Waves className="w-4 h-4 text-primary" />
-          </div>
+          <img
+            src={logo}
+            alt="Nepal Seismic Disaster Portal logo"
+            className="w-8 h-8 rounded-lg object-cover shadow-sm shrink-0"
+          />
           <div className="hidden sm:block leading-none">
             <span className="block font-bold text-foreground text-sm tracking-tight">
-              Nepal Seismic
-            </span>
-            <span className="block font-mono text-[9px] tracking-[0.15em] text-muted-foreground uppercase mt-0.5">
-              Disaster Portal
+              Nepal Seismic Disaster Portal
             </span>
           </div>
         </Link>
