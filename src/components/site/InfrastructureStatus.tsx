@@ -243,7 +243,7 @@ export function InfrastructureStatus() {
                     {lang === "ne" ? r.nameNe : r.name}
                   </div>
                   {r.detail && (
-                    <div className="text-[10px] text-muted-foreground/70 mt-0.5 line-clamp-1">
+                    <div className="text-[10px] text-muted-foreground/70 mt-0.5">
                       {r.detail}
                     </div>
                   )}
@@ -273,7 +273,7 @@ export function InfrastructureStatus() {
                     {lang === "ne" ? a.nameNe : a.name}
                   </div>
                   {a.detail && (
-                    <div className="text-[10px] text-muted-foreground/70 mt-0.5 line-clamp-1">
+                    <div className="text-[10px] text-muted-foreground/70 mt-0.5">
                       {a.detail}
                     </div>
                   )}
@@ -299,7 +299,7 @@ export function InfrastructureStatus() {
               return (
                 <div key={i} className="py-2 border-b border-border/30 last:border-0">
                   <div className="flex items-start justify-between gap-2 mb-1.5">
-                    <div className="text-[11.5px] font-medium text-foreground leading-tight line-clamp-1">
+                    <div className="text-[11.5px] font-medium text-foreground leading-tight">
                       {lang === "ne" ? h.nameNe : h.name}
                     </div>
                     <div className="shrink-0 mt-0.5">
