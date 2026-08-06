@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -24,7 +26,7 @@ jobs:
           python-version: '3.11'
           
       - name: Install dependencies
-        run: pip install requests feedparser
+        run: pip install requests feedparser gspread google-auth
 
       - name: Fetch Incidents and Update JSON
         run: |
@@ -148,3 +150,84 @@ jobs:
             git pull --rebase
             git push
           fi
+
+      - name: Update Google Sheets
+        env:
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+        run: |
+          if [ -z "$GCP_CREDENTIALS" ] || [ -z "$GOOGLE_SHEET_ID" ]; then
+            echo "Google Sheets credentials not provided. Skipping."
+            exit 0
+          fi
+          
+          python3 -c "import sys, textwrap; exec(textwrap.dedent(sys.stdin.read()))" <<'PYEOF'
+          import os, json, gspread
+          from google.oauth2.service_account import Credentials
+
+          credentials_json = os.environ.get('GCP_CREDENTIALS', '{}')
+          sheet_id = os.environ.get('GOOGLE_SHEET_ID')
+
+          try:
+              creds_dict = json.loads(credentials_json)
+              scopes = ['https://www.googleapis.com/auth/spreadsheets']
+              creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
+              client = gspread.authorize(creds)
+              
+              sheet = client.open_by_key(sheet_id)
+              
+              try:
+                  worksheet = sheet.worksheet("Incidents")
+              except gspread.exceptions.WorksheetNotFound:
+                  worksheet = sheet.add_worksheet(title="Incidents", rows="1000", cols="12")
+                  worksheet.append_row(["Incident ID", "Time", "District", "Place", "Category", "Phase", "Headline", "Detail", "Source", "Lat", "Lng"])
+
+              with open("public/live_incidents.json") as f:
+                  incidents = json.load(f)
+              
+              if isinstance(incidents, dict) and "items" in incidents:
+                  incidents = incidents["items"]
+                  
+              import subprocess
+              old_incident_ids = set()
+              try:
+                  result = subprocess.run(['git', 'show', 'HEAD~1:public/live_incidents.json'], capture_output=True, text=True)
+                  if result.returncode == 0:
+                      old_data = json.loads(result.stdout)
+                      if isinstance(old_data, dict) and "items" in old_data:
+                          old_data = old_data["items"]
+                      for item in old_data:
+                          if isinstance(item, dict) and item.get("id"):
+                              old_incident_ids.add(item.get("id"))
+              except Exception as e:
+                  print(f"Notice: Failed to fetch old data or no previous commit: {e}")
+              
+              rows_to_append = []
+              for item in incidents:
+                  incident_id = item.get("id", "")
+                  
+                  if incident_id in old_incident_ids:
+                      continue # Already appended previously
+                      
+                  rows_to_append.append([
+                      incident_id,
+                      item.get("time", ""),
+                      item.get("district", ""),
+                      item.get("place", ""),
+                      item.get("category", ""),
+                      item.get("phase", ""),
+                      item.get("headline", ""),
+                      item.get("detail", ""),
+                      item.get("source", ""),
+                      item.get("lat", ""),
+                      item.get("lng", "")
+                  ])
+              
+              if rows_to_append:
+                  worksheet.append_rows(rows_to_append, value_input_option='USER_ENTERED')
+                  print(f"Successfully appended {len(rows_to_append)} rows to Incidents sheet.")
+                  
+          except Exception as e:
+              print(f"Failed to update Google Sheets: {e}")
+              sys.exit(1)
+          PYEOF

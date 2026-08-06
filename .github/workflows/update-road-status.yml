@@ -17,6 +17,16 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: pip install gspread google-auth
 
       - name: Fetch road status from DOR & write JSON
         run: |
@@ -239,25 +249,12 @@ jobs:
           except Exception as e:
               print("Airport fallback failed", e)
 
-          hospitals = [
-              {"category": "hospital", "name": "Bir Hospital, Kathmandu",           "nameNe": "बीर अस्पताल",              "status": "open", "detail": "120 beds", "beds": 120, "bedsTotal": 390, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "TU Teaching Hospital, KTM",         "nameNe": "त्रिवि शिक्षण अस्पताल",    "status": "open", "detail": "95 beds", "beds": 95, "bedsTotal": 600, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "Patan Hospital, Lalitpur",          "nameNe": "पाटन अस्पताल",             "status": "open", "detail": "60 beds", "beds": 60, "bedsTotal": 300, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "Manipal College Hospital, PKR",     "nameNe": "मणिपाल अस्पताल",           "status": "open", "detail": "45 beds", "beds": 45, "bedsTotal": 150, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "Gandaki Medical College, PKR",      "nameNe": "गण्डकी अस्पताल",           "status": "open", "detail": "38 beds", "beds": 38, "bedsTotal": 200, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "BPKIHS, Dharan",                    "nameNe": "बीपी कोइराला स्वास्थ्य",   "status": "open", "detail": "150 beds", "beds": 150, "bedsTotal": 600, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "Koshi Hospital, Biratnagar",        "nameNe": "कोशी अस्पताल",             "status": "open", "detail": "80 beds", "beds": 80, "bedsTotal": 350, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "Bheri Hospital, Nepalgunj",         "nameNe": "भेरी अस्पताल",             "status": "open", "detail": "70 beds", "beds": 70, "bedsTotal": 200, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "Chitwan Medical College",           "nameNe": "चितवन मेडिकल कलेज",        "status": "open", "detail": "100 beds", "beds": 100, "bedsTotal": 400, "lastUpdated": npt_now},
-              {"category": "hospital", "name": "Lumbini Provincial Hospital",       "nameNe": "लुम्बिनी प्रादेशिक",       "status": "open", "detail": "110 beds", "beds": 110, "bedsTotal": 380, "lastUpdated": npt_now},
-          ]
-
           roads = roads_from_dor if roads_from_dor else fallback_roads
 
           payload = {
               "generatedAt": npt_now,
               "source": "DOR Nepal (navigate.dor.gov.np)" if roads_from_dor else "Curated fallback — DOR API unavailable",
-              "items": roads + airports + hospitals,
+              "items": roads + airports,
           }
 
           with open("public/infra_status.json", "w", encoding="utf-8") as f:
@@ -281,3 +278,79 @@ jobs:
             git pull --rebase
             git push
           fi
+
+      - name: Update Google Sheets
+        env:
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+        run: |
+          if [ -z "$GCP_CREDENTIALS" ] || [ -z "$GOOGLE_SHEET_ID" ]; then
+            echo "Google Sheets credentials not provided. Skipping."
+            exit 0
+          fi
+          
+          python3 -c "import sys, textwrap; exec(textwrap.dedent(sys.stdin.read()))" <<'PYEOF'
+          import os, json, gspread
+          from google.oauth2.service_account import Credentials
+
+          credentials_json = os.environ.get('GCP_CREDENTIALS', '{}')
+          sheet_id = os.environ.get('GOOGLE_SHEET_ID')
+
+          try:
+              creds_dict = json.loads(credentials_json)
+              scopes = ['https://www.googleapis.com/auth/spreadsheets']
+              creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
+              client = gspread.authorize(creds)
+              
+              sheet = client.open_by_key(sheet_id)
+              
+              try:
+                  worksheet = sheet.worksheet("Infra Status")
+              except gspread.exceptions.WorksheetNotFound:
+                  worksheet = sheet.add_worksheet(title="Infra Status", rows="1000", cols="8")
+                  worksheet.append_row(["Timestamp", "Category", "Name", "Name (Nepali)", "Status", "Detail", "Last Updated"])
+
+              with open("public/infra_status.json") as f:
+                  data = json.load(f)
+                  
+              import subprocess
+              old_items = {}
+              try:
+                  result = subprocess.run(['git', 'show', 'HEAD~1:public/infra_status.json'], capture_output=True, text=True)
+                  if result.returncode == 0:
+                      old_data = json.loads(result.stdout)
+                      old_items = {item.get("name"): item for item in old_data.get("items", [])}
+              except Exception as e:
+                  print(f"Notice: Failed to fetch old data or no previous commit: {e}")
+              
+              generated_at = data.get("generatedAt", "")
+              items = data.get("items", [])
+              
+              rows_to_append = []
+              for item in items:
+                  name = item.get("name", "")
+                  
+                  # Compare with old item
+                  old_item = old_items.get(name)
+                  if old_item:
+                      if old_item.get("status") == item.get("status") and old_item.get("detail") == item.get("detail"):
+                          continue # No change, skip
+                          
+                  rows_to_append.append([
+                      generated_at,
+                      item.get("category", ""),
+                      name,
+                      item.get("nameNe", ""),
+                      item.get("status", ""),
+                      item.get("detail", ""),
+                      item.get("lastUpdated", "")
+                  ])
+              
+              if rows_to_append:
+                  worksheet.append_rows(rows_to_append, value_input_option='USER_ENTERED')
+                  print(f"Successfully appended {len(rows_to_append)} rows to Infra Status sheet.")
+                  
+          except Exception as e:
+              print(f"Failed to update Google Sheets: {e}")
+              sys.exit(1)
+          PYEOF

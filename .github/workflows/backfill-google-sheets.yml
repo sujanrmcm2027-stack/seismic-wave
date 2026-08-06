@@ -1,0 +1,129 @@
+name: Backfill Google Sheets History
+
+on: 
+  workflow_dispatch: # Allows manual trigger from the Actions tab
+
+jobs:
+  backfill-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # We need the full git history to extract all past records
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: pip install gspread google-auth
+
+      - name: Extract History and Push to Sheets
+        env:
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+        run: |
+          if [ -z "$GCP_CREDENTIALS" ] || [ -z "$GOOGLE_SHEET_ID" ]; then
+            echo "Google Sheets credentials not provided. Skipping."
+            exit 1
+          fi
+          
+          python3 -c "import sys, textwrap; exec(textwrap.dedent(sys.stdin.read()))" <<'PYEOF'
+          import os, json, subprocess, gspread
+          from google.oauth2.service_account import Credentials
+
+          credentials_json = os.environ.get('GCP_CREDENTIALS', '{}')
+          sheet_id = os.environ.get('GOOGLE_SHEET_ID')
+
+          try:
+              creds_dict = json.loads(credentials_json)
+              scopes = ['https://www.googleapis.com/auth/spreadsheets']
+              creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
+              client = gspread.authorize(creds)
+              sheet = client.open_by_key(sheet_id)
+          except Exception as e:
+              print(f"Failed to authenticate with Google Sheets: {e}")
+              sys.exit(1)
+
+          def get_file_commits(filepath):
+              result = subprocess.run(['git', 'log', '--pretty=format:%H', '--', filepath], capture_output=True, text=True)
+              return result.stdout.strip().split('\n')
+
+          def get_file_content(commit_hash, filepath):
+              try:
+                  result = subprocess.run(['git', 'show', f'{commit_hash}:{filepath}'], capture_output=True, text=True, check=True)
+                  return result.stdout
+              except:
+                  return None
+
+          print("Extracting Infrastructure History...")
+          infra_commits = get_file_commits('public/infra_status.json')
+          infra_records = [["Timestamp", "Category", "Name", "Name (Nepali)", "Status", "Detail", "Last Updated"]]
+          
+          if infra_commits and infra_commits != ['']:
+              # Reverse to chronologically append from oldest to newest
+              for commit in reversed(infra_commits):
+                  content = get_file_content(commit, 'public/infra_status.json')
+                  if not content: continue
+                  try:
+                      data = json.loads(content)
+                      generated_at = data.get("generatedAt", "")
+                      for item in data.get("items", []):
+                          infra_records.append([
+                              generated_at, item.get("category", ""), item.get("name", ""),
+                              item.get("nameNe", ""), item.get("status", ""), item.get("detail", ""),
+                              item.get("lastUpdated", "")
+                          ])
+                  except:
+                      pass
+                      
+          print("Extracting Incidents History...")
+          inc_commits = get_file_commits('public/live_incidents.json')
+          inc_records = [["Incident ID", "Time", "District", "Place", "Category", "Phase", "Headline", "Detail", "Source", "Lat", "Lng"]]
+          
+          if inc_commits and inc_commits != ['']:
+              for commit in reversed(inc_commits):
+                  content = get_file_content(commit, 'public/live_incidents.json')
+                  if not content: continue
+                  try:
+                      data = json.loads(content)
+                      if isinstance(data, dict) and "items" in data: data = data["items"]
+                      for item in data:
+                          inc_records.append([
+                              item.get("id", ""), item.get("time", ""), item.get("district", ""),
+                              item.get("place", ""), item.get("category", ""), item.get("phase", ""),
+                              item.get("headline", ""), item.get("detail", ""), item.get("source", ""),
+                              item.get("lat", ""), item.get("lng", "")
+                          ])
+                  except:
+                      pass
+
+          # Push to Sheets
+          try:
+              if len(infra_records) > 1:
+                  try:
+                      worksheet_infra = sheet.worksheet("Infra Status History")
+                  except gspread.exceptions.WorksheetNotFound:
+                      worksheet_infra = sheet.add_worksheet(title="Infra Status History", rows="1000", cols="8")
+                  print(f"Uploading {len(infra_records)} rows to Infra Status History...")
+                  worksheet_infra.clear()
+                  worksheet_infra.update(infra_records, value_input_option='USER_ENTERED')
+                  
+              if len(inc_records) > 1:
+                  try:
+                      worksheet_inc = sheet.worksheet("Incidents History")
+                  except gspread.exceptions.WorksheetNotFound:
+                      worksheet_inc = sheet.add_worksheet(title="Incidents History", rows="1000", cols="12")
+                  print(f"Uploading {len(inc_records)} rows to Incidents History...")
+                  worksheet_inc.clear()
+                  worksheet_inc.update(inc_records, value_input_option='USER_ENTERED')
+                  
+              print("Backfill complete!")
+          except Exception as e:
+              print(f"Failed to push data to Sheets: {e}")
+              sys.exit(1)
+          PYEOF
