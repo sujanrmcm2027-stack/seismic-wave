@@ -1,10 +1,16 @@
-name: Backfill Google Sheets History
+name: Export History to CSV
 
 on: 
+  schedule:
+    # Run once a day at midnight NPT (18:15 UTC)
+    - cron: "15 18 * * *"
   workflow_dispatch: # Allows manual trigger from the Actions tab
 
+permissions:
+  contents: write
+
 jobs:
-  backfill-history:
+  export-csv-history:
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -19,35 +25,10 @@ jobs:
         with:
           python-version: '3.11'
           
-      - name: Install dependencies
-        run: pip install gspread google-auth
-
-      - name: Extract History and Push to Sheets
-        env:
-          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
-          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+      - name: Extract History to CSV
         run: |
-          if [ -z "$GCP_CREDENTIALS" ] || [ -z "$GOOGLE_SHEET_ID" ]; then
-            echo "Google Sheets credentials not provided. Skipping."
-            exit 1
-          fi
-          
           python3 -c "import sys, textwrap; exec(textwrap.dedent(sys.stdin.read()))" <<'PYEOF'
-          import os, json, subprocess, gspread
-          from google.oauth2.service_account import Credentials
-
-          credentials_json = os.environ.get('GCP_CREDENTIALS', '{}')
-          sheet_id = os.environ.get('GOOGLE_SHEET_ID')
-
-          try:
-              creds_dict = json.loads(credentials_json)
-              scopes = ['https://www.googleapis.com/auth/spreadsheets']
-              creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
-              client = gspread.authorize(creds)
-              sheet = client.open_by_key(sheet_id)
-          except Exception as e:
-              print(f"Failed to authenticate with Google Sheets: {e}")
-              sys.exit(1)
+          import os, json, subprocess, csv
 
           def get_file_commits(filepath):
               result = subprocess.run(['git', 'log', '--pretty=format:%H', '--', filepath], capture_output=True, text=True)
@@ -102,28 +83,35 @@ jobs:
                   except:
                       pass
 
-          # Push to Sheets
+          # Save to CSV
           try:
               if len(infra_records) > 1:
-                  try:
-                      worksheet_infra = sheet.worksheet("Infra Status History")
-                  except gspread.exceptions.WorksheetNotFound:
-                      worksheet_infra = sheet.add_worksheet(title="Infra Status History", rows="1000", cols="8")
-                  print(f"Uploading {len(infra_records)} rows to Infra Status History...")
-                  worksheet_infra.clear()
-                  worksheet_infra.update(infra_records, value_input_option='USER_ENTERED')
+                  with open('infra_history.csv', 'w', newline='', encoding='utf-8') as f:
+                      writer = csv.writer(f)
+                      writer.writerows(infra_records)
+                  print(f"Saved {len(infra_records)} rows to infra_history.csv")
                   
               if len(inc_records) > 1:
-                  try:
-                      worksheet_inc = sheet.worksheet("Incidents History")
-                  except gspread.exceptions.WorksheetNotFound:
-                      worksheet_inc = sheet.add_worksheet(title="Incidents History", rows="1000", cols="12")
-                  print(f"Uploading {len(inc_records)} rows to Incidents History...")
-                  worksheet_inc.clear()
-                  worksheet_inc.update(inc_records, value_input_option='USER_ENTERED')
+                  with open('incidents_history.csv', 'w', newline='', encoding='utf-8') as f:
+                      writer = csv.writer(f)
+                      writer.writerows(inc_records)
+                  print(f"Saved {len(inc_records)} rows to incidents_history.csv")
                   
-              print("Backfill complete!")
+              print("Export complete!")
           except Exception as e:
-              print(f"Failed to push data to Sheets: {e}")
+              print(f"Failed to save CSVs: {e}")
               sys.exit(1)
           PYEOF
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add infra_history.csv incidents_history.csv
+          if git diff --staged --quiet; then
+            echo "No new historical data to commit."
+          else
+            git commit -m "data: update history CSVs [$(TZ='Asia/Kathmandu' date '+%Y-%m-%d NPT')]"
+            git pull --rebase
+            git push
+          fi
