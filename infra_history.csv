@@ -17587,3 +17587,1083 @@ Timestamp,Category,Name,Name (Nepali),Status,Detail,Last Updated
 2026-08-22 00:24 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 00:24 NPT
 2026-08-22 00:24 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 00:24 NPT
 2026-08-22 00:24 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 00:24 NPT
+2026-08-22 01:12 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 01:12 NPT
+2026-08-22 01:12 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 01:12 NPT
+2026-08-22 01:34 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 01:34 NPT
+2026-08-22 01:34 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 01:34 NPT
+2026-08-22 02:12 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 02:12 NPT
+2026-08-22 02:12 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 02:12 NPT
+2026-08-22 02:37 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 02:37 NPT
+2026-08-22 02:37 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 02:37 NPT
+2026-08-22 03:11 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 03:11 NPT
+2026-08-22 03:11 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 03:11 NPT
+2026-08-22 03:36 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 03:36 NPT
+2026-08-22 03:36 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 03:36 NPT
+2026-08-22 04:12 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 04:12 NPT
+2026-08-22 04:12 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 04:12 NPT
+2026-08-22 04:38 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 04:38 NPT
+2026-08-22 04:38 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 04:38 NPT
+2026-08-22 05:11 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 05:11 NPT
+2026-08-22 05:11 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 05:11 NPT
+2026-08-22 05:35 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 05:35 NPT
+2026-08-22 05:35 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 05:35 NPT
+2026-08-22 07:05 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 07:05 NPT
+2026-08-22 07:05 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 07:05 NPT
+2026-08-22 08:21 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 08:21 NPT
+2026-08-22 08:21 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 08:21 NPT
+2026-08-22 09:28 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,closed,"Landslide at Bhume-4, Rukum East",2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 09:28 NPT
+2026-08-22 09:28 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 09:28 NPT
+2026-08-22 10:20 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,closed,"Landslide at Jagannath-6, Bajura",2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 10:20 NPT
+2026-08-22 10:20 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 10:20 NPT
+2026-08-22 11:14 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,closed,"Landslide at Jagannath-6, Bajura",2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 11:14 NPT
+2026-08-22 11:14 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 11:14 NPT
+2026-08-22 11:41 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,closed,"Landslide at Jagannath-6, Bajura",2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 11:41 NPT
+2026-08-22 11:41 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 11:41 NPT
+2026-08-22 12:35 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,closed,"Landslide at Jagannath-6, Bajura",2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 12:35 NPT
+2026-08-22 12:35 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 12:35 NPT
+2026-08-22 13:18 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,closed,"Landslide at Himali-4, Bajura",2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 13:18 NPT
+2026-08-22 13:18 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 13:18 NPT
+2026-08-22 14:17 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,closed,"Landslide at Jagannath-6, Bajura",2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 14:17 NPT
+2026-08-22 14:17 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 14:17 NPT
+2026-08-22 15:13 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,closed,"Landslide at Jagannath-6, Bajura",2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 15:13 NPT
+2026-08-22 15:13 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 15:13 NPT
+2026-08-22 15:38 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,closed,"Landslide at Jagannath-6, Bajura",2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 15:38 NPT
+2026-08-22 15:38 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 15:38 NPT
+2026-08-22 16:11 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 16:11 NPT
+2026-08-22 16:11 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 16:11 NPT
+2026-08-22 16:35 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 16:35 NPT
+2026-08-22 16:35 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 16:35 NPT
+2026-08-22 17:07 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 17:07 NPT
+2026-08-22 17:07 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 17:07 NPT
+2026-08-22 17:31 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 17:31 NPT
+2026-08-22 17:31 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 17:31 NPT
+2026-08-22 18:27 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 18:27 NPT
+2026-08-22 18:27 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 18:27 NPT
+2026-08-22 19:18 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 19:18 NPT
+2026-08-22 19:18 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 19:18 NPT
+2026-08-22 20:08 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 20:08 NPT
+2026-08-22 20:08 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 20:08 NPT
+2026-08-22 20:33 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 20:33 NPT
+2026-08-22 20:33 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 20:33 NPT
+2026-08-22 21:08 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 21:08 NPT
+2026-08-22 21:08 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 21:08 NPT
+2026-08-22 21:32 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 21:32 NPT
+2026-08-22 21:32 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 21:32 NPT
+2026-08-22 22:12 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 22:12 NPT
+2026-08-22 22:12 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 22:12 NPT
+2026-08-22 22:37 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 22:37 NPT
+2026-08-22 22:37 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 22:37 NPT
+2026-08-22 23:07 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 23:07 NPT
+2026-08-22 23:07 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 23:07 NPT
+2026-08-22 23:32 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-22 23:32 NPT
+2026-08-22 23:32 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-22 23:32 NPT
+2026-08-23 00:18 NPT,road,NH01 – Mahendra Rajmarg,महेन्द्र राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH02 – Mechi Rajmarg,मेची राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH03 – Puspalal Hwy (Mid-Hill),पुष्पलाल राजमार्ग,partial,"Landslide at Chaurjahari-8, Rukum West",2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH04 – Birtamod-Chandragadhi,विर्तामोड–चन्द्रगढी,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH05 – Postal Hwy,हुलाकी राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH06 – Koshi Rajmarg,कोशी राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH08 – Sagarmatha Rajmarg,सगरमाथा राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH09 – Madan Bhandari Hwy,मदन भण्डारी राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH10 – Siddhartha Hwy,सिद्धार्थ राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH11 – Rapti Rajmarg,राप्ती राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH12 – Ratna Rajmarg,रत्न राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH13 – Karnali Rajmarg,कर्णाली राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH14 – Mahakali Rajmarg,महाकाली राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH15 – Seti Rajmarg,सेती राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH16 – Rapti-Lumbini Hwy,राप्ती-लुम्बिनी,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH34 – Araniko Hwy,अरनिको राजमार्ग,closed,"Landslide at Bhotekoshi-2, Sindhupalchok",2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH38 – BP Hwy,बीपी राजमार्ग,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH41 – Tribhuvan Hwy,त्रिभुवन राजमार्ग,partial,"Landslide at Bhimphedi-9, Makwanpur",2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH42 – Prithvi Hwy,पृथ्वी राजमार्ग,partial,"Landslide at Aanbookhaireni-2, Tanahu",2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,road,NH43 – Narayanghat-Mugling,नारायणगढ–मुग्लिन,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,airport,Tribhuvan Intl (KTM),त्रिभुवन अन्तर्राष्ट्रिय,open,Normal operations,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,airport,Gautam Buddha Intl (BWA),गौतम बुद्ध विमानस्थल,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,airport,Pokhara Regional (PKR),पोखरा विमानस्थल,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,airport,Bharatpur (BHR),भरतपुर विमानस्थल,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,airport,Dhangadhi (DHI),धनगढी विमानस्थल,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,airport,Biratnagar (BIR),विराटनगर विमानस्थल,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,airport,Nepalgunj (KEP),नेपालगञ्ज विमानस्थल,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,airport,Chandragadhi (BDP),चन्द्रगढी विमानस्थल,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,airport,Janakpur (JKR),जनकपुर विमानस्थल,open,,2026-08-23 00:18 NPT
+2026-08-23 00:18 NPT,airport,Simara (SIF),सिमरा विमानस्थल,open,,2026-08-23 00:18 NPT
