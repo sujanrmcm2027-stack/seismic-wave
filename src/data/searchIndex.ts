@@ -12,6 +12,12 @@ export type SearchEntry = {
 
 export const SEARCH_INDEX: SearchEntry[] = [
   {
+    title: "Multi-Source Verification",
+    description: "Cross-verification intelligence comparing NEMRC (Nepal), CEA/CENC (China), and USGS (USA).",
+    to: "/#verification",
+    keywords: ["verification", "multi-source", "nemrc", "cenc", "cea", "usgs", "accuracy", "discrepancy", "agreement"],
+  },
+  {
     title: "Dashboard",
     description: "Live seismic monitor, earthquake science, and Nepal risk data.",
     to: "/",

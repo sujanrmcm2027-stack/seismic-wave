@@ -33,6 +33,7 @@ import {
   type DdnaReportInput,
 } from "@/data/ddnaSchema";
 import { submitDdnaReport } from "@/lib/ddna/serverFns";
+import { syncDamageAssessment } from "@/services/dataService";
 
 type DdnaFormValues = z.input<typeof ddnaReportInputSchema>;
 
@@ -157,6 +158,7 @@ export function DdnaReportForm() {
     mutationFn: (data: DdnaReportInput) => submitDdnaReport({ data }),
     onSuccess: (report) => {
       queryClient.invalidateQueries({ queryKey: ["ddna-reports"] });
+      void syncDamageAssessment(report);
       toast.success(
         report.within72Hours
           ? "Damage report submitted within the 72-hour compliance window."

@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer, Popup, CircleMarker, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const DEFAULT_CENTER: [number, number] = [28.3949, 84.124];
 const DEFAULT_ZOOM = 7;
@@ -15,13 +15,30 @@ function getMagnitudeColor(magnitude: number) {
 
 export function NepalMapController({ events }: { events: any[] }) {
   const map = useMap();
+  const initialFittedRef = useRef(false);
+
+  useEffect(() => {
+    map.scrollWheelZoom.enable();
+    map.doubleClickZoom.enable();
+    map.touchZoom.enable();
+    map.dragging.enable();
+    if (map.boxZoom) map.boxZoom.enable();
+    if (map.keyboard) map.keyboard.enable();
+  }, [map]);
+
   useEffect(() => {
     if (!events.length) {
-      map.setView(DEFAULT_CENTER, DEFAULT_ZOOM);
+      if (!initialFittedRef.current) {
+        map.setView(DEFAULT_CENTER, DEFAULT_ZOOM);
+        initialFittedRef.current = true;
+      }
       return;
     }
-    const bounds = L.latLngBounds(events.map((event) => [event.latitude, event.longitude]));
-    map.fitBounds(bounds, { padding: [20, 20], maxZoom: 8 });
+    if (!initialFittedRef.current) {
+      const bounds = L.latLngBounds(events.map((event) => [event.latitude, event.longitude]));
+      map.fitBounds(bounds, { padding: [20, 20], maxZoom: 8 });
+      initialFittedRef.current = true;
+    }
   }, [events, map]);
   return null;
 }
@@ -71,7 +88,12 @@ export default function EarthquakeMap({ events, formatNpt }: { events: any[], fo
     <MapContainer
       center={DEFAULT_CENTER}
       zoom={DEFAULT_ZOOM}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
+      doubleClickZoom={true}
+      touchZoom={true}
+      dragging={true}
+      zoomSnap={0.5}
+      zoomDelta={0.5}
       style={{ height: "100%", width: "100%" }}
       attributionControl={false}
     >

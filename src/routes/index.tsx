@@ -9,6 +9,12 @@ import { DidYouFeelIt } from "@/components/site/DidYouFeelIt";
 import { SafetyBoard } from "@/components/site/SafetyBoard";
 import { TectonicStressSandbox } from "@/components/site/TectonicStressSandbox";
 import { useLiveNepalEarthquakes, type NepalEarthquake } from "@/hooks/useLiveNepalEarthquakes";
+import { useMultiSourceEarthquakes } from "@/hooks/useMultiSourceEarthquakes";
+import type { MultiSourceEventGroup } from "@/data/multiSourceSchema";
+import { FinalAssessmentCard } from "@/components/seismic/FinalAssessmentCard";
+import { MultiSourceFeedList } from "@/components/seismic/MultiSourceFeedList";
+import { EventDetailModal } from "@/components/seismic/EventDetailModal";
+import { DiagnosticsPanel } from "@/components/seismic/DiagnosticsPanel";
 import { useCrisisMode } from "@/hooks/useCrisisMode";
 import { t } from "@/lib/i18n/translations";
 import { T } from "@/components/ui/T";
@@ -28,6 +34,8 @@ import {
   Radio,
   Waves,
   BookOpen,
+  Server,
+  Filter,
 } from "lucide-react";
 import { useEffect, useState, Suspense, lazy } from "react";
 import {
@@ -50,6 +58,7 @@ import {
 import tectonicSettingImg from "@/assets/tectonic-setting.png";
 
 const EarthquakeMap = lazy(() => import('@/components/site/EarthquakeMap'));
+const MultiSourceMap = lazy(() => import('@/components/seismic/MultiSourceMap'));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -130,21 +139,33 @@ const tooltipStyle = {
 
 function Home() {
   const {
-    events,
-    latestEvent,
+    eventGroups,
+    latestGroup,
+    selectedGroup,
+    setSelectedGroup,
+    health,
+    availableSourceCount,
     loading,
+    refreshing,
     error,
     lastUpdatedAt,
     now,
-    isQuiet,
-    statusBadge,
-    dataSource,
+    legacyEvents: events,
+    refresh,
     formatNpt,
     formatUtc,
     formatTimeAgo,
-  } = useLiveNepalEarthquakes();
+  } = useMultiSourceEarthquakes();
+
+  const latestEvent = events[0] ?? null;
+  const isQuiet = !events.some((e) => e.magnitude >= 4.0 && now - e.timeMs < 3 * 60 * 60 * 1000);
+  const dataSource = "multi-source";
+
   const { liteMode, lang } = useCrisisMode();
   const [isMounted, setIsMounted] = useState(false);
+  const [modalGroup, setModalGroup] = useState<MultiSourceEventGroup | null>(null);
+  const [showDiagnostics, setShowDiagnostics] = useState(false);
+
   useEffect(() => setIsMounted(true), []);
 
   // ── LITE MODE: lightweight semantic HTML view ──────────────────────
@@ -261,42 +282,62 @@ function Home() {
         <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-8 sm:py-12 md:py-20">
           <SectionLabel number="01" label="DASHBOARD" />
 
-          {/* Desktop breadcrumb / status strip (>= md) */}
+          {/* Desktop multi-source breadcrumb strip (>= md) */}
           <div className="hidden md:flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] font-mono tracking-wider text-muted-foreground mb-8 animate-fade-up">
-            <span className="inline-flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-chart-5 animate-pulse" />
-              SYSTEM OPERATIONAL
+            <span className="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              MULTI-SOURCE VERIFICATION ACTIVE
             </span>
             <span className="opacity-40">|</span>
-            <span>USGS FEED: {error && !events.length ? "Offline" : "Connected"}</span>
+            <span className="inline-flex items-center gap-1">
+              <span>🇳🇵 NEMRC:</span>
+              <span className={health.NEMRC.status === "ONLINE" ? "text-emerald-400" : "text-amber-400"}>
+                {health.NEMRC.status}
+              </span>
+            </span>
             <span className="opacity-40">|</span>
-            {dataSource && (
-              <>
-                <span className="uppercase">SOURCE: {dataSource}</span>
-                <span className="opacity-40">|</span>
-              </>
-            )}
-            <span>LIVE EVENTS: {events.length}</span>
+            <span className="inline-flex items-center gap-1">
+              <span>🇨🇳 CENC:</span>
+              <span className={health.CENC.status === "ONLINE" ? "text-emerald-400" : "text-amber-400"}>
+                {health.CENC.status}
+              </span>
+            </span>
+            <span className="opacity-40">|</span>
+            <span className="inline-flex items-center gap-1">
+              <span>🇺🇸 USGS:</span>
+              <span className={health.USGS.status === "ONLINE" ? "text-emerald-400" : "text-amber-400"}>
+                {health.USGS.status}
+              </span>
+            </span>
+            <span className="opacity-40">|</span>
+            <span>ONLINE: {availableSourceCount}/3</span>
+            <span className="opacity-40">|</span>
+            <span>TRACKED: {eventGroups.length}</span>
             <span className="opacity-40">|</span>
             <span>LAST UPDATE: {lastUpdatedAt ? formatNpt(lastUpdatedAt) : "Waiting"}</span>
             <span className="opacity-40">|</span>
-            <span>AUTO REFRESH: 60s</span>
+            <button
+              onClick={() => setShowDiagnostics(!showDiagnostics)}
+              className="text-primary hover:underline font-semibold"
+            >
+              [Agency Telemetry]
+            </button>
           </div>
 
           {/* Mobile status pill strip (< md) */}
           <div className="md:hidden flex items-center gap-2 overflow-x-auto scrollbar-none pb-2 mb-6 -mx-4 px-4 text-[10px] font-mono whitespace-nowrap">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface border border-border shrink-0">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              SYSTEM OK
+              3-WAY VERIFICATION
             </span>
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface border border-border shrink-0">
-              USGS: {error && !events.length ? "Offline" : "Connected"}
+              🇳🇵 NEMRC: {health.NEMRC.status}
             </span>
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface border border-border shrink-0">
-              LIVE EVENTS: {events.length}
+              🇨🇳 CENC: {health.CENC.status}
             </span>
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface border border-border shrink-0">
-              AUTO: 60s
+              🇺🇸 USGS: {health.USGS.status}
             </span>
           </div>
 
@@ -396,275 +437,133 @@ function Home() {
               </div>
             </div>
 
-            {/* RIGHT — live monitoring panel */}
+            {/* RIGHT — Prominent Final Assessment Card */}
             <div className="animate-fade-up" style={{ animationDelay: "180ms" }}>
-              <div className="rounded-lg border border-border bg-card shadow-sm overflow-hidden">
-                <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-surface/60">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-destructive animate-pulse" />
-                    <span className="font-mono text-[10px] tracking-widest uppercase text-foreground font-semibold">
-                      Live Seismic Monitor
-                    </span>
-                  </div>
-                  <SeismicPulse className="text-primary" />
+              {latestGroup ? (
+                <FinalAssessmentCard
+                  group={latestGroup}
+                  onOpenDetails={(g) => setModalGroup(g)}
+                  formatNpt={formatNpt}
+                  formatUtc={formatUtc}
+                  formatTimeAgo={formatTimeAgo}
+                  now={now}
+                />
+              ) : (
+                <div className="p-8 text-center text-sm font-mono text-muted-foreground bg-card rounded-xl border border-border">
+                  Loading multi-source seismic assessment…
                 </div>
-
-                <div className="p-4 grid grid-cols-2 gap-3 border-b border-border">
-                  <div>
-                    <div className="font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
-                      Latest Magnitude
-                    </div>
-                    <div className="font-serif text-3xl font-bold text-foreground mt-0.5">
-                      {loading && !latestEvent ? (
-                        "…"
-                      ) : latestEvent ? (
-                        <>
-                          <StatCounter value={latestEvent.magnitude} decimals={1} />{" "}
-                          <span className="text-muted-foreground/50 text-base font-sans font-normal">
-                            M
-                          </span>
-                        </>
-                      ) : (
-                        <span className="text-muted-foreground/50 text-base font-sans font-normal">
-                          -
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
-                      Latest Event
-                    </div>
-                    <div className="font-serif text-3xl font-bold text-destructive mt-0.5">
-                      {loading && !latestEvent ? (
-                        "…"
-                      ) : (
-                        <>
-                          <StatCounter value={events.length} />{" "}
-                          <span className="text-muted-foreground/50 text-base font-sans font-normal ml-1">
-                            events
-                          </span>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="px-4 py-3 border-b border-border">
-                  <div
-                    className={`inline-flex items-center gap-2 rounded-full border px-2.5 py-1 text-[11px] font-mono ${statusBadge.tone === "red" ? "border-destructive/30 bg-destructive/10 text-destructive" : statusBadge.tone === "amber" ? "border-chart-4/30 bg-chart-4/10 text-chart-4" : "border-chart-2/30 bg-chart-2/10 text-chart-2"}`}
-                  >
-                    <span>
-                      {statusBadge.tone === "red"
-                        ? "🔴"
-                        : statusBadge.tone === "amber"
-                          ? "🟡"
-                          : "🟢"}
-                    </span>
-                    <span>{statusBadge.label}</span>
-                  </div>
-                  {latestEvent ? (
-                    <div className="mt-3 space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="truncate text-foreground">{latestEvent.place}</span>
-                        <span className="font-semibold text-foreground">
-                          M{latestEvent.magnitude.toFixed(1)}
-                        </span>
-                      </div>
-                      <div className="flex flex-wrap gap-3 text-[11px] font-mono">
-                        <span>NPT: {formatNpt(latestEvent.timeMs)}</span>
-                        <span>UTC: {formatUtc(latestEvent.timeMs)}</span>
-                      </div>
-                      <div className="flex flex-wrap gap-3 text-[11px] font-mono">
-                        <span>Depth: {latestEvent.depth.toFixed(0)} km</span>
-                        <span>
-                          Lat/Long: {latestEvent.latitude.toFixed(2)},{" "}
-                          {latestEvent.longitude.toFixed(2)}
-                        </span>
-                        <span>Type: {latestEvent.magType}</span>
-                      </div>
-                      <div className="flex items-center justify-between gap-3 text-[11px] font-mono">
-                        <span>Time ago: {formatTimeAgo(latestEvent.timeMs, now)}</span>
-                        <span>Event ID: {latestEvent.eventId}</span>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="mt-3 text-sm text-muted-foreground">
-                      {error
-                        ? error
-                        : loading
-                          ? "Loading latest Nepal earthquake details…"
-                          : "No recent seismic activity recorded within the last 24 hours. System monitoring active."}
-                    </div>
-                  )}
-                </div>
-
-                {/* sparkline */}
-                <div className="px-4 pt-3 pb-2">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <div className="font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
-                      Activity · 12h
-                    </div>
-                    <div className="text-[10px] font-mono text-chart-5">+18%</div>
-                  </div>
-                  <div className="h-20">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <AreaChart data={spark}>
-                        <defs>
-                          <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="var(--color-primary)" stopOpacity={0.5} />
-                            <stop offset="100%" stopColor="var(--color-primary)" stopOpacity={0} />
-                          </linearGradient>
-                        </defs>
-                        <Area
-                          type="monotone"
-                          dataKey="v"
-                          stroke="var(--color-primary)"
-                          strokeWidth={2}
-                          fill="url(#sparkGrad)"
-                          isAnimationActive
-                        />
-                      </AreaChart>
-                    </ResponsiveContainer>
-                  </div>
-                </div>
-
-                {/* recent quakes list */}
-                <div className="border-t border-border">
-                  <div className="px-4 py-2.5 flex items-center justify-between bg-surface/40">
-                    <div className="font-mono text-[10px] tracking-wider uppercase text-muted-foreground">
-                      Recent Events
-                    </div>
-                    <Waves className="w-3 h-3 text-muted-foreground" />
-                  </div>
-                  <ul className="divide-y divide-border">
-                    {loading && !events.length ? (
-                      <li className="px-4 py-4 text-sm text-muted-foreground">
-                        Loading live Nepal earthquakes…
-                      </li>
-                    ) : events.length ? (
-                      events.slice(0, 4).map((event) => {
-                        const sev =
-                          event.magnitude >= 6
-                            ? "text-destructive bg-destructive/10 border-destructive/30"
-                            : event.magnitude >= 5
-                              ? "text-chart-5 bg-chart-5/10 border-chart-5/30"
-                              : event.magnitude >= 3
-                                ? "text-chart-4 bg-chart-4/10 border-chart-4/30"
-                                : "text-chart-2 bg-chart-2/10 border-chart-2/30";
-                        return (
-                          <li
-                            key={event.id}
-                            className="px-4 py-3 flex flex-col gap-2 text-sm hover:bg-surface/40 transition-colors"
-                          >
-                            <div className="flex items-center justify-between gap-3">
-                              <span
-                                className={`shrink-0 font-mono text-xs font-bold px-2 py-0.5 rounded border ${sev}`}
-                              >
-                                M{event.magnitude.toFixed(1)}
-                              </span>
-                              <a
-                                href={event.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-[11px] font-mono text-primary hover:underline"
-                              >
-                                USGS
-                              </a>
-                            </div>
-                            <div className="flex items-center gap-1.5 min-w-0 text-foreground">
-                              <MapPin className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
-                              <span className="truncate">{event.place}</span>
-                            </div>
-                            <div className="flex flex-wrap gap-3 text-[11px] text-muted-foreground">
-                              <span>{formatNpt(event.timeMs)}</span>
-                              <span>{formatTimeAgo(event.timeMs, now)}</span>
-                              <span>{event.depth.toFixed(0)}km</span>
-                              <span>
-                                {event.latitude.toFixed(2)}, {event.longitude.toFixed(2)}
-                              </span>
-                            </div>
-                          </li>
-                        );
-                      })
-                    ) : (
-                      <li className="px-4 py-4 text-sm text-muted-foreground">
-                        {error || "No live Nepal events available right now."}
-                      </li>
-                    )}
-                  </ul>
-                </div>
-
-                <div className="border-t border-border">
-                  <div className="px-4 py-2.5 flex items-center justify-between bg-surface/40">
-                    <div className="font-mono text-[10px] tracking-wider uppercase text-muted-foreground">
-                      Live Map
-                    </div>
-                    <MapPin className="w-3 h-3 text-muted-foreground" />
-                  </div>
-                  <div className="px-3 pb-3" style={{ height: '200px' }}>
-                    <div className="overflow-hidden rounded-md border border-border bg-surface" style={{ height: '176px' }}>
-                      {isMounted ? (
-                        <Suspense fallback={<div className="flex items-center justify-center h-full text-xs text-muted-foreground">Loading map…</div>}>
-                          <EarthquakeMap events={events} formatNpt={formatNpt} />
-                        </Suspense>
-                      ) : (
-                        <div className="flex items-center justify-center h-full text-xs text-muted-foreground">
-                          Loading map…
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-3 text-[10px] font-mono text-muted-foreground tracking-wider uppercase text-right">
-                * Live data from the USGS Nepal feed · auto-refresh every 60s
-              </div>
-              {/* Map disclaimer — Government of Nepal */}
-              <div className="mt-4 flex items-start gap-2.5 rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3">
-                <span className="mt-0.5 shrink-0 text-amber-500" aria-hidden>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
-                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                    <line x1="12" y1="9" x2="12" y2="13"/>
-                    <line x1="12" y1="17" x2="12.01" y2="17"/>
-                  </svg>
-                </span>
-                <p className="text-[10px] leading-relaxed text-amber-700 dark:text-amber-400">
-                  <span className="font-semibold uppercase tracking-wide">Map Disclaimer: </span>
-                  Map boundaries shown are from USGS &amp; OpenStreetMap and
-                  <span className="font-semibold"> may not reflect the official map of Nepal</span> as recognised by the Government of Nepal.
-                  For the official map, refer to the Survey Department of Nepal at <span className="font-mono">survey.gov.np</span>.
-                </p>
-              </div>
+              )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── MULTI-SOURCE CROSS-VERIFICATION & MAP SECTION ───────────────── */}
+      <section id="verification" className="max-w-7xl mx-auto px-4 md:px-8 py-10 border-b border-border">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+          <div>
+            <SectionLabel number="01a" label="CROSS-VERIFICATION" />
+            <h2 className="font-serif text-3xl md:text-4xl font-bold">
+              Multi-Source Seismic Verification & Spatial Intelligence
+            </h2>
+            <p className="text-muted-foreground text-sm max-w-3xl mt-1">
+              Independent observations from Nepal (🇳🇵 NEMRC), China (🇨🇳 CEA/CENC), and the United States (🇺🇸 USGS)
+              analyzed for spatial, temporal, and magnitude consistency.
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setShowDiagnostics(!showDiagnostics)}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border text-xs font-mono text-foreground hover:bg-surface/80 transition-colors shadow-sm"
+            >
+              <Server className="w-3.5 h-3.5 text-primary" />
+              {showDiagnostics ? "Hide Agency Telemetry" : "Agency Telemetry & Diagnostics"}
+            </button>
+          </div>
+        </div>
+
+        {/* Collapsible Diagnostics Section */}
+        {showDiagnostics && (
+          <div className="mb-8 animate-fade-in">
+            <DiagnosticsPanel />
+          </div>
+        )}
+
+        <div className="grid lg:grid-cols-[1.3fr_1.1fr] gap-6 items-start">
+          {/* Multi-Source Leaflet Map */}
+          <div>
+            <div className="mb-2.5 flex items-center justify-between">
+              <span className="font-mono text-xs text-muted-foreground uppercase font-semibold flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-primary" />
+                Multi-Source Epicenter Clustering Map
+              </span>
+              <span className="text-[11px] font-mono text-muted-foreground">
+                Showing NEMRC (Red), CENC (Amber), USGS (Blue), & Centroid (Purple)
+              </span>
+            </div>
+            {isMounted ? (
+              <Suspense
+                fallback={
+                  <div className="flex items-center justify-center h-[460px] rounded-xl border border-border bg-surface text-xs font-mono text-muted-foreground">
+                    Loading interactive multi-source map…
+                  </div>
+                }
+              >
+                <MultiSourceMap
+                  groups={eventGroups}
+                  selectedGroupId={selectedGroup?.eventGroupId}
+                  onSelectGroup={(g) => {
+                    setSelectedGroup(g);
+                    setModalGroup(g);
+                  }}
+                  formatNpt={formatNpt}
+                  height="460px"
+                />
+              </Suspense>
+            ) : (
+              <div className="h-[460px] rounded-xl border border-border bg-surface" />
+            )}
+            <div className="mt-2 text-[10px] font-mono text-muted-foreground">
+              * Epicenters connected by purple lines indicate cross-verified detections of the same physical event.
+            </div>
+          </div>
+
+          {/* Cross-Verified Event Feed List */}
+          <div>
+            <MultiSourceFeedList
+              groups={eventGroups}
+              selectedGroupId={selectedGroup?.eventGroupId}
+              onSelectGroup={(g) => setSelectedGroup(g)}
+              onOpenDetails={(g) => setModalGroup(g)}
+              formatNpt={formatNpt}
+              formatTimeAgo={formatTimeAgo}
+              now={now}
+            />
           </div>
         </div>
       </section>
 
       {/* CROWDSOURCED STATUS + INFRASTRUCTURE */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-10">
-        <SectionLabel number="01x" label="CRISIS STATUS" />
+        <SectionLabel number="01b" label="CRISIS & INFRASTRUCTURE" />
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-2">Community & Infrastructure Status</h2>
         <p className="text-muted-foreground text-sm max-w-2xl mb-8">
           Real-time crowdsourced safety reports and critical infrastructure monitoring for informed emergency response.
         </p>
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-6 items-start">
           <div className="flex flex-col gap-4">
             <SafetyReporter />
             <SafetyBoard />
           </div>
-          <div className="relative min-h-[600px]">
-            <div className="lg:absolute lg:inset-0">
-              <InfrastructureStatus />
-            </div>
+          <div className="h-[620px] lg:h-[660px] w-full">
+            <InfrastructureStatus />
           </div>
         </div>
       </section>
 
       {/* WHAT IS EARTHQUAKE */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
-        <SectionLabel number="01a" label={<T en="SCIENCE" ne="विज्ञान" />} />
+        <SectionLabel number="01c" label={<T en="SCIENCE" ne="विज्ञान" />} />
         <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4">
           <T en="What is an Earthquake?" ne="भूकम्प भनेको के हो?" />
         </h2>
@@ -714,7 +613,7 @@ function Home() {
       {/* HOW EARTHQUAKES OCCUR */}
       <section className="border-y border-border bg-surface/40">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
-          <SectionLabel number="01b" label="MECHANISM" />
+          <SectionLabel number="01d" label="MECHANISM" />
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-3">
             How Do Earthquakes Occur?
           </h2>
@@ -757,7 +656,7 @@ function Home() {
 
       {/* WHY NEPAL */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
-        <SectionLabel number="01c" label={<T en="NEPAL'S GEOLOGY" ne="नेपालको भौगर्भिक अवस्था" />} />
+        <SectionLabel number="01e" label={<T en="NEPAL'S GEOLOGY" ne="नेपालको भौगर्भिक अवस्था" />} />
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <h2 className="font-serif text-4xl md:text-5xl font-bold mb-5">
@@ -839,7 +738,7 @@ function Home() {
       {/* FUTURE RISK */}
       <section className="border-y border-border bg-surface/40">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
-          <SectionLabel number="01d" label="RISK PROJECTION" />
+          <SectionLabel number="01f" label="RISK PROJECTION" />
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-3">
             Future Earthquake Risk in Nepal
           </h2>
@@ -909,7 +808,7 @@ function Home() {
 
       {/* DASHBOARD */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
-        <SectionLabel number="01e" label="DATA DASHBOARD" />
+        <SectionLabel number="01g" label="DATA DASHBOARD" />
         <h2 className="font-serif text-4xl md:text-5xl font-bold mb-3">
           Earthquake Data Dashboard
         </h2>
@@ -1020,7 +919,7 @@ function Home() {
       {/* 2026 */}
       <section className="border-y border-border bg-surface/40">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
-          <SectionLabel number="01f" label="CURRENT YEAR" />
+          <SectionLabel number="01h" label="CURRENT YEAR" />
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8">
             Earthquake Statistics 2026
           </h2>
@@ -1090,6 +989,17 @@ function Home() {
           Start the Assessment <ArrowRight className="w-4 h-4" />
         </Link>
       </section>
+
+      {modalGroup && (
+        <EventDetailModal
+          group={modalGroup}
+          onClose={() => setModalGroup(null)}
+          formatNpt={formatNpt}
+          formatUtc={formatUtc}
+          formatTimeAgo={formatTimeAgo}
+          now={now}
+        />
+      )}
     </Layout>
   );
 }

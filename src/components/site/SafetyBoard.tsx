@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Search, CheckCircle2, AlertTriangle, Clock } from "lucide-react";
+import { Search, CheckCircle2, AlertTriangle, Clock, Cloud } from "lucide-react";
+import { subscribeSafetyBoard, type SafetyCheckIn } from "@/services/firebase";
 
 export type SafetyBoardReport = {
-  id: string;
+  id?: string;
   name: string;
   location: string;
   note: string;
@@ -15,14 +16,30 @@ export function SafetyBoard() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    const loadReports = () => {
+    // 1. Initial load from local cache
+    const localData = JSON.parse(localStorage.getItem("safety_board_reports") || "[]");
+    if (localData.length) {
+      setReports(localData.sort((a: any, b: any) => b.timestamp - a.timestamp));
+    }
+
+    // 2. Listen to real-time Firestore updates
+    const unsub = subscribeSafetyBoard((cloudReports) => {
+      if (cloudReports && cloudReports.length) {
+        setReports(cloudReports as SafetyBoardReport[]);
+        localStorage.setItem("safety_board_reports", JSON.stringify(cloudReports));
+      }
+    });
+
+    const handleLocalUpdate = () => {
       const data = JSON.parse(localStorage.getItem("safety_board_reports") || "[]");
-      // Sort newest first
       setReports(data.sort((a: any, b: any) => b.timestamp - a.timestamp));
     };
-    loadReports();
-    window.addEventListener("safety_board_updated", loadReports);
-    return () => window.removeEventListener("safety_board_updated", loadReports);
+    window.addEventListener("safety_board_updated", handleLocalUpdate);
+
+    return () => {
+      if (unsub) unsub();
+      window.removeEventListener("safety_board_updated", handleLocalUpdate);
+    };
   }, []);
 
   const filtered = reports.filter((r) => r.name.toLowerCase().includes(search.toLowerCase()));

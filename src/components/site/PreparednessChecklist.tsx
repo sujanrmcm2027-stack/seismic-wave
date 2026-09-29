@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { CheckSquare, Square, Printer, AlertTriangle } from "lucide-react";
 import { useCrisisMode } from "@/hooks/useCrisisMode";
+import { syncGoBagDownload } from "@/services/dataService";
 
 type ChecklistItem = {
   id: string;
@@ -104,6 +105,14 @@ export function PreparednessChecklist() {
   const categories = Array.from(new Set(ITEMS.map(i => i.category)));
 
   const handlePrint = () => {
+    try {
+      void syncGoBagDownload({
+        lang,
+        itemsChecked: checkedItems.length,
+        completedPercent: progress,
+        sourcePage: "/preparedness",
+      });
+    } catch {}
     window.print();
   };
 

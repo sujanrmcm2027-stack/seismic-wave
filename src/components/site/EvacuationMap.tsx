@@ -181,7 +181,7 @@ export function EvacuationMap({ statusFilter = "all" }: { statusFilter?: string 
               <div className="h-12 w-12 animate-spin rounded-full border-4 border-primary/30 border-t-primary" />
             </div>
           )}
-          <MapContainer center={NEPAL_CENTER} zoom={NEPAL_ZOOM} scrollWheelZoom={false} className="h-full w-full">
+          <MapContainer center={NEPAL_CENTER} zoom={NEPAL_ZOOM} scrollWheelZoom={true} doubleClickZoom={true} touchZoom={true} dragging={true} className="h-full w-full">
             <RecenterOnFirstFix position={position} />
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

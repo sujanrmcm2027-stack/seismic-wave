@@ -136,6 +136,9 @@ export async function syncEarthquakeEvents(events: {
   depth: number;
   magType: string;
   url: string;
+  originTimeNpt?: string;
+  agreementLevel?: string;
+  reportingAgencies?: string[];
 }[]) {
   if (eqSyncPending || !events.length) return;
   eqSyncPending = true;
@@ -145,3 +148,31 @@ export async function syncEarthquakeEvents(events: {
     eqSyncPending = false;
   }
 }
+
+// ── Municipal DDNA Damage Report (Write) ─────────────────────────────────
+export async function syncDamageAssessment(report: any): Promise<boolean> {
+  return post({ action: "damage_assessment", report });
+}
+
+// ── 72-Hour Go-Bag Checklist Download / Completion (Write) ───────────────
+export async function syncGoBagDownload(payload: {
+  lang?: string;
+  itemsChecked?: number;
+  completedPercent?: number;
+  sourcePage?: string;
+}): Promise<boolean> {
+  return post({ action: "gobag_download", ...payload });
+}
+
+// ── Road Status Batch Upload (Write) ─────────────────────────────────────
+export async function syncRoadStatusLog(items: {
+  highwayCode?: string;
+  name: string;
+  nameNe?: string;
+  status: string;
+  detail?: string;
+  lastUpdated?: string;
+}[]): Promise<boolean> {
+  return post({ action: "road_log", items });
+}
+

@@ -112,6 +112,21 @@ function CountryViewController({ countryFilter }: { countryFilter: string }) {
   return null;
 }
 
+function MapInteractivityController() {
+  const map = useMap();
+
+  useEffect(() => {
+    map.scrollWheelZoom.enable();
+    map.doubleClickZoom.enable();
+    map.touchZoom.enable();
+    map.dragging.enable();
+    if (map.boxZoom) map.boxZoom.enable();
+    if (map.keyboard) map.keyboard.enable();
+  }, [map]);
+
+  return null;
+}
+
 export function GisMap() {
   const [quakes, setQuakes] = useState<QuakeEvent[]>([]);
   const [countryFilter, setCountryFilter] = useState("All");
@@ -262,8 +277,20 @@ export function GisMap() {
         </div>
       </div>
 
-      <div className="h-[380px] sm:h-[480px] md:h-[560px] w-full">
-        <MapContainer center={[20, 0]} zoom={2} scrollWheelZoom={false} className="h-full w-full">
+      {/* ── MAP VIEWPORT WITH SMOOTH DIRECT INTERACTIVITY ──────────────── */}
+      <div className="relative h-[380px] sm:h-[480px] md:h-[580px] w-full">
+        <MapContainer
+          center={[20, 0]}
+          zoom={2}
+          scrollWheelZoom={true}
+          doubleClickZoom={true}
+          touchZoom={true}
+          dragging={true}
+          zoomSnap={0.5}
+          zoomDelta={0.5}
+          className="h-full w-full"
+        >
+          <MapInteractivityController />
           <CountryViewController countryFilter={countryFilter} />
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -351,6 +378,36 @@ export function GisMap() {
             </>
           )}
         </MapContainer>
+
+        {/* Floating Interactivity Helper Hint */}
+        <div className="absolute bottom-3 left-3 z-[1000] hidden sm:flex items-center gap-2 rounded-md bg-card/90 backdrop-blur-md border border-border px-2.5 py-1 text-[11px] font-mono text-muted-foreground shadow-sm pointer-events-none">
+          <span>Pan: Drag</span>
+          <span>•</span>
+          <span>Zoom: Scroll / Double Click</span>
+          <span>•</span>
+          <span>Snap: 0.5x</span>
+        </div>
+      </div>
+
+      {/* ── OFFICIAL BOUNDARY DISCLAIMER DIRECTLY BENEATH MAP VIEWPORT ── */}
+      <div className="flex items-start gap-3 border-t border-amber-500/30 bg-amber-500/10 px-4 py-3.5 text-amber-800 dark:text-amber-300">
+        <span className="mt-0.5 shrink-0 text-amber-500" aria-hidden>
+          <AlertTriangle className="h-4 w-4" />
+        </span>
+        <p className="text-xs leading-relaxed">
+          <span className="font-semibold uppercase tracking-wide">Official Map & Boundary Disclaimer: </span>
+          The map boundaries and territorial representations displayed in this GIS portal are rendered from USGS (United States Geological Survey) and OpenStreetMap base layers and{" "}
+          <span className="font-semibold">may not reflect the official political and administrative map of Nepal as recognized by the Government of Nepal (Survey Department, Ministry of Land Management, Cooperatives and Poverty Alleviation)</span>.
+          This portal does not endorse or adjudicate any international border representations. For the authentic, legally recognized map of Nepal, refer directly to the{" "}
+          <a
+            href="https://survey.gov.np"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold underline hover:text-foreground transition-colors font-mono"
+          >
+            Survey Department of Nepal (survey.gov.np)
+          </a>.
+        </p>
       </div>
 
       <div className="grid gap-3 border-t border-border bg-surface/60 p-4 md:grid-cols-3">

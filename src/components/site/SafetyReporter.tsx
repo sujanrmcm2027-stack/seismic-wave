@@ -3,6 +3,7 @@ import { useCrisisMode } from "@/hooks/useCrisisMode";
 import { t } from "@/lib/i18n/translations";
 import { CheckCircle2, AlertTriangle, X } from "lucide-react";
 import { syncSafetyReport, fetchPublicCounts } from "@/services/dataService";
+import { submitCloudSafetyReport } from "@/services/firebase";
 
 
 type Report = "safe" | "help" | null;
@@ -59,17 +60,19 @@ export function SafetyReporter() {
     // Send to backend via cloud sync
     void syncSafetyReport({ userId, status: type, name, location, note });
 
-    // Save to Safety Board (localStorage)
+    // Save to Safety Board (Firestore cloud + localStorage fallback)
     const report = {
       id: Date.now().toString(),
+      userId,
       name,
       location,
       note,
       status: type,
       timestamp: Date.now()
     };
+    void submitCloudSafetyReport(report);
     const existing = JSON.parse(localStorage.getItem("safety_board_reports") || "[]");
-    localStorage.setItem("safety_board_reports", JSON.stringify([...existing, report]));
+    localStorage.setItem("safety_board_reports", JSON.stringify([report, ...existing]));
     window.dispatchEvent(new Event("safety_board_updated"));
 
     setModalType(null);

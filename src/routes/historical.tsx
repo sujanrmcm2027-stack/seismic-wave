@@ -4,6 +4,7 @@ import { SectionLabel } from "@/components/site/SectionLabel";
 import { useState } from "react";
 import { Calendar } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { ResearchDataExportModal } from "@/components/site/ResearchDataExportModal";
 import gorkhaImg from "@/assets/gorkha.png";
 import jajarkotImg from "@/assets/jajarkot.png";
 import historicalNepalImg from "@/assets/1934-bihar-nepal-earthquake.jpg";
@@ -204,6 +205,9 @@ function HistoricalPage() {
             </div>
           </div>
         )}
+
+        {/* ── Open Research & Google Sheets Data Export Hub ── */}
+        <ResearchDataExportModal />
       </div>
     </Layout>
   );
