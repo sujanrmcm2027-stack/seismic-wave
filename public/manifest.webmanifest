@@ -1,0 +1,19 @@
+{
+  "name": "Nepal Seismic Disaster Portal",
+  "short_name": "Nepal Seismic",
+  "description": "Earthquake awareness, real-time monitoring, and preparedness portal for Nepal",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0b1626",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    {
+      "src": "/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

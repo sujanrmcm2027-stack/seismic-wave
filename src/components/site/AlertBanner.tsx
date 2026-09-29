@@ -42,8 +42,50 @@ export function AlertBanner() {
           : "bg-surface text-foreground border-border",
       )}
     >
-      <div className="max-w-7xl mx-auto px-3 md:px-8 py-2 md:py-1.5 flex flex-wrap md:flex-nowrap items-start md:items-center gap-x-4 gap-y-1">
+      {/* ── MOBILE / TABLET VIEW (< md) ── */}
+      <div className="md:hidden px-3.5 py-2 space-y-1">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5 min-w-0">
+            <span
+              className={cn(
+                "inline-flex items-center gap-1 font-mono text-[9px] tracking-wider font-bold uppercase shrink-0",
+                isCritical ? "text-white" : "text-primary",
+              )}
+            >
+              <AlertTriangle className={cn("w-3 h-3", isCritical ? "animate-pulse" : "opacity-80")} />
+              {isCritical ? t("banner.critical", lang) : t("banner.live_advisory", lang)}
+            </span>
+            <span
+              className={cn(
+                "font-mono text-[8.5px] tracking-widest uppercase px-1.5 py-0.5 rounded border shrink-0",
+                isCritical ? "border-white/30 bg-white/10 text-white" : "border-primary/30 bg-primary/10 text-primary",
+              )}
+            >
+              {category}
+            </span>
+          </div>
+          <div
+            className={cn(
+              "flex items-center gap-1 font-mono text-[9.5px] shrink-0",
+              isCritical ? "text-white/80" : "text-muted-foreground",
+            )}
+          >
+            {isOffline && <WifiOff className="w-2.5 h-2.5" />}
+            <span>{updatedAgo ? updatedAgo : "Live"}</span>
+          </div>
+        </div>
+        <p
+          className={cn(
+            "text-xs font-medium leading-snug line-clamp-2",
+            isCritical ? "text-white" : "text-foreground",
+          )}
+        >
+          {primaryMessage}
+        </p>
+      </div>
 
+      {/* ── DESKTOP ROW (>= md) ── */}
+      <div className="hidden md:flex max-w-7xl mx-auto px-4 md:px-8 py-1.5 items-center gap-x-4">
         {/* Label badge */}
         <div
           className={cn(
@@ -59,7 +101,7 @@ export function AlertBanner() {
 
         <div
           className={cn(
-            "hidden md:block h-4 w-px shrink-0",
+            "h-4 w-px shrink-0",
             isCritical ? "bg-white/30" : "bg-border",
           )}
         />
@@ -101,12 +143,12 @@ export function AlertBanner() {
         {/* Divider */}
         <div
           className={cn(
-            "hidden md:block h-4 w-px shrink-0",
+            "h-4 w-px shrink-0",
             isCritical ? "bg-white/30" : "bg-border",
           )}
         />
 
-        {/* Timestamp — always visible, no chase needed */}
+        {/* Timestamp */}
         <div
           className={cn(
             "flex items-center gap-1.5 shrink-0 font-mono text-[10px] whitespace-nowrap",

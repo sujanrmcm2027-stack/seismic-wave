@@ -262,8 +262,8 @@ export function GisMap() {
         </div>
       </div>
 
-      <div className="h-[560px] w-full">
-        <MapContainer center={[20, 0]} zoom={2} scrollWheelZoom className="h-full w-full">
+      <div className="h-[380px] sm:h-[480px] md:h-[560px] w-full">
+        <MapContainer center={[20, 0]} zoom={2} scrollWheelZoom={false} className="h-full w-full">
           <CountryViewController countryFilter={countryFilter} />
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

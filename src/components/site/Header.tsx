@@ -119,8 +119,11 @@ export function Header() {
             alt="Nepal Seismic Disaster Portal logo"
             className="w-8 h-8 rounded-lg object-cover shadow-sm shrink-0"
           />
-          <div className="hidden sm:block leading-none">
-            <span className="block font-bold text-foreground text-sm tracking-tight">
+          <div className="leading-tight">
+            <span className="block font-bold text-foreground text-sm tracking-tight sm:hidden">
+              Nepal Seismic
+            </span>
+            <span className="hidden sm:block font-bold text-foreground text-sm tracking-tight">
               Nepal Seismic Disaster Portal
             </span>
           </div>
@@ -146,32 +149,34 @@ export function Header() {
           })}
         </nav>
 
-        {/* ── RIGHT CONTROLS (desktop) ──────────────────── */}
-        <div className="hidden md:flex items-center gap-2 ml-auto lg:ml-0">
+        {/* ── DESKTOP CONTROLS (lg: >= 1024px) ─────────────── */}
+        <div className="hidden lg:flex items-center gap-2 ml-auto">
           <HeaderSearch variant="desktop" />
           <div className="w-px h-4 bg-border" />
           <ThemeToggle />
         </div>
 
-        {/* ── MOBILE CONTROLS ───────────────────────────── */}
-        <div className="flex items-center gap-1 lg:hidden ml-auto">
+        {/* ── MOBILE & TABLET CONTROLS (< 1024px) ─────────── */}
+        <div className="flex items-center gap-1.5 lg:hidden ml-auto">
           <ThemeToggle />
           <button
-            className="p-1.5 text-foreground rounded-md hover:bg-surface transition-colors"
+            className="p-2 text-foreground rounded-lg hover:bg-surface border border-transparent active:border-border transition-colors touch-manipulation"
             onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* ── MOBILE MENU ───────────────────────────────────── */}
+      {/* ── MOBILE & TABLET DRAWER MENU ─────────────────────── */}
       {open && (
-        <div className="lg:hidden border-t border-border/50 bg-background/95 backdrop-blur-md">
-          <nav className="px-4 py-3 flex flex-col gap-0.5">
+        <div className="lg:hidden border-t border-border/70 bg-background/95 backdrop-blur-xl shadow-2xl max-h-[calc(100dvh-3.5rem)] overflow-y-auto">
+          <div className="px-4 pt-3 pb-2 border-b border-border/40">
             <HeaderSearch variant="mobile" onNavigate={() => setOpen(false)} />
-            <div className="h-2" />
+          </div>
+          <nav className="px-3 py-2 flex flex-col gap-1">
             {nav.map((n) => {
               const active = pathname === n.to || (n.to !== "/" && pathname.startsWith(n.to));
               return (
@@ -179,17 +184,44 @@ export function Header() {
                   key={n.to}
                   to={n.to}
                   onClick={() => setOpen(false)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`flex items-center justify-between px-3.5 py-3 rounded-lg text-sm font-medium transition-colors ${
                     active
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground/70 hover:text-foreground hover:bg-surface"
+                      ? "bg-primary/15 text-primary font-semibold shadow-xs"
+                      : "text-foreground/80 hover:text-foreground hover:bg-surface active:bg-surface-2"
                   }`}
                 >
-                  {n.label}
+                  <span>{n.label}</span>
+                  {active && <span className="w-1.5 h-1.5 rounded-full bg-primary" />}
                 </Link>
               );
             })}
           </nav>
+          {/* Quick SOS strip in mobile drawer */}
+          <div className="p-3 border-t border-border/50 bg-surface/40 mt-1">
+            <div className="text-[10px] font-mono tracking-widest text-muted-foreground uppercase px-2 mb-2 font-semibold">
+              Emergency Numbers
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              <a
+                href="tel:100"
+                className="flex items-center justify-center gap-1.5 py-2 px-1 rounded-md bg-blue-600/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 text-xs font-bold"
+              >
+                Police 100
+              </a>
+              <a
+                href="tel:102"
+                className="flex items-center justify-center gap-1.5 py-2 px-1 rounded-md bg-red-600/10 text-red-600 dark:text-red-400 border border-red-500/20 text-xs font-bold"
+              >
+                Ambulance 102
+              </a>
+              <a
+                href="tel:101"
+                className="flex items-center justify-center gap-1.5 py-2 px-1 rounded-md bg-orange-600/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 text-xs font-bold"
+              >
+                Fire 101
+              </a>
+            </div>
+          </div>
         </div>
       )}
     </header>

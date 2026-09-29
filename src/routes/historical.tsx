@@ -99,23 +99,25 @@ function HistoricalPage() {
     <Layout>
       <div className="max-w-7xl mx-auto px-4 md:px-8 pt-12 pb-20">
         <SectionLabel number="02" label="HISTORICAL EARTHQUAKES" />
-        <div className="inline-flex bg-surface border border-border rounded-lg p-1 mb-10">
-          {[
-            ["1990bs", "1934 Bihar/Nepal"],
-            ["gorkha", "2015 Gorkha"],
-            ["jajarkot", "2023 Jajarkot"],
-            ["compare", "Comparison"],
-          ].map(([id, label]) => (
-            <button
-              key={id}
-              onClick={() => setTab(id as any)}
-              className={`px-5 py-2.5 rounded-md text-sm font-medium transition ${
-                tab === id ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {label}
-            </button>
-          ))}
+        <div className="overflow-x-auto max-w-full pb-2 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none">
+          <div className="inline-flex min-w-max bg-surface border border-border rounded-lg p-1">
+            {[
+              ["1990bs", "1934 Bihar/Nepal"],
+              ["gorkha", "2015 Gorkha"],
+              ["jajarkot", "2023 Jajarkot"],
+              ["compare", "Comparison"],
+            ].map(([id, label]) => (
+              <button
+                key={id}
+                onClick={() => setTab(id as any)}
+                className={`px-4 sm:px-5 py-2.5 rounded-md text-xs sm:text-sm font-medium transition whitespace-nowrap touch-manipulation ${
+                  tab === id ? "bg-primary text-primary-foreground shadow-xs" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {tab !== "compare" && (() => {
@@ -174,9 +176,9 @@ function HistoricalPage() {
                       ["Affected Region", e.id === "1990bs" ? "Northern Bihar and southern Nepal" : e.id === "gorkha" ? "14 districts" : "Jajarkot and Rukum West"],
                       ["Key Lesson", e.id === "1990bs" ? "Site effects mattered as much as rupture size" : e.id === "gorkha" ? "Building quality drove losses" : "Remote terrain delayed relief"],
                     ].map(([k, v]) => (
-                      <li key={k} className="flex justify-between py-3">
-                        <span className="text-muted-foreground">{k}</span>
-                        <span className="font-mono text-foreground">{v}</span>
+                      <li key={k} className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-2.5 sm:py-3 gap-1 sm:gap-4">
+                        <span className="text-xs sm:text-sm text-muted-foreground">{k}</span>
+                        <span className="font-mono text-xs sm:text-sm text-foreground text-left sm:text-right">{v}</span>
                       </li>
                     ))}
                   </ul>

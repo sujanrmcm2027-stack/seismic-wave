@@ -88,6 +88,7 @@ export function InfrastructureStatus() {
   const [roads, setRoads]           = useState<InfraItem[]>(DEFAULT_ROADS);
   const [airports, setAirports]     = useState<InfraItem[]>(DEFAULT_AIRPORTS);
   const [hospitals, setHospitals]   = useState<HospitalItem[]>(DEFAULT_HOSPITALS);
+  const [activeTab, setActiveTab]   = useState<"roads" | "airports" | "hospitals">("roads");
   const [loading, setLoading]       = useState(false);
   const [lastFetched, setLastFetched] = useState<Date | null>(null);
   const [minsAgo, setMinsAgo]       = useState<number | null>(null);
@@ -223,12 +224,48 @@ export function InfrastructureStatus() {
         </div>
       </div>
 
+      {/* ── Mobile Tab Segment Switcher (< md) ── */}
+      <div className="md:hidden px-4 pt-3 pb-1 border-b border-border bg-surface/30">
+        <div className="grid grid-cols-3 w-full gap-1 p-1 bg-surface-2 rounded-lg text-xs font-medium">
+          <button
+            onClick={() => setActiveTab("roads")}
+            className={`py-1.5 px-2 rounded-md transition-all text-center ${
+              activeTab === "roads"
+                ? "bg-card text-foreground font-semibold shadow-xs"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {t("infra.roads", lang)} ({roads.length})
+          </button>
+          <button
+            onClick={() => setActiveTab("airports")}
+            className={`py-1.5 px-2 rounded-md transition-all text-center ${
+              activeTab === "airports"
+                ? "bg-card text-foreground font-semibold shadow-xs"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {t("infra.airports", lang)} ({airports.length})
+          </button>
+          <button
+            onClick={() => setActiveTab("hospitals")}
+            className={`py-1.5 px-2 rounded-md transition-all text-center ${
+              activeTab === "hospitals"
+                ? "bg-card text-foreground font-semibold shadow-xs"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {t("infra.hospitals", lang)} ({hospitals.length})
+          </button>
+        </div>
+      </div>
+
       {/* ── Content grid ── */}
-      <div className="p-5 grid md:grid-cols-3 gap-6 flex-1 min-h-0">
+      <div className="p-4 sm:p-5 grid md:grid-cols-3 gap-6 flex-1 min-h-0">
 
         {/* Roads */}
-        <div className="flex flex-col h-full min-h-0">
-          <div className="shrink-0 mb-2">
+        <div className={`flex-col h-full min-h-0 ${activeTab === "roads" ? "flex" : "hidden md:flex"}`}>
+          <div className="shrink-0 mb-2 hidden md:block">
             <SectionLabel title={t("infra.roads", lang)} />
           </div>
           <div className="space-y-0 overflow-y-auto pr-2 flex-1 min-h-0">
@@ -257,8 +294,8 @@ export function InfrastructureStatus() {
         </div>
 
         {/* Airports */}
-        <div className="flex flex-col h-full min-h-0">
-          <div className="shrink-0 mb-2">
+        <div className={`flex-col h-full min-h-0 ${activeTab === "airports" ? "flex" : "hidden md:flex"}`}>
+          <div className="shrink-0 mb-2 hidden md:block">
             <SectionLabel title={t("infra.airports", lang)} />
           </div>
           <div className="space-y-0 overflow-y-auto pr-2 flex-1 min-h-0">
@@ -287,8 +324,8 @@ export function InfrastructureStatus() {
         </div>
 
         {/* Hospitals */}
-        <div className="flex flex-col h-full min-h-0">
-          <div className="shrink-0 mb-2">
+        <div className={`flex-col h-full min-h-0 ${activeTab === "hospitals" ? "flex" : "hidden md:flex"}`}>
+          <div className="shrink-0 mb-2 hidden md:block">
             <SectionLabel title={t("infra.hospitals", lang)} />
           </div>
           <div className="space-y-0 overflow-y-auto pr-2 flex-1 min-h-0">

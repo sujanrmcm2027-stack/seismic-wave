@@ -111,7 +111,7 @@ export function ParticipantTrustBar() {
                 <span className={`font-bold text-sm tabular-nums ${color}`}>
                   <AnimCount value={value} />
                 </span>
-                <span className="text-[11px] text-muted-foreground whitespace-nowrap hidden md:block">
+                <span className="text-[10px] sm:text-[11px] text-muted-foreground whitespace-nowrap">
                   {label}
                 </span>
               </div>

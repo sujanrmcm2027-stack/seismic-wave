@@ -76,11 +76,12 @@ export function ChatWidget() {
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          className="fixed bottom-24 right-5 z-50 flex items-center gap-2 rounded-full bg-primary px-4 py-3 font-semibold text-primary-foreground shadow-lg hover:opacity-95"
+          className="fixed bottom-20 right-4 sm:bottom-24 sm:right-5 z-50 flex items-center gap-2 rounded-full bg-primary px-3.5 py-2.5 sm:px-4 sm:py-3 font-semibold text-primary-foreground shadow-xl hover:opacity-95 active:scale-95 transition-all touch-manipulation"
           aria-label="Open emergency assistant chat"
         >
-          <MessageCircle className="h-5 w-5" />
-          {EMERGENCY_ASSISTANT_NAME}
+          <MessageCircle className="h-5 w-5 shrink-0" />
+          <span className="hidden sm:inline text-sm">{EMERGENCY_ASSISTANT_NAME}</span>
+          <span className="sm:hidden text-xs font-bold">Ask AI</span>
         </button>
       )}
 
@@ -88,7 +89,7 @@ export function ChatWidget() {
         <div
           role="dialog"
           aria-label="Emergency assistant chat"
-          className="fixed bottom-24 right-5 z-50 flex h-[70vh] max-h-[600px] w-[min(380px,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-xl border border-border bg-card shadow-2xl"
+          className="fixed inset-x-0 bottom-0 top-12 z-[75] sm:inset-x-auto sm:top-auto sm:bottom-24 sm:right-5 flex sm:h-[70vh] sm:max-h-[600px] sm:w-[380px] flex-col overflow-hidden rounded-t-2xl sm:rounded-xl border border-border bg-card shadow-2xl"
         >
           <div className="flex items-center justify-between gap-2 border-b border-border bg-surface/70 px-4 py-3">
             <div className="flex min-w-0 items-center gap-2">
@@ -184,7 +185,7 @@ export function ChatWidget() {
               event.preventDefault();
               handleSend(input);
             }}
-            className="flex items-center gap-2 border-t border-border p-3"
+            className="flex items-center gap-2 border-t border-border p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
           >
             <input
               value={input}

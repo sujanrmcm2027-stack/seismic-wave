@@ -160,7 +160,7 @@ function SafeZonesPage() {
       <section className="mx-auto max-w-7xl px-4 py-8 md:px-8">
         {/* Filter pills */}
         <div
-          className="flex flex-wrap items-center gap-2 mb-6"
+          className="flex items-center gap-2 mb-6 overflow-x-auto scrollbar-none pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap"
           role="group"
           aria-label="Filter zones by availability status"
         >
@@ -170,10 +170,10 @@ function SafeZonesPage() {
               type="button"
               onClick={() => setFilter(option.id)}
               aria-pressed={filter === option.id}
-              className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors ${
+              className={`rounded-full border px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors whitespace-nowrap shrink-0 touch-manipulation ${
                 filter === option.id
-                  ? "border-primary/40 bg-primary/10 text-primary"
-                  : "border-border bg-card text-muted-foreground hover:bg-surface"
+                  ? "border-primary/40 bg-primary/10 text-primary shadow-xs"
+                  : "border-border bg-card text-muted-foreground hover:bg-surface active:bg-surface-2"
               }`}
             >
               {option.label}

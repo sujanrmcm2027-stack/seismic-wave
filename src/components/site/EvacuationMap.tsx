@@ -175,13 +175,13 @@ export function EvacuationMap({ statusFilter = "all" }: { statusFilter?: string 
             Displaying cached offline safe zones data. Connection to live database failed.
           </div>
         )}
-        <div className="h-[420px] w-full lg:h-[560px] relative">
+        <div className="h-[340px] sm:h-[420px] lg:h-[560px] w-full relative">
           {loading && (
             <div className="absolute inset-0 z-[1000] flex items-center justify-center bg-surface/50 backdrop-blur-sm">
               <div className="h-12 w-12 animate-spin rounded-full border-4 border-primary/30 border-t-primary" />
             </div>
           )}
-          <MapContainer center={NEPAL_CENTER} zoom={NEPAL_ZOOM} scrollWheelZoom className="h-full w-full">
+          <MapContainer center={NEPAL_CENTER} zoom={NEPAL_ZOOM} scrollWheelZoom={false} className="h-full w-full">
             <RecenterOnFirstFix position={position} />
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

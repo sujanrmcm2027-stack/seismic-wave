@@ -258,10 +258,11 @@ function Home() {
       <section className="relative overflow-hidden border-b border-border bg-surface/30">
         <div className="absolute inset-0 bg-seismic opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
+        <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-8 sm:py-12 md:py-20">
           <SectionLabel number="01" label="DASHBOARD" />
-          {/* breadcrumb / status strip */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] font-mono tracking-wider text-muted-foreground mb-8 animate-fade-up">
+
+          {/* Desktop breadcrumb / status strip (>= md) */}
+          <div className="hidden md:flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] font-mono tracking-wider text-muted-foreground mb-8 animate-fade-up">
             <span className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-chart-5 animate-pulse" />
               SYSTEM OPERATIONAL
@@ -280,6 +281,23 @@ function Home() {
             <span>LAST UPDATE: {lastUpdatedAt ? formatNpt(lastUpdatedAt) : "Waiting"}</span>
             <span className="opacity-40">|</span>
             <span>AUTO REFRESH: 60s</span>
+          </div>
+
+          {/* Mobile status pill strip (< md) */}
+          <div className="md:hidden flex items-center gap-2 overflow-x-auto scrollbar-none pb-2 mb-6 -mx-4 px-4 text-[10px] font-mono whitespace-nowrap">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface border border-border shrink-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              SYSTEM OK
+            </span>
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface border border-border shrink-0">
+              USGS: {error && !events.length ? "Offline" : "Connected"}
+            </span>
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface border border-border shrink-0">
+              LIVE EVENTS: {events.length}
+            </span>
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface border border-border shrink-0">
+              AUTO: 60s
+            </span>
           </div>
 
           {/* Active status indicator */}
@@ -308,29 +326,29 @@ function Home() {
             </div>
           )}
 
-          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-12 items-start">
+          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 items-start">
             {/* LEFT — headline */}
             <div className="animate-fade-up" style={{ animationDelay: "60ms" }}>
-              <div className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.25em] text-primary mb-5 px-2.5 py-1 rounded-sm border border-primary/30 bg-primary/5 uppercase">
+              <div className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.25em] text-primary mb-4 sm:mb-5 px-2.5 py-1 rounded-sm border border-primary/30 bg-primary/5 uppercase">
                 <ShieldCheck className="w-3 h-3" />
                 National Earthquake Awareness Portal
               </div>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
+              <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.1] sm:leading-[1.05] tracking-tight">
                 <T 
                   en={<>Earthquakes in Nepal:<br />Understanding, Preparing,<br className="hidden md:block" /> and Building <em className="text-destructive not-italic font-bold italic">Resilience</em></>}
                   ne={<>नेपालमा भूकम्प:<br />बुझाइ, पूर्वतयारी,<br className="hidden md:block" /> र <em className="text-destructive not-italic font-bold italic">प्रतिरोध क्षमता</em> निर्माण</>}
                 />
               </h1>
-              <p className="mt-6 md:mt-8 text-muted-foreground max-w-2xl text-base md:text-lg leading-relaxed">
+              <p className="mt-4 sm:mt-6 md:mt-8 text-muted-foreground max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed">
                 <T 
                   en="Learn the science behind earthquakes, Nepal's seismic risks, historical events, and life-saving preparedness measures. Knowledge is our first line of defence."
                   ne="भूकम्प पछाडिको विज्ञान, नेपालको भूकम्पीय जोखिम, ऐतिहासिक घटनाहरू र जीवन बचाउने पूर्वतयारीका उपायहरू बारे जान्नुहोस्। ज्ञान नै हाम्रो सुरक्षाको पहिलो आधार हो।"
                 />
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3">
                 <Link
                   to="/historical"
-                  className="group inline-flex items-center gap-2.5 px-5 py-3 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 shadow-sm"
+                  className="group inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 shadow-sm w-full sm:w-auto"
                 >
                   <BookOpen className="w-4 h-4" />
                   <T en="Learn About Earthquakes" ne="भूकम्पको बारेमा जान्नुहोस्" />
@@ -338,14 +356,14 @@ function Home() {
                 </Link>
                 <Link
                   to="/preparedness"
-                  className="inline-flex items-center gap-2.5 px-5 py-3 rounded-md bg-card border border-border text-foreground font-semibold text-sm hover:bg-surface"
+                  className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-md bg-card border border-border text-foreground font-semibold text-sm hover:bg-surface w-full sm:w-auto"
                 >
                   <CheckCircle2 className="w-4 h-4" />
                   <T en="Test Your Preparedness" ne="आफ्नो पूर्वतयारी परीक्षण गर्नुहोस्" />
                 </Link>
                 <a
                   href="#emergency"
-                  className="inline-flex items-center gap-2.5 px-5 py-3 rounded-md border border-destructive/40 text-destructive font-semibold text-sm hover:bg-destructive/10"
+                  className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-md border border-destructive/40 text-destructive font-semibold text-sm hover:bg-destructive/10 w-full sm:w-auto"
                 >
                   <AlertTriangle className="w-4 h-4" />
                   <T en="Emergency Resources" ne="आपतकालीन स्रोतहरू" />
@@ -353,7 +371,7 @@ function Home() {
               </div>
 
               {/* mini KPI strip */}
-              <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="mt-8 md:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
                 {[
                   {
                     v: 1768 + events.length,
@@ -365,13 +383,13 @@ function Home() {
                   { v: 77, s: "", label: "Districts Tracked" },
                   { v: 84, s: "", label: "Live Stations" },
                 ].map((k) => (
-                  <div key={k.label} className="bg-card border border-border rounded-md p-3">
-                    <div className="font-serif text-2xl md:text-3xl font-bold text-primary">
+                  <div key={k.label} className="bg-card border border-border rounded-md p-2.5 sm:p-3">
+                    <div className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-primary">
                       <StatCounter value={k.v} suffix={k.s} />
                     </div>
-                    <div className="text-[11px] font-semibold text-foreground mt-1">{k.label}</div>
+                    <div className="text-[11px] font-semibold text-foreground mt-1 truncate">{k.label}</div>
                     {k.sub && (
-                      <div className="text-[10px] font-mono text-muted-foreground">{k.sub}</div>
+                      <div className="text-[10px] font-mono text-muted-foreground truncate">{k.sub}</div>
                     )}
                   </div>
                 ))}
@@ -645,7 +663,7 @@ function Home() {
       </section>
 
       {/* WHAT IS EARTHQUAKE */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
         <SectionLabel number="01a" label={<T en="SCIENCE" ne="विज्ञान" />} />
         <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4">
           <T en="What is an Earthquake?" ne="भूकम्प भनेको के हो?" />
@@ -695,7 +713,7 @@ function Home() {
 
       {/* HOW EARTHQUAKES OCCUR */}
       <section className="border-y border-border bg-surface/40">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
           <SectionLabel number="01b" label="MECHANISM" />
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-3">
             How Do Earthquakes Occur?
@@ -738,7 +756,7 @@ function Home() {
       </section>
 
       {/* WHY NEPAL */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
         <SectionLabel number="01c" label={<T en="NEPAL'S GEOLOGY" ne="नेपालको भौगर्भिक अवस्था" />} />
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
@@ -795,7 +813,7 @@ function Home() {
             <div className="font-mono text-xs tracking-widest text-muted-foreground mb-4">
               <T en="TECTONIC SETTING" ne="टेक्टोनिक सेटिङ" />
             </div>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
               {[
                 [<T en="~2.0 cm/yr" ne="~२.० सेमी/वर्ष" />, <T en="Localized Shortening Rate" ne="स्थानीय खुम्चिने दर" />],
                 [<T en="~15 km" ne="~१५ किमी" />, <T en="MHT Depth (Kathmandu)" ne="MHT को गहिराइ (काठमाडौं)" />],
@@ -820,7 +838,7 @@ function Home() {
 
       {/* FUTURE RISK */}
       <section className="border-y border-border bg-surface/40">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
           <SectionLabel number="01d" label="RISK PROJECTION" />
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-3">
             Future Earthquake Risk in Nepal
@@ -890,7 +908,7 @@ function Home() {
       </section>
 
       {/* DASHBOARD */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
         <SectionLabel number="01e" label="DATA DASHBOARD" />
         <h2 className="font-serif text-4xl md:text-5xl font-bold mb-3">
           Earthquake Data Dashboard
@@ -1001,7 +1019,7 @@ function Home() {
 
       {/* 2026 */}
       <section className="border-y border-border bg-surface/40">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
           <SectionLabel number="01f" label="CURRENT YEAR" />
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8">
             Earthquake Statistics 2026
@@ -1052,7 +1070,7 @@ function Home() {
         </div>
       </section>
 
-      <section id="emergency" className="max-w-7xl mx-auto px-4 md:px-8 py-20 text-center">
+      <section id="emergency" className="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20 text-center">
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
           Ready to test your preparedness?
         </h2>

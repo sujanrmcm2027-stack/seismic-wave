@@ -30,7 +30,7 @@ export function EmergencyContactsBar() {
     return (
       <button
         onClick={() => setDismissed(false)}
-        className="fixed bottom-5 right-5 z-[65] bg-red-600 text-white rounded-full px-5 py-3 shadow-xl font-mono text-sm font-bold tracking-wider flex items-center gap-2 hover:bg-red-700 transition-colors pulse-ring"
+        className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-[65] bg-red-600 text-white rounded-full px-4 py-2.5 sm:px-5 sm:py-3 shadow-xl font-mono text-sm font-bold tracking-wider flex items-center gap-2 hover:bg-red-700 active:scale-95 transition-all pulse-ring touch-manipulation"
         aria-label="Show emergency contacts"
       >
         <Phone className="w-4 h-4" />
@@ -96,7 +96,7 @@ export function EmergencyContactsBar() {
       </div>
 
       {/* ── MOBILE: Bottom sticky bar ────────────────────────────────────── */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[65] bg-card border-t-2 border-red-600 shadow-2xl">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[65] bg-card border-t-2 border-red-600 shadow-2xl pb-[max(0.5rem,env(safe-area-inset-bottom))]">
         {/* Collapsed: show 4 quick-dial tiles */}
         {!expanded && (
           <div className="grid grid-cols-4 divide-x divide-border">

@@ -440,9 +440,11 @@ function DamageAssessmentPage() {
           </div>
 
           <div className="mt-10">
-            <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-              <ClipboardCheck className="h-3.5 w-3.5" /> The Compliance Checklist: What Is Actually
-              Required
+            <div className="flex items-center justify-between gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="flex items-center gap-2">
+                <ClipboardCheck className="h-3.5 w-3.5" /> The Compliance Checklist: What Is Actually Required
+              </span>
+              <span className="md:hidden text-[9px] text-primary/80 lowercase">← swipe table →</span>
             </div>
             <div className="mt-3 overflow-x-auto rounded-xl border border-border bg-card shadow-sm">
               <table className="w-full min-w-[820px] border-collapse text-left text-sm">
@@ -584,9 +586,11 @@ function DamageAssessmentPage() {
           </div>
 
           <div className="mt-10">
-            <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-              <Globe2 className="h-3.5 w-3.5" /> Local → Global: Where Nepal's Rules Meet the
-              World's Framework
+            <div className="flex items-center justify-between gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="flex items-center gap-2">
+                <Globe2 className="h-3.5 w-3.5" /> Local → Global: Where Nepal's Rules Meet Frameworks
+              </span>
+              <span className="md:hidden text-[9px] text-primary/80 lowercase">← swipe table →</span>
             </div>
             <div className="mt-3 overflow-x-auto rounded-xl border border-border bg-card shadow-sm">
               <table className="w-full min-w-[760px] border-collapse text-left text-sm">
@@ -632,8 +636,9 @@ function DamageAssessmentPage() {
           </div>
 
           <div className="mt-10">
-            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-              Technical Implementation Matrix
+            <div className="flex items-center justify-between gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+              <span>Technical Implementation Matrix</span>
+              <span className="md:hidden text-[9px] text-primary/80 lowercase">← swipe table →</span>
             </div>
             <div className="mt-3 overflow-x-auto rounded-xl border border-border bg-card shadow-sm">
               <table className="w-full min-w-[720px] border-collapse text-left text-sm">

@@ -209,16 +209,18 @@ function Preparedness() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 print:hidden">
-        <div className="inline-flex bg-surface border border-border rounded-lg p-1 mb-10">
-          {(Object.keys(phases) as Array<keyof typeof phases>).map((p) => (
-            <button
-              key={p}
-              onClick={() => setPhase(p)}
-              className={`px-6 py-2.5 rounded-md text-sm font-medium transition ${phase === p ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
-            >
-              {p}
-            </button>
-          ))}
+        <div className="overflow-x-auto max-w-full pb-2 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none">
+          <div className="inline-flex min-w-max bg-surface border border-border rounded-lg p-1">
+            {(Object.keys(phases) as Array<keyof typeof phases>).map((p) => (
+              <button
+                key={p}
+                onClick={() => setPhase(p)}
+                className={`px-5 sm:px-6 py-2.5 rounded-md text-xs sm:text-sm font-medium transition touch-manipulation ${phase === p ? "bg-primary text-primary-foreground shadow-xs" : "text-muted-foreground hover:text-foreground"}`}
+              >
+                {p}
+              </button>
+            ))}
+          </div>
         </div>
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-8">{phases[phase].title}</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -239,12 +241,12 @@ function Preparedness() {
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-8">
           Preparedness for Every Community
         </h2>
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="overflow-x-auto max-w-full pb-2 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none flex gap-2 sm:flex-wrap">
           {(Object.keys(groups) as Array<keyof typeof groups>).map((g) => (
             <button
               key={g}
               onClick={() => setGroup(g)}
-              className={`px-5 py-2.5 rounded-md text-sm font-medium border transition ${group === g ? "bg-primary text-primary-foreground border-primary" : "border-border text-muted-foreground hover:text-foreground"}`}
+              className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-md text-xs sm:text-sm font-medium border transition whitespace-nowrap touch-manipulation ${group === g ? "bg-primary text-primary-foreground border-primary shadow-xs" : "border-border text-muted-foreground hover:text-foreground"}`}
             >
               {g}
             </button>

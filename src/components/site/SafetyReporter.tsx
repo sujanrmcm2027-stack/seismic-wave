@@ -192,7 +192,7 @@ export function SafetyReporter() {
       {/* Modal */}
       {modalType && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm p-4">
-          <div className="w-full max-w-md rounded-xl border border-border bg-card shadow-lg">
+          <div className="w-full max-w-md max-h-[90dvh] overflow-y-auto rounded-xl border border-border bg-card shadow-lg">
             <div className={`p-4 border-b border-border flex justify-between items-center ${
               modalType === "safe" ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400" : "bg-red-500/10 text-red-700 dark:text-red-400"
             }`}>
