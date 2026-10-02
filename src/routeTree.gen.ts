@@ -9,37 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SafeZonesRouteImport } from './routes/safe-zones'
-import { Route as PreparednessRouteImport } from './routes/preparedness'
-import { Route as HistoricalRouteImport } from './routes/historical'
-import { Route as GisRouteImport } from './routes/gis'
-import { Route as DamageAssessmentRouteImport } from './routes/damage-assessment'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as DamageAssessmentRouteImport } from './routes/damage-assessment'
+import { Route as GisRouteImport } from './routes/gis'
+import { Route as HistoricalRouteImport } from './routes/historical'
+import { Route as PreparednessRouteImport } from './routes/preparedness'
+import { Route as SafeZonesRouteImport } from './routes/safe-zones'
 
-const SafeZonesRoute = SafeZonesRouteImport.update({
-  id: '/safe-zones',
-  path: '/safe-zones',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PreparednessRoute = PreparednessRouteImport.update({
-  id: '/preparedness',
-  path: '/preparedness',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HistoricalRoute = HistoricalRouteImport.update({
-  id: '/historical',
-  path: '/historical',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GisRoute = GisRouteImport.update({
-  id: '/gis',
-  path: '/gis',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DamageAssessmentRoute = DamageAssessmentRouteImport.update({
-  id: '/damage-assessment',
-  path: '/damage-assessment',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -47,9 +27,29 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const DamageAssessmentRoute = DamageAssessmentRouteImport.update({
+  id: '/damage-assessment',
+  path: '/damage-assessment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GisRoute = GisRouteImport.update({
+  id: '/gis',
+  path: '/gis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoricalRoute = HistoricalRouteImport.update({
+  id: '/historical',
+  path: '/historical',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreparednessRoute = PreparednessRouteImport.update({
+  id: '/preparedness',
+  path: '/preparedness',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafeZonesRoute = SafeZonesRouteImport.update({
+  id: '/safe-zones',
+  path: '/safe-zones',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -123,39 +123,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/safe-zones': {
-      id: '/safe-zones'
-      path: '/safe-zones'
-      fullPath: '/safe-zones'
-      preLoaderRoute: typeof SafeZonesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/preparedness': {
-      id: '/preparedness'
-      path: '/preparedness'
-      fullPath: '/preparedness'
-      preLoaderRoute: typeof PreparednessRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/historical': {
-      id: '/historical'
-      path: '/historical'
-      fullPath: '/historical'
-      preLoaderRoute: typeof HistoricalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gis': {
-      id: '/gis'
-      path: '/gis'
-      fullPath: '/gis'
-      preLoaderRoute: typeof GisRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/damage-assessment': {
-      id: '/damage-assessment'
-      path: '/damage-assessment'
-      fullPath: '/damage-assessment'
-      preLoaderRoute: typeof DamageAssessmentRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -165,11 +137,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/damage-assessment': {
+      id: '/damage-assessment'
+      path: '/damage-assessment'
+      fullPath: '/damage-assessment'
+      preLoaderRoute: typeof DamageAssessmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gis': {
+      id: '/gis'
+      path: '/gis'
+      fullPath: '/gis'
+      preLoaderRoute: typeof GisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historical': {
+      id: '/historical'
+      path: '/historical'
+      fullPath: '/historical'
+      preLoaderRoute: typeof HistoricalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preparedness': {
+      id: '/preparedness'
+      path: '/preparedness'
+      fullPath: '/preparedness'
+      preLoaderRoute: typeof PreparednessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safe-zones': {
+      id: '/safe-zones'
+      path: '/safe-zones'
+      fullPath: '/safe-zones'
+      preLoaderRoute: typeof SafeZonesRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
