@@ -39,7 +39,7 @@ const TEAM = [
     name: "Sujan Rayamajhi",
     photo: sujanPhoto,
     role: "Project Lead | B.A. in Social Work & Rural Development | Master's in Crisis Management Student",
-    bio: "Sujan is a Master's student in Crisis Management who served as Project Lead for this portal, driving its research, content, and coordination frameworks. He is currently General Manager at JobMatchy Nepal, bringing strategic leadership and platform coordination experience. Holding a Bachelor's in Social Work and Rural Development, he brings hands-on humanitarian experience as a freelance psychosocial counselor and community crisis volunteer. Passionate about GIS and spatial data analysis, Sujan bridges executive leadership and disaster risk reduction with grassroots mobilization to strengthen local resilience and support vulnerable communities.",
+    bio: "Sujan is a Master's student in Crisis Management who served as Project Lead for this portal, driving its research, content, and coordination frameworks. Holding a Bachelor's in Social Work and Rural Development, he brings hands-on humanitarian experience as a freelance psychosocial counselor and community crisis volunteer. Passionate about GIS and spatial data analysis, Sujan bridges disaster risk reduction with grassroots mobilization to strengthen local resilience and support vulnerable communities.",
     links: {
       linkedin: "https://www.linkedin.com/in/sujan-rayamajhi-7b72a4319",
       github: "https://github.com/sujanrmcm2027-stack",

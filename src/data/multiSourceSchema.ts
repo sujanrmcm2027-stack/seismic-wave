@@ -188,6 +188,7 @@ export interface MultiSourceAssessment {
   // Contextual classification
   nepalContext: {
     isInsideNepal: boolean;
+    isFeltInNepal: boolean;
     regionName: string;
     contextualNote: string;
   };

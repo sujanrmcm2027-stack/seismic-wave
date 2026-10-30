@@ -24,10 +24,10 @@ export const SEARCH_INDEX: SearchEntry[] = [
     keywords: ["home", "science", "mechanism", "geology", "risk projection", "statistics"],
   },
   {
-    title: "Historical Earthquakes",
+    title: "Historical Events",
     description: "Case studies of the 1934 Bihar/Nepal, 2015 Gorkha, and 2023 Jajarkot earthquakes.",
     to: "/historical",
-    keywords: ["gorkha", "jajarkot", "bihar", "1934", "2015", "2023", "case study", "comparison"],
+    keywords: ["historical", "events", "earthquakes", "gorkha", "jajarkot", "bihar", "1934", "2015", "2023", "case study", "comparison"],
   },
   {
     title: "GIS Mapping",

@@ -8,6 +8,7 @@
 import { useState, useMemo } from "react";
 import type { MultiSourceEventGroup, AgreementLevel, SourceAgency } from "@/data/multiSourceSchema";
 import { AGENCY_METADATA } from "@/data/multiSourceSchema";
+import { resolveNamedLocation } from "@/lib/seismic/geoUtils";
 import {
   Activity,
   CheckCircle2,
@@ -45,6 +46,7 @@ export function MultiSourceFeedList({
 
   const filteredGroups = useMemo(() => {
     return groups.filter((g) => {
+      if (!g.assessment.nepalContext.isFeltInNepal) return false;
       if (agencyFilter !== "all" && !g.observations[agencyFilter]) return false;
       if (agreementFilter !== "all" && g.assessment.agreementLevel !== agreementFilter) return false;
       return true;
@@ -59,11 +61,11 @@ export function MultiSourceFeedList({
           <div className="flex items-center gap-2">
             <Radio className="w-4 h-4 text-primary animate-pulse" />
             <h4 className="font-serif font-bold text-foreground text-sm">
-              Cross-Verified Seismic Events ({filteredGroups.length})
+              Events Felt in Nepal ({filteredGroups.length})
             </h4>
           </div>
-          <span className="text-[10px] font-mono text-muted-foreground uppercase">
-            3-Way Verification Active
+          <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full uppercase">
+            Tremors Felt in Nepal
           </span>
         </div>
 
@@ -164,7 +166,22 @@ export function MultiSourceFeedList({
 
                 <div className="flex items-center gap-1.5 text-sm font-medium text-foreground">
                   <MapPin className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
-                  <span className="truncate">{a.primaryPlaceName}</span>
+                  <span className="truncate">
+                    {resolveNamedLocation(
+                      a.primaryPlaceName,
+                      a.centroidLatitude,
+                      a.centroidLongitude,
+                    )}
+                  </span>
+                  {a.nepalContext.isInsideNepal ? (
+                    <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0 font-normal">
+                      Inside Nepal
+                    </span>
+                  ) : a.nepalContext.isFeltInNepal ? (
+                    <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 shrink-0 font-normal">
+                      Felt in Nepal
+                    </span>
+                  ) : null}
                 </div>
 
                 {/* Contributing Agencies Pill Strip */}

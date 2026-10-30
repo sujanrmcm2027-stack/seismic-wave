@@ -13,6 +13,7 @@ import { useState } from "react";
 import type { MultiSourceEventGroup, SourceAgency } from "@/data/multiSourceSchema";
 import { AGENCY_METADATA } from "@/data/multiSourceSchema";
 import { SEISMIC_CONFIG } from "@/lib/seismic/config";
+import { resolveNamedLocation } from "@/lib/seismic/geoUtils";
 import {
   Activity,
   AlertCircle,
@@ -98,12 +99,22 @@ export function FinalAssessmentCard({
               </span>
             </div>
             <h3 className="font-serif text-lg font-bold text-foreground flex items-center gap-2">
-              <span>{a.primaryPlaceName}</span>
-              {a.nepalContext.isInsideNepal && (
+              <span>
+                {resolveNamedLocation(
+                  a.primaryPlaceName,
+                  a.centroidLatitude,
+                  a.centroidLongitude,
+                )}
+              </span>
+              {a.nepalContext.isInsideNepal ? (
                 <span className="text-xs font-sans px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
                   Inside Nepal
                 </span>
-              )}
+              ) : a.nepalContext.isFeltInNepal ? (
+                <span className="text-xs font-sans px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 font-medium">
+                  Felt in Nepal
+                </span>
+              ) : null}
             </h3>
           </div>
         </div>
@@ -293,23 +304,32 @@ export function FinalAssessmentCard({
                     </div>
                   </div>
 
-                  <div className="mt-2.5 flex flex-wrap items-center justify-between gap-y-1 text-[11px] font-mono text-muted-foreground border-t border-border/40 pt-2">
-                    <div className="flex flex-wrap gap-x-3 gap-y-1">
-                      <span>Depth: {obs.depthKm !== null ? `${obs.depthKm} km` : "N/A"}</span>
-                      <span>
-                        Coords: {obs.latitude.toFixed(2)}°N, {obs.longitude.toFixed(2)}°E
-                      </span>
-                      <span>ID: {obs.sourceEventId}</span>
+                  <div className="mt-2.5 flex flex-col gap-1.5 text-[11px] font-mono text-muted-foreground border-t border-border/40 pt-2">
+                    <div className="flex flex-wrap items-center justify-between gap-y-1">
+                      <div className="flex flex-wrap gap-x-3 gap-y-1">
+                        <span>Depth: {obs.depthKm !== null ? `${obs.depthKm} km` : "N/A"}</span>
+                        <span>
+                          Coords: {obs.latitude.toFixed(2)}°N, {obs.longitude.toFixed(2)}°E
+                        </span>
+                        <span>ID: {obs.sourceEventId}</span>
+                      </div>
+                      <a
+                        href={obs.sourceUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 text-primary hover:underline ml-auto"
+                      >
+                        View Source
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
                     </div>
-                    <a
-                      href={obs.sourceUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-primary hover:underline ml-auto"
-                    >
-                      View Source
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
+                    <div className="flex items-center gap-1.5 text-xs text-foreground/90 font-sans pt-0.5">
+                      <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
+                      <span className="font-mono text-[10px] text-muted-foreground uppercase">Location:</span>
+                      <span className="font-medium text-foreground truncate">
+                        {resolveNamedLocation(obs.placeName, obs.latitude, obs.longitude)}
+                      </span>
+                    </div>
                   </div>
                 </div>
               );

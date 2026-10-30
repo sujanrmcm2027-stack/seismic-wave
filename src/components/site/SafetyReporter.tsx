@@ -19,12 +19,17 @@ export function SafetyReporter() {
   const [note, setNote] = useState("");
   
   const [userId] = useState(() => {
-    let id = localStorage.getItem('status_user_id');
-    if (!id) {
-      id = Math.random().toString(36).substring(2) + Date.now().toString(36);
-      localStorage.setItem('status_user_id', id);
+    if (typeof window === "undefined") return "guest";
+    try {
+      let id = localStorage.getItem('status_user_id');
+      if (!id) {
+        id = Math.random().toString(36).substring(2) + Date.now().toString(36);
+        localStorage.setItem('status_user_id', id);
+      }
+      return id;
+    } catch {
+      return "guest";
     }
-    return id;
   });
 
   // Fetch live counts on mount and every 60s

@@ -7,6 +7,7 @@
 
 import type { RawSourceObservation, SourceHealthStatus } from "@/data/multiSourceSchema";
 import { SEISMIC_CONFIG } from "../config";
+import { isFeltInNepal } from "../geoUtils";
 
 const USGS_BASE_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query";
 
@@ -68,7 +69,11 @@ export async function fetchUsgsObservations(
     }
 
     const data = await res.json();
-    const features: any[] = data.features ?? [];
+    const features: any[] = (data.features ?? []).filter((f: any) => {
+      const [lon, lat] = Array.isArray(f.geometry?.coordinates) ? f.geometry.coordinates : [0, 0];
+      const mag = Number(f.properties?.mag ?? 0);
+      return isFeltInNepal(Number(lat), Number(lon), mag, false).felt;
+    });
 
     const observations: RawSourceObservation[] = features.map((feature: any) => {
       const p = feature.properties ?? {};

@@ -206,9 +206,12 @@ export async function syncAllSources(forceRefresh = false): Promise<MultiSourceE
       groupMap.set(group.eventGroupId, group);
     }
 
-    store.eventGroups = Array.from(groupMap.values()).sort(
-      (a, b) => b.assessment.consensusOriginTimeMs - a.assessment.consensusOriginTimeMs,
-    );
+    // Only include earthquakes located inside Nepal or where tremor is felt in Nepal
+    store.eventGroups = Array.from(groupMap.values())
+      .filter((g) => g.assessment.nepalContext.isFeltInNepal)
+      .sort(
+        (a, b) => b.assessment.consensusOriginTimeMs - a.assessment.consensusOriginTimeMs,
+      );
 
     store.lastFetchedAt = Date.now();
 
@@ -251,8 +254,9 @@ export async function getMultiSourceFeedServer(limit = 30): Promise<{
   lastUpdated: string;
 }> {
   const groups = await syncAllSources();
+  const feltInNepal = groups.filter((g) => g.assessment.nepalContext.isFeltInNepal);
   return {
-    groups: groups.slice(0, limit),
+    groups: feltInNepal.slice(0, limit),
     health: store.health,
     lastUpdated: new Date(store.lastFetchedAt || Date.now()).toISOString(),
   };

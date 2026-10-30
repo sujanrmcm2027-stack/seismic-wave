@@ -21,7 +21,7 @@ import type {
 } from "@/data/multiSourceSchema";
 import { AGENCY_METADATA } from "@/data/multiSourceSchema";
 import { SEISMIC_CONFIG } from "./config";
-import { calculateCentroid, calculateHaversineDistanceKm, isWithinNepalBounds } from "./geoUtils";
+import { calculateCentroid, calculateHaversineDistanceKm, isFeltInNepal, isWithinNepalBounds, resolveNamedLocation } from "./geoUtils";
 import { calculateRepresentativeMagnitude, evaluateMagnitudeConsistency } from "./magnitudeUtils";
 import type { ClusteredGroupRaw } from "./eventMatcher";
 
@@ -148,14 +148,15 @@ export function generateMultiSourceAssessment(group: ClusteredGroupRaw): MultiSo
   const usgsObs = group.observations.USGS;
   const cencObs = group.observations.CENC;
 
-  let primaryPlace = "Nepal / Himalayan Region";
+  let rawPlace: string | null = null;
   if (nemrcObs?.placeName) {
-    primaryPlace = nemrcObs.placeName;
+    rawPlace = nemrcObs.placeName;
   } else if (usgsObs?.placeName) {
-    primaryPlace = usgsObs.placeName;
+    rawPlace = usgsObs.placeName;
   } else if (cencObs?.placeName) {
-    primaryPlace = cencObs.placeName;
+    rawPlace = cencObs.placeName;
   }
+  const primaryPlace = resolveNamedLocation(rawPlace, centroid.lat, centroid.lng);
 
   // ── Consensus Origin Time ────────────────────────────────────────────
   // Average or median time
@@ -164,10 +165,15 @@ export function generateMultiSourceAssessment(group: ClusteredGroupRaw): MultiSo
   const consensusTimeUtc = new Date(consensusTimeMs).toISOString();
 
   // ── Nepal Context (Section 8) ────────────────────────────────────────
-  const isInside = isWithinNepalBounds(centroid.lat, centroid.lng);
-  const contextualNote = isInside
-    ? "Local and regional observations are particularly relevant for this event because of the earthquake's geographic location inside or adjacent to Nepal."
-    : "Event located in the broader Himalayan/Tibetan tectonic collision zone outside sovereign Nepal boundaries.";
+  const feltCheck = isFeltInNepal(
+    centroid.lat,
+    centroid.lng,
+    magSummary.representative,
+    Boolean(nemrcObs),
+  );
+  const isInside = feltCheck.isInside;
+  const isFelt = feltCheck.felt;
+  const contextualNote = feltCheck.reason;
 
   // ── Data Status ──────────────────────────────────────────────────────
   let dataStatus: MultiSourceAssessment["dataStatus"] = "PRELIMINARY";
@@ -231,7 +237,12 @@ export function generateMultiSourceAssessment(group: ClusteredGroupRaw): MultiSo
     },
     nepalContext: {
       isInsideNepal: isInside,
-      regionName: isInside ? "Nepal Tectonic Arc" : "Regional Himalayan Arc",
+      isFeltInNepal: isFelt,
+      regionName: isInside
+        ? "Nepal Territory"
+        : isFelt
+          ? "Border Region (Felt in Nepal)"
+          : "Broader Himalayan Frontier",
       contextualNote,
     },
     dataStatus,

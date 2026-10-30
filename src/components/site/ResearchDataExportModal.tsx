@@ -169,6 +169,61 @@ export function ResearchDataExportModal() {
             <span>{downloading === "safe_zones" ? "Preparing..." : "Download GeoJSON"}</span>
           </button>
         </div>
+
+        {/* Dataset 5: IBM SPSS Statistics Package (.SAV + .SPS) */}
+        <div className="rounded-lg border border-indigo-500/30 bg-indigo-500/5 p-4 flex flex-col justify-between hover:border-indigo-500/50 transition-colors shadow-xs">
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="w-8 h-8 rounded-md bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold font-mono text-xs">
+                SPSS
+              </span>
+              <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border border-indigo-500/20">
+                .SAV + .SPS
+              </span>
+            </div>
+            <h3 className="font-semibold text-sm text-foreground">SPSS Statistics Package</h3>
+            <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+              Native IBM SPSS binary files with pre-coded scales and open-ended text reasons for content & thematic analysis.
+            </p>
+          </div>
+
+          <div className="mt-4 flex flex-col gap-2">
+            <a
+              href="/nepal_infra_master.sav"
+              download="nepal_infra_master.sav"
+              className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-xs font-semibold transition-colors"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Roads & Airports .SAV (27k)</span>
+            </a>
+            <a
+              href="/nepal_seismic_master.sav"
+              download="nepal_seismic_master.sav"
+              className="w-full flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-md bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-700 dark:text-indigo-300 font-mono text-xs font-semibold transition-colors border border-indigo-500/30"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Tremors Catalog .SAV</span>
+            </a>
+            <div className="flex gap-2">
+              <a
+                href="/nepal_infra_import.sps"
+                download="nepal_infra_import.sps"
+                className="flex-1 flex items-center justify-center gap-1 py-1 px-2 rounded bg-surface border border-border text-foreground hover:bg-surface-2 font-mono text-[10px] font-semibold transition-colors text-center"
+              >
+                <FileText className="w-3 h-3 text-indigo-500" />
+                <span>Infra Syntax (.sps)</span>
+              </a>
+              <a
+                href="/nepal_seismic_import.sps"
+                download="nepal_seismic_import.sps"
+                className="flex-1 flex items-center justify-center gap-1 py-1 px-2 rounded bg-surface border border-border text-foreground hover:bg-surface-2 font-mono text-[10px] font-semibold transition-colors text-center"
+              >
+                <FileText className="w-3 h-3 text-indigo-500" />
+                <span>Tremors Syntax (.sps)</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Google Sheets Multi-Tab Guide Box */}

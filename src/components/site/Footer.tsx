@@ -360,7 +360,7 @@ const contacts: [string, string[]][] = [
 
 const pages = [
   { to: "/", label: "Home" },
-  { to: "/historical", label: "Historical Earthquakes" },
+  { to: "/historical", label: "Historical Events" },
   { to: "/gis", label: "GIS" },
   { to: "/preparedness", label: "Preparedness" },
   { to: "/test-yourself", label: "Self Assessment" },

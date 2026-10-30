@@ -85,12 +85,13 @@ export function useMultiSourceEarthquakes() {
         : await getMultiSourceFeed();
 
       if (result && Array.isArray(result.groups) && result.groups.length > 0) {
-        setEventGroups(result.groups);
+        const feltGroups = result.groups.filter((g) => g.assessment.nepalContext.isFeltInNepal);
+        setEventGroups(feltGroups);
         if (result.health) setHealth(result.health);
         setLastUpdatedAt(new Date(result.lastUpdated || Date.now()));
         setError(null);
         try {
-          localStorage.setItem(CLIENT_CACHE_KEY, JSON.stringify(result.groups.slice(0, 30)));
+          localStorage.setItem(CLIENT_CACHE_KEY, JSON.stringify(feltGroups.slice(0, 30)));
         } catch {}
 
         // Automatically archive every tremor into Firebase Firestore for research study

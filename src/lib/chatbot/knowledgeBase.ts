@@ -246,7 +246,7 @@ Nearly 9,000 deaths, ~22,000 injuries, over 600,000 homes destroyed. Sindhupalch
 
 Nepal sits on the boundary of the Indian and Eurasian tectonic plates — one of the most seismically active regions in the world.
 
-Visit the **Historical** page on this portal for the full interactive timeline.`,
+Visit the **Historical Events** page on this portal for the full interactive timeline.`,
   },
 
   // ── EMERGENCY CONTACTS ────────────────────────────────────────────────────

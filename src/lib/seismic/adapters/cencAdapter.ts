@@ -9,7 +9,7 @@
 
 import type { RawSourceObservation, SourceHealthStatus } from "@/data/multiSourceSchema";
 import { SEISMIC_CONFIG } from "../config";
-import { isWithinHimalayanBounds } from "../geoUtils";
+import { isFeltInNepal, isWithinHimalayanBounds } from "../geoUtils";
 
 const CENC_OFFICIAL_URL = "https://news.ceic.ac.cn/";
 const CENC_PUBLIC_MIRROR = "https://api.wolfx.jp/cenc_eqlist.json";
@@ -131,16 +131,9 @@ export async function fetchCencObservations(): Promise<CencFetchResult> {
 
       if (isNaN(lat) || isNaN(lng) || isNaN(mag)) continue;
 
-      // Filter to Himalayan / Tibet / Nepal regional arc
-      const isRegional =
-        isWithinHimalayanBounds(lat, lng) ||
-        (item.location &&
-          (item.location.includes("西藏") ||
-            item.location.includes("尼泊尔") ||
-            item.location.includes("Tibet") ||
-            item.location.includes("Nepal")));
-
-      if (!isRegional) continue;
+      // Filter to earthquakes in Nepal or regional quakes whose tremors reach Nepal
+      const feltCheck = isFeltInNepal(lat, lng, mag, false);
+      if (!feltCheck.felt) continue;
 
       // CENC timestamps are in Beijing Time (CST, UTC+8)
       // Example: "2026-09-30 00:03:23"

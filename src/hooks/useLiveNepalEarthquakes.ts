@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { syncEarthquakeEvents } from "@/services/dataService";
 import type { MultiSourceEventGroup } from "@/data/multiSourceSchema";
 import { getMultiSourceFeed } from "@/lib/seismic/serverFns";
+import { isFeltInNepal } from "@/lib/seismic/geoUtils";
 
 // ── Persistence helpers ────────────────────────────────────────────────────
 const HISTORY_KEY = "eq_history";
@@ -103,11 +104,21 @@ export function useLiveNepalEarthquakes() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdatedAt, setLastUpdatedAt] = useState<Date | null>(() => {
-    const saved = localStorage.getItem("eq_last_updated");
-    return saved ? new Date(Number(saved)) : null;
+    if (typeof window === "undefined") return null;
+    try {
+      const saved = localStorage.getItem("eq_last_updated");
+      return saved ? new Date(Number(saved)) : null;
+    } catch {
+      return null;
+    }
   });
   const [dataSource, setDataSource] = useState<DataSource | null>(() => {
-    return (localStorage.getItem("eq_data_source") as DataSource | null) ?? "multi-source";
+    if (typeof window === "undefined") return "multi-source";
+    try {
+      return (localStorage.getItem("eq_data_source") as DataSource | null) ?? "multi-source";
+    } catch {
+      return "multi-source";
+    }
   });
   const [now, setNow] = useState(Date.now());
 
@@ -124,7 +135,10 @@ export function useLiveNepalEarthquakes() {
     try {
       const feedResult = await getMultiSourceFeed();
       if (feedResult && feedResult.groups && feedResult.groups.length > 0) {
-        const mapped: NepalEarthquake[] = feedResult.groups.map((group) => {
+        const feltGroups = feedResult.groups.filter(
+          (g) => g.assessment.nepalContext.isFeltInNepal,
+        );
+        const mapped: NepalEarthquake[] = feltGroups.map((group) => {
           const a = group.assessment;
           const primaryObs = group.observations.NEMRC || group.observations.USGS || group.observations.CENC;
           return {
@@ -169,7 +183,11 @@ export function useLiveNepalEarthquakes() {
       const res = await fetch(USGS_URL);
       if (!res.ok) throw new Error("USGS non-OK");
       const data = await res.json();
-      const features = data.features ?? [];
+      const features = (data.features ?? []).filter((f: any) => {
+        const [lon, lat] = Array.isArray(f.geometry?.coordinates) ? f.geometry.coordinates : [0, 0];
+        const mag = Number(f.properties?.mag ?? 0);
+        return isFeltInNepal(Number(lat), Number(lon), mag, false).felt;
+      });
       const parsed: NepalEarthquake[] = features.map((f: any) => {
         const p = f.properties ?? {};
         const [lon, lat, depth] = Array.isArray(f.geometry?.coordinates) ? f.geometry.coordinates : [0, 0, 0];

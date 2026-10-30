@@ -22,6 +22,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import type { MultiSourceEventGroup, SourceAgency } from "@/data/multiSourceSchema";
 import { AGENCY_METADATA } from "@/data/multiSourceSchema";
+import { resolveNamedLocation } from "@/lib/seismic/geoUtils";
 import { Eye, EyeOff, Layers, Radio, AlertTriangle } from "lucide-react";
 
 interface MultiSourceMapProps {
@@ -254,7 +255,13 @@ export default function MultiSourceMap({
                 <Popup>
                   <div className="space-y-1.5 text-xs font-sans">
                     <div className="font-bold text-foreground flex items-center justify-between gap-2">
-                      <span>{a.primaryPlaceName}</span>
+                      <span>
+                        {resolveNamedLocation(
+                          a.primaryPlaceName,
+                          a.centroidLatitude,
+                          a.centroidLongitude,
+                        )}
+                      </span>
                       <span className="font-mono text-purple-600 font-bold">
                         ~M{a.representativeMagnitude.toFixed(1)}
                       </span>
@@ -307,7 +314,9 @@ export default function MultiSourceMap({
                               M{obs.magnitudeValue.toFixed(1)} {obs.magnitudeType}
                             </span>
                           </div>
-                          <div className="text-[11px] text-muted-foreground">{obs.placeName}</div>
+                          <div className="text-[11px] text-muted-foreground">
+                            {resolveNamedLocation(obs.placeName, obs.latitude, obs.longitude)}
+                          </div>
                           <div className="text-[10px] font-mono text-muted-foreground">
                             Depth: {obs.depthKm !== null ? `${obs.depthKm}km` : "N/A"} · ID:{" "}
                             {obs.sourceEventId}

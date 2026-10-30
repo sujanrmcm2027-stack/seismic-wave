@@ -13,6 +13,7 @@
 import { useState } from "react";
 import type { MultiSourceEventGroup, SourceAgency } from "@/data/multiSourceSchema";
 import { AGENCY_METADATA } from "@/data/multiSourceSchema";
+import { resolveNamedLocation } from "@/lib/seismic/geoUtils";
 import {
   Calendar,
   CheckCircle2,
@@ -82,7 +83,11 @@ export function EventDetailModal({
                 </span>
               </div>
               <h2 className="font-serif text-xl font-bold text-foreground">
-                {a.primaryPlaceName}
+                {resolveNamedLocation(
+                  a.primaryPlaceName,
+                  a.centroidLatitude,
+                  a.centroidLongitude,
+                )}
               </h2>
             </div>
           </div>
@@ -222,6 +227,24 @@ export function EventDetailModal({
                       return (
                         <td key={agency} className="p-3 text-foreground">
                           {obs ? `${obs.latitude.toFixed(3)}°N, ${obs.longitude.toFixed(3)}°E` : "—"}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground font-semibold">Location</td>
+                    {agencies.map((agency) => {
+                      const obs = group.observations[agency];
+                      return (
+                        <td key={agency} className="p-3 text-foreground font-medium">
+                          {obs ? (
+                            <div className="flex items-center gap-1.5 text-xs">
+                              <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
+                              <span>{resolveNamedLocation(obs.placeName, obs.latitude, obs.longitude)}</span>
+                            </div>
+                          ) : (
+                            "—"
+                          )}
                         </td>
                       );
                     })}

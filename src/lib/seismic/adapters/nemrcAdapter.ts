@@ -8,6 +8,7 @@
 
 import type { RawSourceObservation, SourceHealthStatus } from "@/data/multiSourceSchema";
 import { SEISMIC_CONFIG } from "../config";
+import { resolveNamedLocation } from "../geoUtils";
 
 const NEMRC_BASE_URL = "https://seismonepal.gov.np/";
 
@@ -83,13 +84,57 @@ export function parseNemrcHtml(html: string, retrievedAt: string): RawSourceObse
     const lonMatch = row.match(/°[\s\S]*?([\d.]+)°/i);
 
     const formMatch = row.match(/\/form\/(\d+)/i);
-    const placeMatch = row.match(/<td>\s*([A-Za-z\s]+?)\s*<\/td>\s*<td>\s*<a[^>]*form/i);
+    const placeMatch = row.match(/<td>\s*([^<]+?)\s*<\/td>\s*<td>\s*<a[^>]*form/i);
 
     if (!magMatch) continue;
 
     const magValue = parseFloat(magMatch[1]);
     const eventId = formMatch ? formMatch[1] : `nemrc_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`;
-    const place = placeMatch ? placeMatch[1].trim() : "Nepal";
+    let rawPlace = placeMatch ? placeMatch[1].replace(/<[^>]+>/g, "").trim() : "";
+
+    // Nepali Devanagari to English district mapping
+    const NEP_TO_EN: Record<string, string> = {
+      "बझाङ": "Bajhang",
+      "बाजुरा": "Bajura",
+      "अछाम": "Achham",
+      "डोटी": "Doti",
+      "डडेल्धुरा": "Dadeldhura",
+      "बैतडी": "Baitadi",
+      "दार्चुला": "Darchula",
+      "कैलाली": "Kailali",
+      "कञ्चनपुर": "Kanchanpur",
+      "मुगु": "Mugu",
+      "हुम्ला": "Humla",
+      "जुम्ला": "Jumla",
+      "कालिकोट": "Kalikot",
+      "जाजरकोट": "Jajarkot",
+      "दैलेख": "Dailekh",
+      "सुर्खेत": "Surkhet",
+      "सल्यान": "Salyan",
+      "डोल्पा": "Dolpa",
+      "रुकुम": "Rukum",
+      "मुस्ताङ": "Mustang",
+      "म्याग्दी": "Myagdi",
+      "बाग्लुङ": "Baglung",
+      "पर्वत": "Parbat",
+      "कास्की": "Kaski",
+      "स्याङ्जा": "Syangja",
+      "तनहुँ": "Tanahun",
+      "लमजुङ": "Lamjung",
+      "गोरखा": "Gorkha",
+      "मनाङ": "Manang",
+      "धादिङ": "Dhading",
+      "नुवाकोट": "Nuwakot",
+      "रसुवा": "Rasuwa",
+      "काठमाडौं": "Kathmandu",
+      "सिन्धुपाल्चोक": "Sindhupalchok",
+      "दोलखा": "Dolakha",
+      "संखुवासभा": "Sankhuwasabha",
+      "सोलुखुम्बु": "Solukhumbu",
+    };
+    if (NEP_TO_EN[rawPlace]) {
+      rawPlace = NEP_TO_EN[rawPlace];
+    }
 
     // Date & Time parsing
     const dateStr = adMatch ? adMatch[1] : "2026-09-15";
@@ -101,13 +146,15 @@ export function parseNemrcHtml(html: string, retrievedAt: string): RawSourceObse
     let lat = latMatch ? parseFloat(latMatch[1]) : 0;
     let lon = lonMatch ? parseFloat(lonMatch[1]) : 0;
 
-    if ((!lat || !lon || isNaN(lat) || isNaN(lon)) && DISTRICT_CENTROIDS[place.toLowerCase()]) {
-      lat = DISTRICT_CENTROIDS[place.toLowerCase()].lat;
-      lon = DISTRICT_CENTROIDS[place.toLowerCase()].lng;
+    if ((!lat || !lon || isNaN(lat) || isNaN(lon)) && rawPlace && DISTRICT_CENTROIDS[rawPlace.toLowerCase()]) {
+      lat = DISTRICT_CENTROIDS[rawPlace.toLowerCase()].lat;
+      lon = DISTRICT_CENTROIDS[rawPlace.toLowerCase()].lng;
     }
 
     if (isNaN(lat) || lat === 0) lat = 28.39;
     if (isNaN(lon) || lon === 0) lon = 84.12;
+
+    const placeName = resolveNamedLocation(rawPlace, lat, lon);
 
     observations.push({
       observationId: `nemrc_${eventId}`,
@@ -120,7 +167,7 @@ export function parseNemrcHtml(html: string, retrievedAt: string): RawSourceObse
       depthKm: 10, // NEMRC regional default or shallow crustal constraint
       originTimeUtc: isNaN(timeMs) ? new Date().toISOString() : new Date(timeMs).toISOString(),
       originTimeMs: isNaN(timeMs) ? Date.now() : timeMs,
-      placeName: `${place}, Nepal`,
+      placeName,
       status: "REVIEWED",
       retrievedAt,
       publishedAt: isoString,

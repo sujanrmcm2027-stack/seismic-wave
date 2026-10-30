@@ -12,7 +12,7 @@ import historicalNepalImg from "@/assets/1934-bihar-nepal-earthquake.jpg";
 export const Route = createFileRoute("/historical")({
   head: () => ({
     meta: [
-      { title: "Historical Earthquakes: Nepal Seismic" },
+      { title: "Historical Events: Nepal Seismic" },
       { name: "description", content: "Case studies of the 2015 Gorkha and 2023 Jajarkot earthquakes with damage statistics and lessons learned." },
     ],
   }),
@@ -99,7 +99,7 @@ function HistoricalPage() {
   return (
     <Layout>
       <div className="max-w-7xl mx-auto px-4 md:px-8 pt-12 pb-20">
-        <SectionLabel number="02" label="HISTORICAL EARTHQUAKES" />
+        <SectionLabel number="02" label="HISTORICAL EVENTS" />
         <div className="overflow-x-auto max-w-full pb-2 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none">
           <div className="inline-flex min-w-max bg-surface border border-border rounded-lg p-1">
             {[

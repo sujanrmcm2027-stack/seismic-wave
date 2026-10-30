@@ -7,7 +7,7 @@ import logo from "@/assets/logo.jpeg";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/historical", label: "Historical" },
+  { to: "/historical", label: "Historical Events" },
   { to: "/gis", label: "GIS" },
   { to: "/damage-assessment", label: "Damage Assessment" },
   { to: "/safe-zones", label: "Safe Zones" },
