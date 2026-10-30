@@ -2,8 +2,8 @@ name: Update Live Incidents
 
 on:
   schedule:
-    # Run at minute 15 and 45
-    - cron: "15,45 * * * *"
+    # Every 2 hours (at minute 30, staggered from road status)
+    - cron: "30 */2 * * *"
   workflow_dispatch: # allow manual trigger
 
 permissions:
