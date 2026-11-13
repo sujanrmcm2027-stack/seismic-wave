@@ -325,7 +325,7 @@ function Home() {
           </div>
 
           {/* Mobile status pill strip (< md) */}
-          <div className="md:hidden flex items-center gap-2 overflow-x-auto scrollbar-none pb-2 mb-6 -mx-4 px-4 text-[10px] font-mono whitespace-nowrap">
+          <div className="md:hidden flex items-center gap-2 overflow-x-auto scrollbar-none pb-2 mb-6 w-full text-[10px] font-mono whitespace-nowrap">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface border border-border shrink-0">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               3-WAY VERIFICATION
@@ -374,7 +374,7 @@ function Home() {
                 <ShieldCheck className="w-3 h-3" />
                 National Earthquake Awareness Portal
               </div>
-              <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.1] sm:leading-[1.05] tracking-tight">
+              <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.1] sm:leading-[1.05] tracking-tight break-words">
                 <T 
                   en={<>Earthquakes in Nepal:<br />Understanding, Preparing,<br className="hidden md:block" /> and Building <em className="text-destructive not-italic font-bold italic">Resilience</em></>}
                   ne={<>नेपालमा भूकम्प:<br />बुझाइ, पूर्वतयारी,<br className="hidden md:block" /> र <em className="text-destructive not-italic font-bold italic">प्रतिरोध क्षमता</em> निर्माण</>}

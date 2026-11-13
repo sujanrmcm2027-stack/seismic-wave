@@ -84,7 +84,7 @@ export function FinalAssessmentCard({
   return (
     <div className="rounded-xl border border-border bg-card shadow-lg overflow-hidden transition-all duration-200">
       {/* ── CARD HEADER ──────────────────────────────────────────────── */}
-      <div className="bg-surface/80 px-5 py-4 border-b border-border flex flex-wrap items-center justify-between gap-3">
+      <div className="bg-surface/80 px-4 sm:px-5 py-3 sm:py-4 border-b border-border flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
             <Zap className="h-4 w-4" />
@@ -98,7 +98,7 @@ export function FinalAssessmentCard({
                 {a.dataStatus}
               </span>
             </div>
-            <h3 className="font-serif text-lg font-bold text-foreground flex items-center gap-2">
+            <h3 className="font-serif text-base sm:text-lg font-bold text-foreground flex flex-wrap items-center gap-2">
               <span>
                 {resolveNamedLocation(
                   a.primaryPlaceName,
@@ -129,7 +129,7 @@ export function FinalAssessmentCard({
       </div>
 
       {/* ── CORE ASSESSMENT BODY ─────────────────────────────────────── */}
-      <div className="p-5 grid md:grid-cols-[1.3fr_1.7fr] gap-6 items-start">
+      <div className="p-4 sm:p-5 grid md:grid-cols-[1.3fr_1.7fr] gap-6 items-start">
         {/* LEFT: Multi-Source Consensus Summary */}
         <div className="flex flex-col gap-4 bg-surface/30 rounded-lg p-4 border border-border/60">
           <div className="flex items-baseline justify-between">

@@ -11,7 +11,7 @@ import { ParticipantTrustBar } from "./ParticipantTrustBar";
 
 function LayoutInner({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden w-full relative">
       <div className="fixed inset-0 -z-10 bg-topo" aria-hidden="true" />
       {/* Crisis bar — very top, sticky, always visible */}
       <div className="print:hidden"><CrisisBar /></div>

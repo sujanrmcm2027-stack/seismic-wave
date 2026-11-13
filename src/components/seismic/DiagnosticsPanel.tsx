@@ -98,7 +98,7 @@ export function DiagnosticsPanel() {
       </div>
 
       {/* ── SUB-NAVIGATION TABS ──────────────────────────────────────── */}
-      <div className="flex border-b border-border bg-surface/40 px-5 gap-4 text-xs font-mono">
+      <div className="flex border-b border-border bg-surface/40 px-4 sm:px-5 gap-3 sm:gap-4 text-xs font-mono overflow-x-auto scrollbar-none whitespace-nowrap">
         <button
           onClick={() => setActiveTab("sources")}
           className={`py-2.5 border-b-2 font-semibold transition-colors ${

@@ -369,8 +369,8 @@ const pages = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background mt-20">
-      <div className="max-w-[1280px] mx-auto px-8 py-16">
+    <footer className="border-t border-border bg-background mt-16 sm:mt-20">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr] pb-12 border-b border-border/60">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
@@ -404,7 +404,7 @@ export function Footer() {
 
         <div className="pt-12">
           <div className="font-mono text-xs tracking-widest text-muted-foreground mb-5">EMERGENCY CONTACTS</div>
-          <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid gap-3 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
             {contacts.map(([name, numbers]) => (
               <div
                 key={name}
@@ -429,7 +429,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border">
-        <div className="max-w-[1280px] mx-auto px-8 py-5 flex flex-col md:flex-row gap-2 justify-between text-xs text-muted-foreground">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 py-5 flex flex-col md:flex-row gap-2 justify-between text-xs text-muted-foreground">
           <p>© 2026 Nepal Seismic Awareness Portal. All rights reserved.</p>
           <div className="flex gap-5">
             <LegalDialog
